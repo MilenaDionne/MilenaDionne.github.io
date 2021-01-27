@@ -1,7 +1,26 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <title>Questionnaire</title>
+    <h1>Questionnaire</h1>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+    <form action="index.php" name="my form" method="POST">
+        FirstName:<input type="text" name="firstname"><br>
+        LastName:<input type="text" name="lastname"><br><br>
+
+        Are you:<br>
+        <input type="radio" name="sex" value="male">Male<br>
+        <input type="radio" name="sex" value="female">Female<br><br>
+
+        Question1 :<br>
+        <input type="checkbox" name="answer1" value="answer1">answer1<br>
+        <input type="checkbox" name="answer2" value="answer2">answer2<br>
+        <input type="checkbox" name="answer3" value="answer3">answer3<br><br>
+
+       
+
+        <input type="submit" value="submit the questionnaire"/>
+    </form>
 </body>
 </html>
