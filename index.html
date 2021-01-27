@@ -2,14 +2,18 @@
 <html>
 
 <head>
-    <title>Uottawa survey</title>
+    <title>UOttawa survey</title>
 </head>
 
 <body>
-    <h1>Uottawa web page survey</h1>
+    <h1>UOttawa website survey</h1>
+    <p>This goal of this survey is to get your feedback on the website
+        <a href="https://www.uottawa.ca/en">UOttawa</a>
+    </p>
     <a href="https://www.uottawa.ca/en"><img src="images/uottawaWebPage.PNG" alt="uottawa Web Page photo" width="75%"></a>
     <form action="index.php" name="my form" method="POST">
         <div>
+            <!--could be "I am a" -->
             <label for="role">Who are you?</label>
             <select name="role">
                 <option value="student">Student</option>
@@ -19,8 +23,14 @@
             </select>
         </div>
         <div>
-            <p>What do you like about this web page? (e.g. colors, images, content)</p>
+            <p>What do you like about this website? (e.g. colors, images, content)</p>
             <textarea rows="8" cols="60"></textarea>
+        </div>
+
+        <div>
+            <p>In you opinion, are there too many fonts and/or sizes of text on this website?</p>
+            <input type="radio" name="yes" value="yes">Yes<br>
+            <input type="radio" name="No" value="No">No<br>
         </div>
 
 
@@ -30,9 +40,12 @@
         <input type="checkbox" name="answer2" value="answer2">answer2<br>
         <input type="checkbox" name="answer3" value="answer3">answer3<br><br>
 
-
-
-        <input type="submit" value="submit the questionnaire" />
+        <div>
+            <p>Do you have any comments?</p>
+            <textarea rows="8" cols="60"></textarea>
+        </div>
+        <br>
+        <input type="submit" value="Submit!" />
 
         <p id="signature" style="color:darkcyan"> This website was made by: Milena Dionne, Jean-Luc Blais-Amyot, Ben Rizk, and Yousuf Ahmed</p>
     </form>
