@@ -9,10 +9,17 @@
     <h1>Uottawa web page survey</h1>
     <a href="https://www.uottawa.ca/en"><img src="images/uottawaWebPage.PNG" alt="uottawa Web Page photo" width="75%"></a>
     <form action="index.php" name="my form" method="POST">
-        FirstName:<input type="text" name="firstname"><br> LastName:
-        <input type="text" name="lastname"><br><br> Are you:<br>
-        <input type="radio" name="sex" value="male">Male<br>
-        <input type="radio" name="sex" value="female">Female<br><br> Question1 :<br>
+        <label for="role">Who are you?</label>
+        <select name="role">
+            <option value="student">Student</option>
+            <option value="employee">Employee</option>
+            <option value="enroll">Someone looking to enroll</option>
+            <option value="other"> Other</option>
+        </select>
+
+
+
+        <br> Question1 :<br>
         <input type="checkbox" name="answer1" value="answer1">answer1<br>
         <input type="checkbox" name="answer2" value="answer2">answer2<br>
         <input type="checkbox" name="answer3" value="answer3">answer3<br><br>
@@ -21,7 +28,7 @@
 
         <input type="submit" value="submit the questionnaire" />
 
-        <p id="signature" style="color:darkcyan"> this website was made by: Milena Dionne, Jean-Luc Blais-Amyot, Ben Rizk, and Yousuf Ahmed</p>
+        <p id="signature" style="color:darkcyan"> This website was made by: Milena Dionne, Jean-Luc Blais-Amyot, Ben Rizk, and Yousuf Ahmed</p>
     </form>
 </body>
 
