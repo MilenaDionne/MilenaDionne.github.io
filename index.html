@@ -9,43 +9,61 @@
 <body>
     <h1>UOttawa website survey</h1>
     <p>This goal of this survey is to get your feedback on the website
-        <a href="https://www.uottawa.ca/en">UOttawa</a>
+        <a href="https://www.uottawa.ca/en">UOttawa</a>.
     </p>
     <a href="https://www.uottawa.ca/en"><img src="images/uottawaWebPage.PNG" alt="uottawa Web Page photo" width="75%"></a>
-    <p>Picture is from https://www.uottawa.ca/en. </p>
+    <br>
+    <caption>Picture is from https://www.uottawa.ca/en. </caption>
+    <br>
+    <br>
     <form action="index.php" name="my form" method="POST">
-        <div>
-            <!--could be "I am a" -->
-            <label for="role">Who are you?</label>
-            <select name="role">
+        <ol>
+            <div>
+                <li>
+                    <!--could be "I am a" -->
+                    <label for="role" class="underline">Who are you?</label>
+                    <select name="role">
                 <option value="student">Student</option>
                 <option value="employee">Employee</option>
                 <option value="enroll">Someone looking to enroll</option>S
                 <option value="other"> Other</option>
-            </select>
-        </div>
-        <div>
-            <br><p1>What do you like about this website? (e.g. colors, images, content)</p1><br><br>
-            <textarea rows="8" cols="60"></textarea>
-        </div>
+            </select></li>
+            </div>
+            <div>
+                <br>
+                <li>
+                    <p1 class="underline">What do you like about this website? (e.g. colors, images, content)</p1><br><br>
+                    <textarea rows="8" cols="60"></textarea>
+                </li>
+            </div>
 
-        <div>
-            <br><p1>In you opinion, are there too many fonts and/or sizes of text on this website?</p1><br><br>
-            <input type="radio" name="yes" value="yes">Yes<br>
-            <input type="radio" name="No" value="No">No<br>
-        </div>
+            <div>
+                <br>
+                <li>
+                    <p1 class="underline">In you opinion, are there too many fonts and/or sizes of text on this website?</p1><br><br>
+                    <input type="radio" name="yes" value="yes">Yes
+                    <input type="radio" name="No" value="No">No<br>
+                </li>
+            </div>
 
 
 
-        <br><p1>Select all that apply</p1>  <br>:<br>
-        <input type="checkbox" name="answer1" value="answer1">I am lookig for information about this university<br>
-        <input type="checkbox" name="answer2" value="answer2">I need assistance from this university<br>
-        <input type="checkbox" name="answer3" value="answer3">I am looking be apart of this university<br><br>
+            <br>
+            <li>
+                <p1 class="underline">Select all that apply :</p1>
+                <br>
 
-        <div>
-            <p1>Do you have any comments?</p1><br><br>
-            <textarea rows="8" cols="60"></textarea>
-        </div>
+                <input type="checkbox">I am lookig for information about this university<br>
+                <input type="checkbox">I need assistance from this university<br>
+                <input type="checkbox">I am looking be apart of this university<br><br></li>
+
+            <div>
+                <li>
+                    <p1 class="underline">Do you have any comments?</p1><br><br>
+                    <textarea rows="8" cols="60"></textarea>
+                </li>
+            </div>
+        </ol>
         <br>
         <input type="submit" value="Submit!" />
 
