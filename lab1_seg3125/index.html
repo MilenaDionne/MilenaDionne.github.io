@@ -3,17 +3,18 @@
 
 <head>
     <link rel="stylesheet" href="styles.css" />
-    <title>UOttawa survey</title>
+    <title>uOttawa survey</title>
 </head>
 
 <body>
-    <h1>UOttawa website survey</h1>
-    <p>This goal of this survey is to get your feedback on the website
-        <a href="https://www.uottawa.ca/en">UOttawa</a>.
-    </p>
-    <a href="https://www.uottawa.ca/en"><img src="images/uottawaWebPage.PNG" alt="uottawa Web Page photo" width="75%"></a>
     <br>
-    <caption>Picture is from https://www.uottawa.ca/en. </caption>
+    <img src="images/uottawalogo.png" alt="uOttawa Logo" width="10%" class="center">
+    <h1>uOttawa Website Survey</h1>
+    <p>The goal of this survey is to get your feedback on uOttawa's website! To access their website click 
+        <a href="https://www.uottawa.ca/en">here</a>.
+    </p>
+    <a href="https://www.uottawa.ca/en"><img src="images/uottawaWebPage.PNG" alt="uOttawa Web Page Screenshot" width="75%" class="center"></a>
+    <h5>Picture is from https://www.uottawa.ca/en. </h5>
     <br>
     <br>
     <form action="index.php" name="my form" method="POST">
@@ -22,6 +23,7 @@
                 <li>
                     <!--could be "I am a" -->
                     <label for="role" class="underline">Who are you?</label>
+                    <br>
                     <select name="role">
                 <option value="student" class="dropdown">Student</option>
                 <option value="employee" class="dropdown">Employee</option>
@@ -32,7 +34,7 @@
             <div>
                 <br>
                 <li>
-                    <p1 class="underline">How did you hear about UOttawa</p1><br>
+                    <p1 class="underline">How did you hear about uOttawa?</p1><br>
                     <input type="checkbox">Family and friend<br>
                     <input type="checkbox">Google <br>
                     <input type="checkbox">Facebook<br>
@@ -49,7 +51,7 @@
             <div>
                 <br>
                 <li>
-                    <p1 class="underline">What do you like about this website? (e.g. colors, images, content)</p1><br><br>
+                    <p1 class="underline">What do you like about this website? (e.g. colors, images, content)</p1><br>
                     <textarea rows="8" cols="60"></textarea>
                 </li>
             </div>
@@ -57,9 +59,9 @@
             <div>
                 <br>
                 <li>
-                    <p1 class="underline">In you opinion, are there too many fonts and/or sizes of text on this website?</p1><br><br>
-                    <input type="radio" name="yes" value="yes">Yes
-                    <input type="radio" name="No" value="No">No<br>
+                    <p1 class="underline">In you opinion, are there too many fonts and/or sizes of text on this website?</p1><br>
+                    <input type="radio" name="radio" value="yes">Yes
+                    <input type="radio" name="radio" value="No">No<br>
                 </li>
             </div>
 
@@ -70,13 +72,13 @@
                 <p1 class="underline">Select all that apply :</p1>
                 <br>
 
-                <input type="checkbox">I am lookig for information about this university<br>
+                <input type="checkbox">I am looking for information about this university<br>
                 <input type="checkbox">I need assistance from this university<br>
                 <input type="checkbox">I am looking be apart of this university<br><br></li>
 
             <div>
                 <li>
-                    <p1 class="underline">Do you have any comments?</p1><br><br>
+                    <p1 class="underline">Do you have any comments?</p1><br>
                     <textarea rows="8" cols="60"></textarea>
                 </li>
             </div>
