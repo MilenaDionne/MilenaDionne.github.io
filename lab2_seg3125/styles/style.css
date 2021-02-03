@@ -1,4 +1,12 @@
-  /* This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp> */
+.storename h1 {
+  font-size: 30px;
+  font-family: Garamond, Times, serif;
+  color: #42a1ffl;
+  text-align: center;
+} 
+
+
+/* This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp> */
   /* Style the tab */
 
 .tab {
@@ -43,9 +51,4 @@
     font-style: italic;
 }
 
-.storename {
-  font-size: 30px;
-  font-family: Garamond, Times, serif;
-  color: #42a1ffl;
-  text-align: center;
-}
+
