@@ -18,7 +18,61 @@ var products = [
 		name: "salmon",
 		vegetarian: false,
 		glutenFree: true,
-		price: 10.00
+		price: 12.99
+	}, 
+	{
+		name: "apples",
+		vegetarian: true,
+		glutenFree: true,
+		price: 4.00
+	}, 
+	{
+		name: "bananas",
+		vegetarian: true,
+		glutenFree: true,
+		price: 6.00
+	}, 
+	{
+		name: "carrots",
+		vegetarian: true,
+		glutenFree: true,
+		price: 2.50
+	}, 
+	{
+		name: "chicken",
+		vegetarian: false,
+		glutenFree: true,
+		price: 13.00
+	}, 
+	{
+		name: "croissant",
+		vegetarian: false,
+		glutenFree: false,
+		price: 12.00
+	}, 
+	{
+		name: "lettuce",
+		vegetarian: true,
+		glutenFree: true,
+		price: 7.50
+	}, 
+	{
+		name: "napkins",
+		vegetarian: true,
+		glutenFree: true,
+		price: 3.00
+	}, 
+	{
+		name: "paper plates",
+		vegetarian: true,
+		glutenFree: true,
+		price: 4.00
+	}, 
+	{
+		name: "steak",
+		vegetarian: false,
+		glutenFree: true,
+		price: 20.00
 	}
 ];
 	
