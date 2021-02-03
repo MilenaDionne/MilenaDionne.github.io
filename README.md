@@ -12,3 +12,4 @@ main lab page link: https://milenadionne.github.io/
 
 labs links: 
 * lab 1: https://milenadionne.github.io/lab1_seg3125/
+* lab 2: https://milenadionne.github.io/lab2_seg3125/
