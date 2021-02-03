@@ -35,3 +35,10 @@
       border: 1px solid #ccc;
       border-top: none;
   }
+
+/*Style the signature*/
+.signature {
+    font-size: 16px;
+    color: red;
+    font-style: italic;
+}
