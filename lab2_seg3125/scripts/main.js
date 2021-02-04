@@ -96,3 +96,13 @@ function selectedItems() {
     c.appendChild(document.createTextNode("Total Price is " + getTotalPrice(chosenProducts)));
 
 }
+
+
+function setFontSize() {
+    var fontSizeNode = document.getElementById("fontSize");
+    var body = document.getElementById('body');
+    var fontSizeNumberNode = document.getElementById("fontSizeNumber");
+
+    body.style.fontSize = fontSizeNode.value + "px";
+    fontSizeNumberNode.innerHTML = fontSizeNode.value
+}

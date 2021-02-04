@@ -99,6 +99,8 @@ function restrictListProducts(prods, restriction, organicPreference) {
         return parseFloat(a.price) - parseFloat(b.price);
     });
 
+    //Organic preference
+    //Still shows item even if they do not correspond to the preference since it's not a restriction
     if (organicPreference == 'Organic') {
         prods.sort((a, b) => b.organic - a.organic);
     } else if (organicPreference == 'NonOrganic') {
