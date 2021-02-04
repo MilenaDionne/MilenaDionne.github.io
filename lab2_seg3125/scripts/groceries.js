@@ -93,16 +93,23 @@ var products = [
 // prices should be included in this list, as well as a sort based on price
 
 function restrictListProducts(prods, restriction) {
+
+	//sort list 
+	prods.sort(function(a, b) {
+		return parseFloat(a.price) - parseFloat(b.price);
+	});
 	let product_names = [];
+	
+	count = 0; 
 	for (let i=0; i<prods.length; i+=1) {
 		if ((restriction == "Vegetarian") && (prods[i].vegetarian == true)){
-			product_names.push(prods[i].name);
+			product_names.push(prods[i].name + "\t$" + prods[i].price);
 		}
 		else if ((restriction == "GlutenFree") && (prods[i].glutenFree == true)){
-			product_names.push(prods[i].name);
+			product_names.push(prods[i].name + "\t$" + prods[i].price);
 		}
 		else if (restriction == "None"){
-			product_names.push(prods[i].name);
+			product_names.push(prods[i].name + "" + prods[i].price);
 		}
 	}
 	return product_names;
