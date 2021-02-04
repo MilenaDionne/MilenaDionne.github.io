@@ -33,6 +33,7 @@ var products = [{
         name: "bananas",
         vegetarian: true,
         glutenFree: true,
+        organic: true,
         price: 6.00
     },
     {
@@ -91,12 +92,18 @@ var products = [{
 // given restrictions provided, make a reduced list of products
 // prices should be included in this list, as well as a sort based on price
 
-function restrictListProducts(prods, restriction) {
+function restrictListProducts(prods, restriction, organicPreference) {
 
     //sort list 
     prods.sort(function(a, b) {
         return parseFloat(a.price) - parseFloat(b.price);
     });
+
+    if (organicPreference == 'Organic') {
+        prods.sort((a, b) => b.organic - a.organic);
+    } else if (organicPreference == 'NonOrganic') {
+        prods.sort((a, b) => a.organic - b.organic);
+    } // If no preference, nothing to do
     let product_names = [];
 
     count = 0;

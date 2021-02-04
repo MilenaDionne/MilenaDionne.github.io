@@ -33,9 +33,9 @@
       </select>
         <br><br>
         <div> Any products preferences?
-            <input type="radio" name="organicPreference" id="Organic" value="Organic" onclick="">Organic</input>
-            <input type="radio" name="organicPreference" id="NonOrganic" value="NonOrganic" onclick="">Non-Organic</input>
-            <input type="radio" name="organicPreference" id="NoPreference" value="none" checked onclick="">No preferences</input>
+            <input type="radio" name="organicPreference" id="Organic" value="Organic" onclick="populateListProductChoices('dietSelect', 'displayProduct')">Organic</input>
+            <input type="radio" name="organicPreference" id="NonOrganic" value="NonOrganic" onclick="populateListProductChoices('dietSelect', 'displayProduct')">Non-Organic</input>
+            <input type="radio" name="organicPreference" id="NoPreference" value="null" checked onclick="populateListProductChoices('dietSelect', 'displayProduct')">No preferences</input>
         </div>
     </div>
 
