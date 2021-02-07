@@ -2,7 +2,7 @@
 // A set of ingredients should be added to products		 
 
 var products = [{
-        name: "brocoli",
+        name: "broccoli",
         vegetarian: true,
         glutenFree: true,
         organic: true,
