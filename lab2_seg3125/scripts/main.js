@@ -42,14 +42,21 @@ function populateListProductChoices(slct1, slct2) {
     // obtain a reduced list of products based on restrictions
     var optionArray = restrictListProducts(products, s1.value, a);
 
+    //adding a button "add to cart" button on top if there is at least 
+    //one product so the user doesn't have to always scroll all the way down to add to cart
+    var addToCartTop = document.getElementById('addCartTop');
+    if (optionArray.length > 0) {
+        addToCartTop.style.display = "block"
+    } else {
+        addToCartTop.style.display = "none"
+    }
     // for each item in the array, create a checkbox element, each containing information such as:
     // <input type="checkbox" name="product" value="Bread">
     // <label for="Bread">Bread/label><br>
 
     for (i = 0; i < optionArray.length; i++) {
         var div = document.createElement("div");
-        div.style.alignItems = "center"
-        div.style.display = "flex"
+        div.classList.add("div-centered")
 
         var productName = optionArray[i];
         // create the checkbox and add in HTML DOM
@@ -68,8 +75,7 @@ function populateListProductChoices(slct1, slct2) {
         var img = document.createElement('img');
         var temp = productName.split('\t$');
         img.src = 'Images/' + temp[0] + '.jpg';
-        img.style.width = '150px';
-        img.style.height = '150px';
+        img.classList.add("img-size")
         div.appendChild(img)
         s2.appendChild(div);
 
@@ -102,6 +108,14 @@ function selectedItems() {
             chosenProducts.push(ele[i].value);
         }
     }
+
+    var cartTab = document.getElementById("cartTab");
+    if (chosenProducts.length > 0) {
+        cartTab.innerText = "Cart (" + chosenProducts.length + " items)"
+    } else {
+        cartTab.innerText = "Cart"
+    }
+
 
     // add paragraph and total price
     c.appendChild(para);
