@@ -127,7 +127,7 @@ function restrictListProducts(prods, restriction, organicPreference) {
 function getTotalPrice(chosenProducts) {
     totalPrice = 0;
     for (let i = 0; i < products.length; i += 1) {
-        if (chosenProducts.indexOf(products[i].name) > -1) {
+        if (chosenProducts.indexOf(products[i].name + "\t$" + products[i].price) > -1) {
             totalPrice += products[i].price;
         }
     }
