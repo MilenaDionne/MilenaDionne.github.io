@@ -1,7 +1,7 @@
 .storename h1 {
     font-size: 30px;
     font-family: Garamond, Times, serif;
-    color: #42a1ffl;
+    /* color: 42a1ffl; */
     text-align: center;
 }
 
@@ -82,4 +82,12 @@
     width: 150px;
     height: 150px;
     margin-left: 25px;
+}
+
+.display-none {
+    display: none;
+}
+
+.display-block {
+    display: block;
 }

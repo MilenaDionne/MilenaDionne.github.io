@@ -41,14 +41,16 @@ function populateListProductChoices(slct1, slct2) {
 
     // obtain a reduced list of products based on restrictions
     var optionArray = restrictListProducts(products, s1.value, a);
-
-    //adding a button "add to cart" button on top if there is at least 
-    //one product so the user doesn't have to always scroll all the way down to add to cart
+    console.log(optionArray)
+        //adding a button "add to cart" button on top if there is at least 
+        //one product so the user doesn't have to always scroll all the way down to add to cart
     var addToCartTop = document.getElementById('addCartTop');
     if (optionArray.length > 0) {
-        addToCartTop.style.display = "block"
+        addToCartTop.classList.remove("display-none");
+        addToCartTop.classList.add("display-block");
     } else {
-        addToCartTop.style.display = "none"
+        addToCartTop.classList.remove("display-block");
+        addToCartTop.classList.add("display-none");
     }
     // for each item in the array, create a checkbox element, each containing information such as:
     // <input type="checkbox" name="product" value="Bread">
