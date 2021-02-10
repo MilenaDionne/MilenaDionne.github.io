@@ -24,25 +24,17 @@
         <h3>Customer information</h3>
         <p>Tell us a bit about yourself!</p>
         Please select your diet preference:
-        <select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
-            <option value=""></option>
-            <option value="Vegetarian">Vegetarian diet</option>
-            <option value="GlutenFree">Gluten-free diet</option>
-            <option value="VegetarianAndGlutenFree">Vegetarian and gluten-free diets</option>
-            <option value="None">None</option>
-        </select>
-
-        <!--
-       Our attempt to checkbox instead of dropdown
-
-      <br><br>Choose a Category:<br>
-      <input type="checkbox" id="dietSelect" name="preference" value="Vegetarian">
-      <label for="male">Vegetarian</label><br>
-      <input type="checkbox" id="dietSelect" name="preference" value="Gluten Free">
-      <label for="female">GlutenFree</label><br>
-      <input type="checkbox" id="dietSelect" name="preference" value="None">
-      <label for="other">None</label>
-      -->
+        
+        <input type="radio" name="dietSelect" id="Vegetarian" value="Vegetarian" onclick="populateListProductChoices(this.id, 'displayProduct')">
+        <label for="Vegetarian">Vegeterian diet</label><br>
+        <input type="radio" name="dietSelect" id="GlutenFree" value="GlutenFree" onclick="populateListProductChoices(this.id, 'displayProduct')">
+        <label for="GlutenFree">Gluten-free diet</label><br>
+        <input type="radio" name="dietSelect" id="VegetarianAndGlutenFree" value="VegetarianAndGlutenFree" onclick="populateListProductChoices(this.id, 'displayProduct')">
+        <label for="VegetarianAndGlutenFree">Vegetarian and gluten-free diets</label><br>
+        <input type="radio" name="dietSelect" id="None" value="None" checked onclick="populateListProductChoices(this.id, 'displayProduct')">
+        <label for="None">None</label><br>
+        
+        
 
         <br><br>
         <div>
