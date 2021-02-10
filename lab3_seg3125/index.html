@@ -33,16 +33,20 @@
         <input type="radio" name="dietSelect" id="VegetarianAndGlutenFree" value="VegetarianAndGlutenFree" onclick="populateListProductChoices(this.id, 'displayProduct')">
         <label for="VegetarianAndGlutenFree">Vegetarian and gluten-free diets</label><br>
         <input type="radio" name="dietSelect" id="None" value="None" checked onclick="populateListProductChoices(this.id, 'displayProduct')">
-        <label for="None">None</label><br>
+        <label for="None">No preferences</label><br>
         
         
 
         <br>
         <div>
             What type of produce would you prefer?
-            <input type="radio" name="organicPreference" id="Organic" value="Organic" onclick="populateListProductChoices('dietSelect', 'displayProduct')">Organic</input>
-            <input type="radio" name="organicPreference" id="NonOrganic" value="NonOrganic" onclick="populateListProductChoices('dietSelect', 'displayProduct')">Non-Organic</input>
-            <input type="radio" name="organicPreference" id="NoPreference" value="null" checked onclick="populateListProductChoices('dietSelect', 'displayProduct')">No preferences</input>
+            <br>
+            <select id="dietSelect" name="organicPreference" onchange="populateListProductChoices(this.id, 'displayProduct')">
+              <option value=""></option>
+             <option value="Organic">Organic</option>
+             <option value="NonOrganic">Non-organic</option>
+             <option value="null">No preferences</option>
+            
         </div>
     </div>
 
