@@ -21,11 +21,6 @@ function openInfo(evt, tabName) {
 
 }
 
-//setup for stickytab function
-window.onscroll = function () { stickyTab() };
-var webTab = document.getElementById("ourTabs");
-var sticky = webTab.offsetTop;
-
 // generate a checkbox list from a list of products
 // it makes each product name as the label for the checkbos
 
@@ -104,7 +99,7 @@ function selectedItems() {
 
     // build list of selected item
     var para = document.createElement("P");
-    para.innerHTML = "You selected : ";
+    para.innerHTML = "You selected: ";
     para.appendChild(document.createElement("br"));
     for (i = 0; i < ele.length; i++) {
         if (ele[i].checked) {
@@ -124,7 +119,7 @@ function selectedItems() {
 
     // add paragraph and total price
     c.appendChild(para);
-    c.appendChild(document.createTextNode("Total Price is $" + getTotalPrice(chosenProducts)));
+    c.appendChild(document.createTextNode("Total price is $" + getTotalPrice(chosenProducts)));
 
 }
 
@@ -136,13 +131,4 @@ function setFontSize() {
 
     body.style.fontSize = fontSizeNode.value + "px";
     fontSizeNumberNode.innerHTML = fontSizeNode.value
-}
-
-function stickyTab() {                      //function to make tab sticky
-    if (window.pageYOffset >= sticky) {
-        webTab.classList.add("sticky");
-    }
-    else {
-        webTab.classList.remove("sticky");
-    }
 }

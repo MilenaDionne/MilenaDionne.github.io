@@ -2,84 +2,84 @@
 // A set of ingredients should be added to products		 
 
 var products = [{
-        name: "broccoli",
+        name: "Broccoli",
         vegetarian: true,
         glutenFree: true,
         organic: true,
         price: 1.99
     },
     {
-        name: "bread",
+        name: "Bread",
         vegetarian: true,
         glutenFree: false,
         organic: true,
         price: 2.35
     },
     {
-        name: "salmon",
+        name: "Salmon",
         vegetarian: false,
         glutenFree: true,
         organic: true,
         price: 12.99
     },
     {
-        name: "apples",
+        name: "Apples",
         vegetarian: true,
         glutenFree: true,
         organic: true,
         price: 4.00
     },
     {
-        name: "bananas",
+        name: "Bananas",
         vegetarian: true,
         glutenFree: true,
         organic: true,
         price: 6.00
     },
     {
-        name: "carrots",
+        name: "Carrots",
         vegetarian: true,
         glutenFree: true,
         organic: true,
         price: 2.50
     },
     {
-        name: "chicken",
+        name: "Chicken",
         vegetarian: false,
         glutenFree: true,
         organic: true,
         price: 13.00
     },
     {
-        name: "croissant",
+        name: "Croissant",
         vegetarian: false,
         glutenFree: false,
         organic: true,
         price: 12.00
     },
     {
-        name: "lettuce",
+        name: "Lettuce",
         vegetarian: true,
         glutenFree: true,
         organic: true,
         price: 7.50
     },
     {
-        name: "napkins",
+        name: "Napkins",
         vegetarian: true,
         glutenFree: true,
         organic: false,
         price: 3.00
     },
     {
-        name: "paper plates",
+        name: "Paper plates",
         vegetarian: true,
         glutenFree: true,
         organic: false,
         price: 4.00
     },
     {
-        name: "steak",
+        name: "Steak",
         vegetarian: false,
         glutenFree: true,
         organic: true,
