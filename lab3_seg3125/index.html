@@ -21,9 +21,9 @@
 
     <!-- Tab content -->
     <div id="Client" class="tabcontent" style="display: block;">
-        <h3>Client Information</h3>
-        <p>Tell us a bit about you.</p>
-        Choose a Category:
+        <h3>Customer information</h3>
+        <p>Tell us a bit about yourself!.</p>
+        Please select your diet preference:
         <select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
             <option value=""></option>
             <option value="Vegetarian">Vegetarian</option>
@@ -46,7 +46,7 @@
 
         <br><br>
         <div>
-            Any products preferences?
+            What type of produce would you prefer?
             <input type="radio" name="organicPreference" id="Organic" value="Organic" onclick="populateListProductChoices('dietSelect', 'displayProduct')">Organic</input>
             <input type="radio" name="organicPreference" id="NonOrganic" value="NonOrganic" onclick="populateListProductChoices('dietSelect', 'displayProduct')">Non-Organic</input>
             <input type="radio" name="organicPreference" id="NoPreference" value="null" checked onclick="populateListProductChoices('dietSelect', 'displayProduct')">No preferences</input>
@@ -54,21 +54,21 @@
     </div>
 
     <div id="Products" class="tabcontent">
-        <h3>Your targeted products</h3>
-        <p>We preselected products based on your restrictions.</p>
+        <h3>Suggested products</h3>
+        <p>Here are products we thought you may like based on your preferences.</p>
         <button id="addCartTop" type="button" class="display-none block" onclick="selectedItems()">
-            Add selected items to cart.
-        </button ><br> Choose items to buy:
+            Add selected items to shopping cart.
+        </button ><br> Please choose the items you would like to buy:
         <div id="displayProduct"></div>
         <br>
         <button id="addCart" type="button"  class="block" onclick="selectedItems()">
-            Add selected items to cart.
+            Add selected items to shopping cart.
         </button>
     </div>
 
     <div id="Cart" class="tabcontent">
         <h3>Cart</h3>
-        <p>Here is your cart.</p>
+        <p>Items in your shopping cart.</p>
         <div id="displayCart"></div>
     </div>
 
