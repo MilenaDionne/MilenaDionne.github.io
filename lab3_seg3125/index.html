@@ -39,17 +39,16 @@
 
         <br>
         <div>
-            What type of produce would you prefer?
-            <br>
-            <select id="dietSelect" name="organicPreference" onchange="populateListProductChoices('dietSelect', 'displayProduct')">
-              <option value=""></option>
-             <option value="Organic">Organic</option>
-             <option value="NonOrganic">Non-organic</option>
-             <option value="null">No preferences</option>
+        <input type="radio" name="organicPreference" id="Organic" value="Organic" onclick="populateListProductChoices('dietSelect', 'displayProduct')">
+        <label for="Organic">Organic><br>
+        <input type="radio" name="organicPreference" id="NonOrganic" value="NonOrganic" onclick="populateListProductChoices('dietSelect', 'displayProduct')">
+        <label for="">Non-organic</label><br>
+        <input type="radio" name="dietSelect" id="None" value="None" checked onclick="populateListProductChoices(this.id, 'displayProduct')">
+        <label for="None">No preferences</label><br>
             
         </div>
             
-            <br>
+         <br>
     </div>
 
     <div id="Products" class="tabcontent">
