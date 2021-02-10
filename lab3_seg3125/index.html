@@ -25,6 +25,7 @@
         <p>Tell us a bit about yourself!</p>
         Please select your diet preference:
         
+        <br>
         <input type="radio" name="dietSelect" id="Vegetarian" value="Vegetarian" onclick="populateListProductChoices(this.id, 'displayProduct')">
         <label for="Vegetarian">Vegeterian diet</label><br>
         <input type="radio" name="dietSelect" id="GlutenFree" value="GlutenFree" onclick="populateListProductChoices(this.id, 'displayProduct')">
@@ -36,7 +37,7 @@
         
         
 
-        <br><br>
+        <br>
         <div>
             What type of produce would you prefer?
             <input type="radio" name="organicPreference" id="Organic" value="Organic" onclick="populateListProductChoices('dietSelect', 'displayProduct')">Organic</input>
