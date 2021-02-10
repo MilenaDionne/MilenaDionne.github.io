@@ -79,7 +79,7 @@ function populateListProductChoices(slct1, slct2) {
         //add image to listing
         var img = document.createElement('img');
         var temp = productName.split('\t$');
-        img.src = 'Images/' + temp[0] + '.jpg';
+        img.src = 'Photos/' + temp[0] + '.jpg';
         img.classList.add("img-size")
         div.appendChild(img)
         s2.appendChild(div);
