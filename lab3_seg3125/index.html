@@ -13,57 +13,48 @@
     </div>
     <img src="Images/Cute_Logo.jpg" alt="logo" height="100" width="200" class="center" />
     <!-- Tab links, each one with an onclick event associated with it -->
-    <!-- <div class="tab">
+    <div id="ourTabs" class="tab">
         <button class="tablinks active" style="font-size:25px" onclick="openInfo(event, 'Client')">Client</button>
         <button class="tablinks" style="font-size:25px" onclick="openInfo(event, 'Products')">Products</button>
         <button class="tablinks" style="font-size:25px" onclick="openInfo(event, 'Cart')" id="cartTab">Cart</button>
     </div> -->
 
-    <!-- This style is taken from https://www.w3schools.com/howto/howto_css_fixed_sidebar.asp -->
-    <div class="sidenav">
-        <a href="#">Client</a>
-        <a href="#">Products</a>
-        <a href="#">Cart</a>
-    </div>
-    <div class="main">
-        <!-- Tab content -->
-        <div id="Client" class="tabcontent" style="display: block;">
-            <h3>Customer information</h3>
-            <p>Tell us a bit about yourself!</p>
-            Please select your diet preference:
-            <select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
-            <option value=""></option>
-            <option value="Vegetarian">Vegetarian diet</option>
-            <option value="GlutenFree">Gluten-free diet</option>
-            <option value="VegetarianAndGlutenFree">Vegetarian and gluten-free diets</option>
-            <option value="None">None</option>
-        </select>
+    <!-- Tab content -->
+    <div id="Client" class="tabcontent" style="display: block;">
+        <h3>Customer information</h3>
+        <p>Tell us a bit about yourself!</p>
+        Please select your diet preference:
 
-            <!--
-       Our attempt to checkbox instead of dropdown
+        <br>
+        <input type="radio" name="dietSelect" id="Vegetarian" value="Vegetarian" onclick="populateListProductChoices(this.id, 'displayProduct')">
+        <label for="Vegetarian">Vegeterian diet</label><br>
+        <input type="radio" name="dietSelect" id="GlutenFree" value="GlutenFree" onclick="populateListProductChoices(this.id, 'displayProduct')">
+        <label for="GlutenFree">Gluten-free diet</label><br>
+        <input type="radio" name="dietSelect" id="VegetarianAndGlutenFree" value="VegetarianAndGlutenFree" onclick="populateListProductChoices(this.id, 'displayProduct')">
+        <label for="VegetarianAndGlutenFree">Vegetarian and gluten-free diets</label><br>
+        <input type="radio" name="dietSelect" id="None" value="None" checked onclick="populateListProductChoices(this.id, 'displayProduct')">
+        <label for="None">No preferences</label><br>
 
-      <br><br>Choose a Category:<br>
-      <input type="checkbox" id="dietSelect" name="preference" value="Vegetarian">
-      <label for="male">Vegetarian</label><br>
-      <input type="checkbox" id="dietSelect" name="preference" value="Gluten Free">
-      <label for="female">GlutenFree</label><br>
-      <input type="checkbox" id="dietSelect" name="preference" value="None">
-      <label for="other">None</label>
-      -->
 
-            <br><br>
-            <div>
-                What type of produce would you prefer?
-                <input type="radio" name="organicPreference" id="Organic" value="Organic" onclick="populateListProductChoices('dietSelect', 'displayProduct')">Organic</input>
-                <input type="radio" name="organicPreference" id="NonOrganic" value="NonOrganic" onclick="populateListProductChoices('dietSelect', 'displayProduct')">Non-Organic</input>
-                <input type="radio" name="organicPreference" id="NoPreference" value="null" checked onclick="populateListProductChoices('dietSelect', 'displayProduct')">No preferences</input>
-            </div>
+
+        <br>
+        <div>
+            <input type="radio" name="organicPreference" id="Organic" value="Organic" onclick="populateListProductChoices('dietSelect', 'displayProduct')">
+            <label for="Organic">Organic<br>
+        <input type="radio" name="organicPreference" id="NonOrganic" value="NonOrganic" onclick="populateListProductChoices('dietSelect', 'displayProduct')">
+        <label for="NonOrganic">Non-organic</label><br>
+            <input type="radio" name="organicPreference" id="None" value="None" checked onclick="populateListProductChoices('dietSelect', 'displayProduct')">
+            <label for="None">No preferences</label><br>
+
         </div>
 
-        <div id="Products" class="tabcontent">
-            <h3>Suggested products</h3>
-            <p>Here are products we thought you may like based on your preferences.</p>
-            <button id="addCartTop" type="button" class="display-none block" onclick="selectedItems()">
+        <br>
+    </div>
+
+    <div id="Products" class="tabcontent">
+        <h3>Suggested products</h3>
+        <p>Here are products we thought you may like based on your preferences.</p>
+        <button id="addCartTop" type="button" class="display-none block" onclick="selectedItems()">
             Add selected items to shopping cart.
         </button ><br> Please choose the items you would like to buy:
         <div id="displayProduct"></div>
@@ -71,29 +62,29 @@
         <button id="addCart" type="button"  class="block" onclick="selectedItems()">
             Add selected items to shopping cart.
         </button>
-        </div>
+    </div>
 
-        <div id="Cart" class="tabcontent">
-            <h3>Cart</h3>
-            <p>Items in your shopping cart.</p>
-            <div id="displayCart"></div>
-        </div>
+    <div id="Cart" class="tabcontent">
+        <h3>Cart</h3>
+        <p>Items in your shopping cart.</p>
+        <div id="displayCart"></div>
+    </div>
 
-        <script src="scripts/groceries.js"></script>
-        <script src="scripts/main.js"></script>
-        <!-- CHANGE POSITION (vertical align?)-->
-        <div style="display: flex; ">
-            Characters size:
-            <input type="range" id="fontSize" min="8" max="30" step="1" onchange="setFontSize()"> &nbsp;
-            <span id="fontSizeNumber">11</span>
+    <script src="scripts/groceries.js"></script>
+    <script src="scripts/main.js"></script>
+    <!-- CHANGE POSITION (vertical align?)-->
+    <div style="display: flex; ">
+        Characters size:
+        <input type="range" id="fontSize" min="8" max="30" step="1" onchange="setFontSize()"> &nbsp;
+        <span id="fontSizeNumber">11</span>
 
-        </div>
+    </div>
 
-        <div style="position: relative; width: 200px; height: 100px;">
-            <div style="position: absolute; bottom: 5px;">
-                <p id=" signature " class="signature "> This website was made by: Milena Dionne, Jean-Luc Blais-Amyot, Ben Rizk, and Yousuf Ahmed</p>
-            </div>
+    <div style="position: relative; width: 200px; height: 100px;">
+        <div style="position: absolute; bottom: 5px;">
+            <p id=" signature " class="signature "> This website was made by: Milena Dionne, Jean-Luc Blais-Amyot, Ben Rizk, and Yousuf Ahmed</p>
         </div>
+    </div>
 </body>
 
 </html>

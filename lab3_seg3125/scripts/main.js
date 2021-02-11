@@ -21,7 +21,10 @@ function openInfo(evt, tabName) {
 
 }
 
-
+//setup for stickytab function
+window.onscroll = function () { stickyTab() };
+var webTab = document.getElementById("ourTabs");
+var sticky = webTab.offsetTop;
 
 // generate a checkbox list from a list of products
 // it makes each product name as the label for the checkbos
@@ -73,10 +76,10 @@ function populateListProductChoices(slct1, slct2) {
         label.htmlFor = productName;
         label.appendChild(document.createTextNode(productName));
         div.appendChild(label);
-
+        //add image to listing
         var img = document.createElement('img');
         var temp = productName.split('\t$');
-        img.src = 'Images/' + temp[0] + '.jpg';
+        img.src = 'Photos/' + temp[0] + '.jpg';
         img.classList.add("img-size")
         div.appendChild(img)
         s2.appendChild(div);
@@ -133,4 +136,13 @@ function setFontSize() {
 
     body.style.fontSize = fontSizeNode.value + "px";
     fontSizeNumberNode.innerHTML = fontSizeNode.value
+}
+
+function stickyTab() {                      //function to make tab sticky
+    if (window.pageYOffset >= sticky) {
+        webTab.classList.add("sticky");
+    }
+    else {
+        webTab.classList.remove("sticky");
+    }
 }
