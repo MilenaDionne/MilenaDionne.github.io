@@ -22,9 +22,9 @@ function openInfo(evt, tabName) {
 }
 
 //setup for stickytab function
-window.onscroll = function () { stickyTab() };
-var webTab = document.getElementById("ourTabs");
-var sticky = webTab.offsetTop;
+// window.onscroll = function () { stickyTab() };
+// var webTab = document.getElementById("ourTabs");
+// var sticky = webTab.offsetTop;
 
 // generate a checkbox list from a list of products
 // it makes each product name as the label for the checkbos
@@ -45,16 +45,6 @@ function populateListProductChoices(slct1, slct2) {
     // obtain a reduced list of products based on restrictions
     var optionArray = restrictListProducts(products, s1.value, a);
     console.log(optionArray)
-        //adding a button "add to cart" button on top if there is at least 
-        //one product so the user doesn't have to always scroll all the way down to add to cart
-    var addToCartTop = document.getElementById('addCartTop');
-    if (optionArray.length > 0) {
-        addToCartTop.classList.remove("display-none");
-        addToCartTop.classList.add("display-block");
-    } else {
-        addToCartTop.classList.remove("display-block");
-        addToCartTop.classList.add("display-none");
-    }
     // for each item in the array, create a checkbox element, each containing information such as:
     // <input type="checkbox" name="product" value="Bread">
     // <label for="Bread">Bread/label><br>
@@ -116,9 +106,10 @@ function selectedItems() {
 
     var cartTab = document.getElementById("cartTab");
     if (chosenProducts.length > 0) {
-        cartTab.innerText = "Cart (" + chosenProducts.length + " items)"
+        var item = (chosenProducts.length==1)?" item)":" items)"
+        cartTab.innerText = "Step 3: Cart (" + chosenProducts.length + item
     } else {
-        cartTab.innerText = "Cart"
+        cartTab.innerText = "Step 3: Cart"
     }
 
 
@@ -133,9 +124,16 @@ function setFontSize() {
     var fontSizeNode = document.getElementById("fontSize");
     var body = document.getElementById('body');
     var fontSizeNumberNode = document.getElementById("fontSizeNumber");
+    var accordions = document.getElementsByClassName('accordion');
 
     body.style.fontSize = fontSizeNode.value + "px";
-    fontSizeNumberNode.innerHTML = fontSizeNode.value
+    fontSizeNumberNode.innerHTML = fontSizeNode.value;
+    var i;
+
+    for (i = 0; i < accordions.length; i++) {
+
+        accordions[i].style.fontSize =fontSizeNode.value + "px"
+    }
 }
 
 function stickyTab() {                      //function to make tab sticky
@@ -145,4 +143,23 @@ function stickyTab() {                      //function to make tab sticky
     else {
         webTab.classList.remove("sticky");
     }
+}
+
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    /* Toggle between adding and removing the "active" class,
+    to highlight the button that controls the panel */
+    this.classList.toggle("active");
+
+    /* Toggle between hiding and showing the active panel */
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
 }

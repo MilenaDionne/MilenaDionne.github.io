@@ -13,76 +13,89 @@
     </div>
     <img src="Images/Cute_Logo.jpg" alt="logo" height="100" width="200" class="center" />
     <!-- Tab links, each one with an onclick event associated with it -->
-    <div id="ourTabs" class="tab">
+    <!-- <div id="ourTabs" class="tab">
         <button class="tablinks active" style="font-size:25px" onclick="openInfo(event, 'Client')">Client</button>
         <button class="tablinks" style="font-size:25px" onclick="openInfo(event, 'Products')">Products</button>
         <button class="tablinks" style="font-size:25px" onclick="openInfo(event, 'Cart')" id="cartTab">Cart</button>
-    </div>
+    </div> -->
+    <button class="accordion">Step 1: Customer information</button>
+    <div class="panel">
+        <!-- Tab content -->
 
-    <!-- Tab content -->
-    <div id="Client" class="tabcontent" style="display: block;">
-        <h3>Customer information</h3>
-        <p>Tell us a bit about yourself!</p>
-        Please select your diet preference:
+        <h3 class="textCenter">Customer information</h3>
+        <p class="textCenter">Tell us a bit about yourself!</p>
+        <hr>
+        <div class="row">
+            <div class="column">
+
+        <p style="margin-left: 26%;">Please select your diet preference:</p>
+
         
-        <br>
-        <input type="radio" name="dietSelect" id="Vegetarian" value="Vegetarian" onclick="populateListProductChoices(this.id, 'displayProduct')">
+        <input type="radio" name="dietSelect" id="Vegetarian" value="Vegetarian"
+            onclick="populateListProductChoices(this.id, 'displayProduct')">
         <label for="Vegetarian">Vegeterian diet</label><br>
-        <input type="radio" name="dietSelect" id="GlutenFree" value="GlutenFree" onclick="populateListProductChoices(this.id, 'displayProduct')">
-        <label for="GlutenFree">Gluten-free diet</label><br>
-        <input type="radio" name="dietSelect" id="VegetarianAndGlutenFree" value="VegetarianAndGlutenFree" onclick="populateListProductChoices(this.id, 'displayProduct')">
-        <label for="VegetarianAndGlutenFree">Vegetarian and gluten-free diets</label><br>
-        <input type="radio" name="dietSelect" id="None" value="None" checked onclick="populateListProductChoices(this.id, 'displayProduct')">
-        <label for="None">No preferences</label><br>
-        
-        
 
-        <br>
-        <div>
-        <input type="radio" name="organicPreference" id="Organic" value="Organic" onclick="populateListProductChoices('dietSelect', 'displayProduct')">
-        <label for="Organic">Organic<br>
-        <input type="radio" name="organicPreference" id="NonOrganic" value="NonOrganic" onclick="populateListProductChoices('dietSelect', 'displayProduct')">
-        <label for="NonOrganic">Non-organic</label><br>
-        <input type="radio" name="organicPreference" id="None" value="None" checked onclick="populateListProductChoices('dietSelect', 'displayProduct')">
+        <input type="radio" name="dietSelect" id="GlutenFree" value="GlutenFree"
+            onclick="populateListProductChoices(this.id, 'displayProduct')">
+        <label for="GlutenFree">Gluten-free diet</label><br>
+
+        <input type="radio" name="dietSelect" id="VegetarianAndGlutenFree" value="VegetarianAndGlutenFree"
+            onclick="populateListProductChoices(this.id, 'displayProduct')">
+        <label for="VegetarianAndGlutenFree">Vegetarian and gluten-free diets</label><br>
+
+        <input type="radio" name="dietSelect" id="None" value="None" checked
+            onclick="populateListProductChoices(this.id, 'displayProduct')">
         <label for="None">No preferences</label><br>
-            
-        </div>
-            
-         <br>
     </div>
 
-    <div id="Products" class="tabcontent">
+
+        <div class="column verticalLine">
+        <div>
+            <input type="radio" name="organicPreference" id="Organic" value="Organic"
+                onclick="populateListProductChoices('dietSelect', 'displayProduct')">
+            <label for="Organic">Organic<br>
+                <input type="radio" name="organicPreference" id="NonOrganic" value="NonOrganic"
+                    onclick="populateListProductChoices('dietSelect', 'displayProduct')">
+                <label for="NonOrganic">Non-organic</label><br>
+                <input type="radio" name="organicPreference" id="None" value="None" checked
+                    onclick="populateListProductChoices('dietSelect', 'displayProduct')">
+                <label for="None">No preferences</label><br>
+            </div>
+        </div>
+</div>
+        <br>
+    </div>
+    <button class="accordion">Step 2: Products</button>
+    <div class="panel textCenter">
         <h3>Suggested products</h3>
         <p>Here are products we thought you may like based on your preferences.</p>
-        <button id="addCartTop" type="button" class="display-none block" onclick="selectedItems()">
-            Add selected items to shopping cart.
-        </button ><br> Please choose the items you would like to buy:
+        <br> Please choose the items you would like to buy:
         <div id="displayProduct"></div>
         <br>
-        <button id="addCart" type="button"  class="block" onclick="selectedItems()">
+        <button id="addCart" type="button" class="block" onclick="selectedItems()">
             Add selected items to shopping cart.
         </button>
     </div>
-
-    <div id="Cart" class="tabcontent">
+    <button class="accordion" id="cartTab">Step 3: Cart</button>
+    <div class="panel">
         <h3>Cart</h3>
         <p>Items in your shopping cart.</p>
         <div id="displayCart"></div>
-    </div>
 
+    </div>
     <script src="scripts/groceries.js"></script>
     <script src="scripts/main.js"></script>
-    <!-- CHANGE POSITION (vertical align?)-->
     <div style="display: flex; ">
         Characters size:
         <input type="range" id="fontSize" min="8" max="30" step="1" onchange="setFontSize()"> &nbsp;
-        <span id="fontSizeNumber">11</span>
+        <span id="fontSizeNumber">19</span>
 
     </div>
 
     <div style="position: relative; width: 200px; height: 100px;">
         <div style="position: absolute; bottom: 5px;">
-            <p id=" signature " class="signature "> This website was made by: Milena Dionne, Jean-Luc Blais-Amyot, Ben Rizk, and Yousuf Ahmed</p>
+            <p id=" signature " class="signature "> This website was made by: Milena Dionne, Jean-Luc Blais-Amyot, Ben
+                Rizk, and Yousuf Ahmed</p>
         </div>
 </body>
 

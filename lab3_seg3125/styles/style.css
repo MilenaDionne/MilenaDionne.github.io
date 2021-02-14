@@ -4,6 +4,9 @@
     /* color: 42a1ffl; */
     text-align: center;
 }
+.body{
+    font-size: 19px;
+}
 
 
 /* This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp> */
@@ -101,3 +104,66 @@
 .sticky + .content {
     padding-top: 60px;
 }
+
+/*
+Accordion style taking from : 
+https://www.w3schools.com/howto/howto_js_accordion.asp
+*/
+
+
+.accordion {
+    background-color: #2d8be9ce;
+    color: black;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: center;
+    border: none;
+    outline: none;
+    /* transition: 0.4s; */
+    font-size: 19px;
+  }
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .active, .accordion:hover {
+    background-color: #2d8be9;
+  }
+  
+  /* Style the accordion panel. Note: hidden by default */
+  .panel {
+    padding-bottom: 20px;
+    /* text-align:start; */
+    display: none;
+    overflow: hidden;
+  }
+  .accordion:after {
+    content: '\002B'; /* Unicode character for "plus" sign (+) */
+    color: black;
+    float: right;
+    margin-left: 5px;
+  }
+  
+  .active:after {
+    content: "\002D"; /* Unicode character for "minus" sign (-) */   
+  } 
+
+  .row {
+    display: flex;
+  }
+  
+  .column {
+    flex: 50%;
+  }
+
+  .verticalLine{
+    border-left: thin solid black;
+  }
+
+  .textCenter{
+      text-align: center;
+  }
+
+  input[type="radio"]{
+    margin-left:33%
+  }
+  
