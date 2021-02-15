@@ -6,84 +6,96 @@ var products = [{
         vegetarian: true,
         glutenFree: true,
         organic: true,
-        price: 1.99
+        price: 1.99,
+        category: [],
     },
     {
         name: "Bread",
         vegetarian: true,
         glutenFree: false,
         organic: true,
-        price: 2.35
+        price: 2.35,
+        category: [],
     },
     {
         name: "Salmon",
         vegetarian: false,
         glutenFree: true,
         organic: true,
-        price: 12.99
+        price: 12.99,
+        category: [],
     },
     {
         name: "Apples",
         vegetarian: true,
         glutenFree: true,
         organic: true,
-        price: 4.00
+        price: 4.00,
+        category: [],
     },
     {
         name: "Bananas",
         vegetarian: true,
         glutenFree: true,
         organic: true,
-        price: 6.00
+        price: 6.00,
+        category: [],
     },
     {
         name: "Carrots",
         vegetarian: true,
         glutenFree: true,
         organic: true,
-        price: 2.50
+        price: 2.50,
+        category: [],
     },
     {
         name: "Chicken",
         vegetarian: false,
         glutenFree: true,
         organic: true,
-        price: 13.00
+        price: 13.00,
+        category: [],
     },
     {
         name: "Croissant",
         vegetarian: false,
         glutenFree: false,
         organic: true,
-        price: 12.00
+        price: 12.00,
+        category: [],
     },
     {
         name: "Lettuce",
         vegetarian: true,
         glutenFree: true,
         organic: true,
-        price: 7.50
+        price: 7.50,
+        category: [],
     },
     {
         name: "Napkins",
         vegetarian: true,
         glutenFree: true,
         organic: false,
-        price: 3.00
+        price: 3.00,
+        category: [],
     },
     {
         name: "Paper plates",
         vegetarian: true,
         glutenFree: true,
         organic: false,
-        price: 4.00
+        price: 4.00,
+        category: [],
     },
     {
         name: "Steak",
         vegetarian: false,
         glutenFree: true,
         organic: true,
-        price: 20.00
+        price: 20.00,
+        category: [],
     }
 ];
 
