@@ -45,8 +45,7 @@ function populateListProductChoices(slct2) {
     s2.innerHTML = "";
 
     // obtain a reduced list of products based on restrictions
-    var optionArray = restrictListProducts(products, diet.value, organicPreference);
-    // optionArray.r
+    var optionArray = restrictListProducts(products, diet.value, organicPreference, categoryFilters);
 
 
 
