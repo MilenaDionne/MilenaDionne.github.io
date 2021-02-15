@@ -23,7 +23,7 @@ var products = [{
         glutenFree: true,
         organic: true,
         price: 12.99,
-        category: ["Protein"],
+        category: ["Proteins"],
     },
     {
         name: "Apples",
@@ -55,7 +55,7 @@ var products = [{
         glutenFree: true,
         organic: true,
         price: 13.00,
-        category: ["Protein"],
+        category: ["Proteins"],
     },
     {
         name: "Croissant",
@@ -95,7 +95,7 @@ var products = [{
         glutenFree: true,
         organic: true,
         price: 20.00,
-        category: ["Protein"],
+        category: ["Proteins"],
     }
 ];
 
@@ -104,7 +104,7 @@ var products = [{
 // given restrictions provided, make a reduced list of products
 // prices should be included in this list, as well as a sort based on price
 
-function restrictListProducts(prods, restriction, organicPreference) {
+function restrictListProducts(prods, restriction, organicPreference, categoryFilters) {
 
     //sort list 
     prods.sort(function(a, b) {
@@ -118,6 +118,19 @@ function restrictListProducts(prods, restriction, organicPreference) {
     } else if (organicPreference == 'NonOrganic') {
         prods.sort((a, b) => a.organic - b.organic);
     } // If no preference, nothing to do
+
+    //filters the products list to be displayed
+    if(categoryFilters.length != 0){
+        prods = prods.filter((product)=> {
+            for(var category of product.category){
+                if(categoryFilters.includes(category)){
+                    return true
+                }
+            }
+            return false
+        })
+    }
+
     let product_names = [];
 
     count = 0;
