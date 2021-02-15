@@ -69,15 +69,26 @@
     <div class="panel textCenter">
         <h3>Suggested products</h3>
         <p>Here are products we thought you may like based on your preferences.</p>
+        <div>
+        <input type="checkbox" id="categoryAll" value="All" checked onclick="">All
+            <input type="checkbox" id="categoryDairy" value="Dairy" checked>Dairy
+            <input type="checkbox" id="categoryFruit" value="Fruit" checked>Fruit
+            <input type="checkbox" id="categoryVegetable" value="Vegetable" checked>Vegetable
+            <input type="checkbox" id="categoryProtein" value="Protein" checked>Protein
+            <input type="checkbox" id="categoryGrain" value="Grain" checked>Grain
+            <input type="checkbox" id="categoryOther" value="Other" checked>Other
+        </div>
         <br> Please choose the items you would like to buy:
+       
         <div id="displayProduct"></div>
         <br>
+        
         <button id="addCart" type="button" class="block" onclick="selectedItems()">
             Add selected items to shopping cart.
         </button>
     </div>
     <button class="accordion" id="cartTab">Step 3: Cart</button>
-    <div class="panel">
+    <div class="panel textCenter">
         <h3>Cart</h3>
         <p>Items in your shopping cart.</p>
         <div id="displayCart"></div>
