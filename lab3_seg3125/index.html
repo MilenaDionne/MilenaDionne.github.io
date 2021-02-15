@@ -28,41 +28,35 @@
         <div class="row">
             <div class="column">
 
-        <p style="margin-left: 26%;">Please select your diet preference:</p>
-
-        
-        <input type="radio" name="dietSelect" id="Vegetarian" value="Vegetarian"
-            onclick="populateListProductChoices(this.id, 'displayProduct')">
-        <label for="Vegetarian">Vegeterian diet</label><br>
-
-        <input type="radio" name="dietSelect" id="GlutenFree" value="GlutenFree"
-            onclick="populateListProductChoices(this.id, 'displayProduct')">
-        <label for="GlutenFree">Gluten-free diet</label><br>
-
-        <input type="radio" name="dietSelect" id="VegetarianAndGlutenFree" value="VegetarianAndGlutenFree"
-            onclick="populateListProductChoices(this.id, 'displayProduct')">
-        <label for="VegetarianAndGlutenFree">Vegetarian and gluten-free diets</label><br>
-
-        <input type="radio" name="dietSelect" id="None" value="None" checked
-            onclick="populateListProductChoices(this.id, 'displayProduct')">
-        <label for="None">No preferences</label><br>
-    </div>
+                <p style="margin-left: 26%;">Please select your diet preference:</p>
 
 
-        <div class="column verticalLine">
-        <div>
-            <input type="radio" name="organicPreference" id="Organic" value="Organic"
-                onclick="populateListProductChoices('dietSelect', 'displayProduct')">
-            <label for="Organic">Organic<br>
-                <input type="radio" name="organicPreference" id="NonOrganic" value="NonOrganic"
-                    onclick="populateListProductChoices('dietSelect', 'displayProduct')">
-                <label for="NonOrganic">Non-organic</label><br>
-                <input type="radio" name="organicPreference" id="None" value="None" checked
-                    onclick="populateListProductChoices('dietSelect', 'displayProduct')">
+                <input type="radio" name="dietSelect" id="Vegetarian" value="Vegetarian" onclick="populateListProductChoices('displayProduct')">
+                <label for="Vegetarian">Vegeterian diet</label><br>
+
+                <input type="radio" name="dietSelect" id="GlutenFree" value="GlutenFree" onclick="populateListProductChoices('displayProduct')">
+                <label for="GlutenFree">Gluten-free diet</label><br>
+
+                <input type="radio" name="dietSelect" id="VegetarianAndGlutenFree" value="VegetarianAndGlutenFree" onclick="populateListProductChoices('displayProduct')">
+                <label for="VegetarianAndGlutenFree">Vegetarian and gluten-free diets</label><br>
+
+                <input type="radio" name="dietSelect" id="None" value="None" checked onclick="populateListProductChoices('displayProduct')">
                 <label for="None">No preferences</label><br>
             </div>
+
+
+            <div class="column verticalLine">
+                <div>
+                    <input type="radio" name="organicPreference" id="Organic" value="Organic" onclick="populateListProductChoices('displayProduct')">
+                    <label for="Organic">Organic<br>
+                <input type="radio" name="organicPreference" id="NonOrganic" value="NonOrganic"
+                    onclick="populateListProductChoices('displayProduct')">
+                <label for="NonOrganic">Non-organic</label><br>
+                    <input type="radio" name="organicPreference" id="None" value="None" checked onclick="populateListProductChoices('displayProduct')">
+                    <label for="None">No preferences</label><br>
+                </div>
+            </div>
         </div>
-</div>
         <br>
     </div>
     <button class="accordion">Step 2: Products</button>
@@ -70,19 +64,19 @@
         <h3>Suggested products</h3>
         <p>Here are products we thought you may like based on your preferences.</p>
         <div>
-        <input type="checkbox" id="categoryAll" value="All" checked onclick="">All
-            <input type="checkbox" id="categoryDairy" value="Dairy" checked>Dairy
-            <input type="checkbox" id="categoryFruit" value="Fruit" checked>Fruit
-            <input type="checkbox" id="categoryVegetable" value="Vegetable" checked>Vegetable
-            <input type="checkbox" id="categoryProtein" value="Protein" checked>Protein
-            <input type="checkbox" id="categoryGrain" value="Grain" checked>Grain
-            <input type="checkbox" id="categoryOther" value="Other" checked>Other
+            <!-- <input type="checkbox" id="categoryAll" value="All" checked onclick="">All -->
+            <input type="checkbox" id="categoryDairy" value="Dairy" class="filter" onclick="populateListProductChoices('displayProduct')">Dairy
+            <input type="checkbox" id="categoryFruit" value="Fruit" class="filter" onclick="populateListProductChoices( 'displayProduct')">Fruit
+            <input type="checkbox" id="categoryVegetable" value="Vegetable" class="filter" onclick="populateListProductChoices('displayProduct')">Vegetable
+            <input type="checkbox" id="categoryProtein" value="Protein" class="filter" onclick="populateListProductChoices('displayProduct')">Protein
+            <input type="checkbox" id="categoryGrain" value="Grain" class="filter" onclick="populateListProductChoices('displayProduct')">Grain
+            <input type="checkbox" id="categoryOther" value="Other" class="filter" onclick="populateListProductChoices('displayProduct')">Other
         </div>
         <br> Please choose the items you would like to buy:
-       
+
         <div id="displayProduct"></div>
         <br>
-        
+
         <button id="addCart" type="button" class="block" onclick="selectedItems()">
             Add selected items to shopping cart.
         </button>
@@ -105,8 +99,7 @@
 
     <div style="position: relative; width: 200px; height: 100px;">
         <div style="position: absolute; bottom: 5px;">
-            <p id=" signature " class="signature "> This website was made by: Milena Dionne, Jean-Luc Blais-Amyot, Ben
-                Rizk, and Yousuf Ahmed</p>
+            <p id=" signature " class="signature "> This website was made by: Milena Dionne, Jean-Luc Blais-Amyot, Ben Rizk, and Yousuf Ahmed</p>
         </div>
 </body>
 

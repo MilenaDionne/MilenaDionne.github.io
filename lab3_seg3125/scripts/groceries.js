@@ -7,7 +7,7 @@ var products = [{
         glutenFree: true,
         organic: true,
         price: 1.99,
-        category: [],
+        category: ["Vegetables"],
     },
     {
         name: "Bread",
@@ -15,7 +15,7 @@ var products = [{
         glutenFree: false,
         organic: true,
         price: 2.35,
-        category: [],
+        category: ["Grains"],
     },
     {
         name: "Salmon",
@@ -23,7 +23,7 @@ var products = [{
         glutenFree: true,
         organic: true,
         price: 12.99,
-        category: [],
+        category: ["Protein"],
     },
     {
         name: "Apples",
@@ -31,7 +31,7 @@ var products = [{
         glutenFree: true,
         organic: true,
         price: 4.00,
-        category: [],
+        category: ["Fruits"],
     },
     {
         name: "Bananas",
@@ -39,7 +39,7 @@ var products = [{
         glutenFree: true,
         organic: true,
         price: 6.00,
-        category: [],
+        category: ["Fruits"],
     },
     {
         name: "Carrots",
@@ -47,7 +47,7 @@ var products = [{
         glutenFree: true,
         organic: true,
         price: 2.50,
-        category: [],
+        category: ["Vegetables"],
     },
     {
         name: "Chicken",
@@ -55,7 +55,7 @@ var products = [{
         glutenFree: true,
         organic: true,
         price: 13.00,
-        category: [],
+        category: ["Protein"],
     },
     {
         name: "Croissant",
@@ -63,7 +63,7 @@ var products = [{
         glutenFree: false,
         organic: true,
         price: 12.00,
-        category: [],
+        category: ["Grains"],
     },
     {
         name: "Lettuce",
@@ -71,7 +71,7 @@ var products = [{
         glutenFree: true,
         organic: true,
         price: 7.50,
-        category: [],
+        category: ["Vegetables"],
     },
     {
         name: "Napkins",
@@ -79,7 +79,7 @@ var products = [{
         glutenFree: true,
         organic: false,
         price: 3.00,
-        category: [],
+        category: ["Other"],
     },
     {
         name: "Paper plates",
@@ -87,7 +87,7 @@ var products = [{
         glutenFree: true,
         organic: false,
         price: 4.00,
-        category: [],
+        category: ["Other"],
     },
     {
         name: "Steak",
@@ -95,7 +95,7 @@ var products = [{
         glutenFree: true,
         organic: true,
         price: 20.00,
-        category: [],
+        category: ["Protein"],
     }
 ];
 

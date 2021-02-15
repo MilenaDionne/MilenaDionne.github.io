@@ -29,22 +29,27 @@ function openInfo(evt, tabName) {
 // generate a checkbox list from a list of products
 // it makes each product name as the label for the checkbos
 
-function populateListProductChoices(slct1, slct2) {
-    var s1 = document.getElementById(slct1);
+function populateListProductChoices(slct2) {
+    var diet;
+    for (var d of document.getElementsByName("dietSelect")) {
+        diet = d.checked ? d : diet;
+    }
     var s2 = document.getElementById(slct2);
-    var a = null;
-    var organicPreference = document.getElementsByName("organicPreference")
-    for (var q of organicPreference) {
-        a = q.checked ? q.value : a;
+    var organicPreference;
+    for (var q of document.getElementsByName("organicPreference")) {
+        organicPreference = q.checked ? q.value : organicPreference;
     }
 
-
+    var categoryFilters = getCategoryFilters();
     // s2 represents the <div> in the Products tab, which shows the product list, so we first set it empty
     s2.innerHTML = "";
 
     // obtain a reduced list of products based on restrictions
-    var optionArray = restrictListProducts(products, s1.value, a);
-    console.log(optionArray)
+    var optionArray = restrictListProducts(products, diet.value, organicPreference);
+    // optionArray.r
+
+
+
     // for each item in the array, create a checkbox element, each containing information such as:
     // <input type="checkbox" name="product" value="Bread">
     // <label for="Bread">Bread/label><br>
@@ -106,7 +111,7 @@ function selectedItems() {
 
     var cartTab = document.getElementById("cartTab");
     if (chosenProducts.length > 0) {
-        var item = (chosenProducts.length==1)?" item)":" items)"
+        var item = (chosenProducts.length == 1) ? " item)" : " items)"
         cartTab.innerText = "Step 3: Cart (" + chosenProducts.length + item
     } else {
         cartTab.innerText = "Step 3: Cart"
@@ -132,15 +137,14 @@ function setFontSize() {
 
     for (i = 0; i < accordions.length; i++) {
 
-        accordions[i].style.fontSize =fontSizeNode.value + "px"
+        accordions[i].style.fontSize = fontSizeNode.value + "px"
     }
 }
 
-function stickyTab() {                      //function to make tab sticky
+function stickyTab() { //function to make tab sticky
     if (window.pageYOffset >= sticky) {
         webTab.classList.add("sticky");
-    }
-    else {
+    } else {
         webTab.classList.remove("sticky");
     }
 }
@@ -149,17 +153,29 @@ var acc = document.getElementsByClassName("accordion");
 var i;
 
 for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    /* Toggle between adding and removing the "active" class,
-    to highlight the button that controls the panel */
-    this.classList.toggle("active");
+    acc[i].addEventListener("click", function() {
+        /* Toggle between adding and removing the "active" class,
+        to highlight the button that controls the panel */
+        this.classList.toggle("active");
 
-    /* Toggle between hiding and showing the active panel */
-    var panel = this.nextElementSibling;
-    if (panel.style.display === "block") {
-      panel.style.display = "none";
-    } else {
-      panel.style.display = "block";
+        /* Toggle between hiding and showing the active panel */
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+        }
+    });
+}
+
+
+function getCategoryFilters() {
+    var filters = document.getElementsByClassName("filter");
+    var activeFilters = []
+    for (var filter of filters) {
+        if (filter.checked) {
+            activeFilters.push(filter.value)
+        }
     }
-  });
+    return activeFilters
 }
