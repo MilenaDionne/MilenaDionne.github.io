@@ -18,83 +18,86 @@
         <button class="tablinks" style="font-size:25px" onclick="openInfo(event, 'Products')">Products</button>
         <button class="tablinks" style="font-size:25px" onclick="openInfo(event, 'Cart')" id="cartTab">Cart</button>
     </div> -->
-    <button class="accordion">Step 1: Customer information</button>
-    <div class="panel">
-        <!-- Tab content -->
+    <div class="grid_item">
+        <button class="accordion">Step 1: Customer information</button>
+        <div class="panel">
+            <!-- Tab content -->
 
-        <h3 class="textCenter">Customer information</h3>
-        <p class="textCenter">Tell us a bit about yourself!</p>
-        <hr>
-        <div class="row">
-            <div class="column">
+            <h3 class="textCenter">Customer information</h3>
+            <p class="textCenter">Tell us a bit about yourself!</p>
+            <hr>
+            <div class="row">
+                <div class="column">
 
-                <p style="margin-left: 26%;">Please select your diet preference:</p>
-
-
-                <input type="radio" name="dietSelect" id="Vegetarian" value="Vegetarian" onclick="populateListProductChoices('displayProduct')">
-                <label for="Vegetarian">Vegeterian diet</label><br>
-
-                <input type="radio" name="dietSelect" id="GlutenFree" value="GlutenFree" onclick="populateListProductChoices('displayProduct')">
-                <label for="GlutenFree">Gluten-free diet</label><br>
-
-                <input type="radio" name="dietSelect" id="VegetarianAndGlutenFree" value="VegetarianAndGlutenFree" onclick="populateListProductChoices('displayProduct')">
-                <label for="VegetarianAndGlutenFree">Vegetarian and gluten-free diets</label><br>
-
-                <input type="radio" name="dietSelect" id="None" value="None" checked onclick="populateListProductChoices('displayProduct')">
-                <label for="None">No preferences</label><br>
-            </div>
+                    <p style="margin-left: 30%;">Please select your diet preference:</p>
 
 
-            <div class="column verticalLine">
-                <div>
-                    <input type="radio" name="organicPreference" id="Organic" value="Organic" onclick="populateListProductChoices('displayProduct')">
-                    <label for="Organic">Organic<br>
-                <input type="radio" name="organicPreference" id="NonOrganic" value="NonOrganic"
-                    onclick="populateListProductChoices('displayProduct')">
-                <label for="NonOrganic">Non-organic</label><br>
-                    <input type="radio" name="organicPreference" id="None" value="None" checked onclick="populateListProductChoices('displayProduct')">
+                    <input type="radio" name="dietSelect" id="Vegetarian" value="Vegetarian" onclick="populateListProductChoices('displayProduct')">
+                    <label for="Vegetarian">Vegeterian diet</label><br>
+
+                    <input type="radio" name="dietSelect" id="GlutenFree" value="GlutenFree" onclick="populateListProductChoices('displayProduct')">
+                    <label for="GlutenFree">Gluten-free diet</label><br>
+
+                    <input type="radio" name="dietSelect" id="VegetarianAndGlutenFree" value="VegetarianAndGlutenFree" onclick="populateListProductChoices('displayProduct')">
+                    <label for="VegetarianAndGlutenFree">Vegetarian and gluten-free diets</label><br>
+
+                    <input type="radio" name="dietSelect" id="None" value="None" checked onclick="populateListProductChoices('displayProduct')">
                     <label for="None">No preferences</label><br>
                 </div>
+
+
+                <div class="column verticalLine">
+                    <div>
+                        <p style="margin-left: 30%;">Please select your items preference:</p>
+                        <input type="radio" name="organicPreference" id="Organic" value="Organic" onclick="populateListProductChoices('displayProduct')">
+                        <label for="Organic">Organic<br>
+                    <input type="radio" name="organicPreference" id="NonOrganic" value="NonOrganic"
+                        onclick="populateListProductChoices('displayProduct')">
+                    <label for="NonOrganic">Non-organic</label><br>
+                        <input type="radio" name="organicPreference" id="None" value="None" checked onclick="populateListProductChoices('displayProduct')">
+                        <label for="None">No preferences</label><br>
+                    </div>
+                </div>
             </div>
+            <br>
         </div>
-        <br>
-    </div>
-    <button class="accordion">Step 2: Products</button>
-    <div class="panel textCenter">
-        <h3>Suggested products</h3>
-        <p>Here are products we thought you may like based on your preferences.</p>
-        <div>
-            <!-- <input type="checkbox" id="categoryAll" value="All" checked onclick="">All -->
-            <input type="checkbox" id="categoryDairy" value="Dairy" class="filter" onclick="populateListProductChoices('displayProduct')">Dairy
-            <input type="checkbox" id="categoryFruit" value="Fruit" class="filter" onclick="populateListProductChoices( 'displayProduct')">Fruit
-            <input type="checkbox" id="categoryVegetable" value="Vegetable" class="filter" onclick="populateListProductChoices('displayProduct')">Vegetable
-            <input type="checkbox" id="categoryProtein" value="Protein" class="filter" onclick="populateListProductChoices('displayProduct')">Protein
-            <input type="checkbox" id="categoryGrain" value="Grain" class="filter" onclick="populateListProductChoices('displayProduct')">Grain
-            <input type="checkbox" id="categoryOther" value="Other" class="filter" onclick="populateListProductChoices('displayProduct')">Other
+        <button class="accordion">Step 2: Products</button>
+        <div class="panel textCenter">
+            <h3>Suggested products</h3>
+            <p>Here are products we thought you may like based on your preferences.</p>
+            <div>
+                <!-- <input type="checkbox" id="categoryAll" value="All" checked onclick="">All -->
+                <input type="checkbox" id="categoryDairy" value="Dairy" class="filter" onclick="populateListProductChoices('displayProduct')">Dairy
+                <input type="checkbox" id="categoryFruit" value="Fruit" class="filter" onclick="populateListProductChoices( 'displayProduct')">Fruit
+                <input type="checkbox" id="categoryVegetable" value="Vegetable" class="filter" onclick="populateListProductChoices('displayProduct')">Vegetable
+                <input type="checkbox" id="categoryProtein" value="Protein" class="filter" onclick="populateListProductChoices('displayProduct')">Protein
+                <input type="checkbox" id="categoryGrain" value="Grain" class="filter" onclick="populateListProductChoices('displayProduct')">Grain
+                <input type="checkbox" id="categoryOther" value="Other" class="filter" onclick="populateListProductChoices('displayProduct')">Other
+            </div>
+            <br> Please choose the items you would like to buy:
+
+            <div id="displayProduct"></div>
+            <br>
+
+            <button id="addCart" type="button" class="block" onclick="selectedItems()">
+                Add selected items to shopping cart.
+            </button>
         </div>
-        <br> Please choose the items you would like to buy:
+        <button class="accordion" id="cartTab">Step 3: Cart</button>
+        <div class="panel textCenter">
+            <h3>Cart</h3>
+            <p>Items in your shopping cart.</p>
+            <div id="displayCart"></div>
 
-        <div id="displayProduct"></div>
-        <br>
+        </div>
+        <script src="scripts/groceries.js"></script>
+        <script src="scripts/main.js"></script>
+        <div style="display: flex; ">
+            Characters size:
+            <input type="range" id="fontSize" min="8" max="30" step="1" onchange="setFontSize()"> &nbsp;
+            <span id="fontSizeNumber">19</span>
 
-        <button id="addCart" type="button" class="block" onclick="selectedItems()">
-            Add selected items to shopping cart.
-        </button>
-    </div>
-    <button class="accordion" id="cartTab">Step 3: Cart</button>
-    <div class="panel textCenter">
-        <h3>Cart</h3>
-        <p>Items in your shopping cart.</p>
-        <div id="displayCart"></div>
-
-    </div>
-    <script src="scripts/groceries.js"></script>
-    <script src="scripts/main.js"></script>
-    <div style="display: flex; ">
-        Characters size:
-        <input type="range" id="fontSize" min="8" max="30" step="1" onchange="setFontSize()"> &nbsp;
-        <span id="fontSizeNumber">19</span>
-
+        </div>
     </div>
 
     <div style="position: relative; width: 200px; height: 100px;">

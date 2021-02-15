@@ -1,8 +1,9 @@
 .storename h1 {
-    font-size: 30px;
+    font-size: 35px;
     font-family: Garamond, Times, serif;
     /* color: 42a1ffl; */
     text-align: center;
+    
 }
 .body{
     font-size: 19px;
@@ -109,19 +110,29 @@
 Accordion style taking from : 
 https://www.w3schools.com/howto/howto_js_accordion.asp
 */
+.grid_item {
+    display:inline-block;
+    padding-left: 20px;
+    padding-right: 20px;
+    vertical-align:auto;
+    width: 100%;
+    box-sizing: border-box;
+}
 
 
 .accordion {
-    background-color: #2d8be9ce;
+    background-color: #4f93d8ce;
     color: black;
     cursor: pointer;
     padding: 18px;
-    width: 100%;
     text-align: center;
     border: none;
     outline: none;
+    width: 100%;
     /* transition: 0.4s; */
     font-size: 19px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
   }
   
   /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
@@ -135,6 +146,8 @@ https://www.w3schools.com/howto/howto_js_accordion.asp
     /* text-align:start; */
     display: none;
     overflow: hidden;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color:#efefef;
   }
   .accordion:after {
     content: '\002B'; /* Unicode character for "plus" sign (+) */
