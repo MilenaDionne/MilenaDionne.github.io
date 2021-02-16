@@ -50,12 +50,13 @@
                     <div>
                         <p style="margin-left: 30%;">Please select your produce preference:</p>
                         <input type="radio" name="organicPreference" id="Organic" value="Organic" onclick="populateListProductChoices('displayProduct')">
-                        <label for="Organic">Organic<br>
-                    <input type="radio" name="organicPreference" id="NonOrganic" value="NonOrganic"
-                        onclick="populateListProductChoices('displayProduct')">
-                    <label for="NonOrganic">Non-organic</label><br>
-                        <input type="radio" name="organicPreference" id="None" value="None" checked onclick="populateListProductChoices('displayProduct')">
-                        <label for="None">No preferences</label><br>
+                        <label for="Organic">
+                            Organic<br>
+                            <input type="radio" name="organicPreference" id="NonOrganic" value="NonOrganic"
+                                   onclick="populateListProductChoices('displayProduct')">
+                            <label for="NonOrganic">Non-organic</label><br>
+                            <input type="radio" name="organicPreference" id="None" value="None" checked onclick="populateListProductChoices('displayProduct')">
+                            <label for="None">No preferences</label><br>
                     </div>
                 </div>
             </div>
@@ -65,7 +66,7 @@
         <div class="panel textCenter">
             <h3>Suggested products</h3>
             <p>Here are products we thought you may like based on your preferences.</p>
-            <div >
+            <div>
                 <!-- <input type="checkbox" id="categoryAll" value="All" checked onclick="">All -->
                 <input type="checkbox" id="categoryDairy" value="Dairy" class="filter" onclick="populateListProductChoices('displayProduct')">Dairy
                 <input type="checkbox" id="categoryFruit" value="Fruits" class="filter" onclick="populateListProductChoices( 'displayProduct')">Fruits
@@ -75,9 +76,9 @@
                 <input type="checkbox" id="categoryOther" value="Other" class="filter" onclick="populateListProductChoices('displayProduct')">Other
             </div>
             <br> Please choose the items you would like to buy:
-            
+
             <div class="product" id="displayProduct"></div>
-           
+
             <br>
 
             <button id="addCart" type="button" class="block" onclick="selectedItems()">
@@ -93,6 +94,41 @@
         </div>
         <script src="scripts/groceries.js"></script>
         <script src="scripts/main.js"></script>
+
+        <!--slide show Code for slideshow provided by: https://www.w3schools.com/howto/howto_js_slideshow.asp-->
+        <div class="mySlideshow; center1">
+            <!-- slide 1-->
+            <div class="slide fade">
+                <div class="numberText">1 / 3</div>
+                <img src="Images/Deal1.jpg" style="width:100" />
+                <div class="text">Deal 1</div>
+            </div>
+            <!-- slide 2-->
+            <div class="slide fade" style="display:none">
+                <div class="numberText">2 / 3</div>
+                <img src="Images/Deal2.jpg" style="width:100" />
+                <div class="text">Deal 2</div>
+            </div>
+            <!-- slide 3-->
+            <div class="slide fade" style="display:none">
+                <div class="numberText">3 / 3</div>
+                <img src="Images/Deal3.jpg" style="width:100" />
+                <div class="text">Deal 3</div>
+            </div>
+            <!--
+        <a class="prev" onclick="plusSlides(-1)">&#10094</a>    strange bug where both buttons try to exist at once
+        -->
+            <a class="next" onclick="plusSlides(1)">&#10095</a>
+
+        </div><!--end of slideshow-->
+        <!--Dots for slideshow-->
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+
+
         <div style="display: flex; ">
             Characters size:
             <input type="range" id="fontSize" min="8" max="30" step="1" onchange="setFontSize()"> &nbsp;
@@ -101,10 +137,10 @@
         </div>
     </div>
 
-    <div style="position: relative; width: 200px; height: 100px;">
-        <div style="position: absolute; bottom: 5px;">
-            <p id=" signature " class="signature "> This website was made by: Milena Dionne, Jean-Luc Blais-Amyot, Ben Rizk, and Yousuf Ahmed</p>
-        </div>
+            <div style="position: relative; width: 200px; height: 100px;">
+                <div style="position: absolute; bottom: 5px;">
+                    <p id=" signature " class="signature "> This website was made by: Milena Dionne, Jean-Luc Blais-Amyot, Ben Rizk, and Yousuf Ahmed</p>
+                </div>
 </body>
 
 </html>
