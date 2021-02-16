@@ -52,12 +52,21 @@ function populateListProductChoices(slct2) {
     // for each item in the array, create a checkbox element, each containing information such as:
     // <input type="checkbox" name="product" value="Bread">
     // <label for="Bread">Bread/label><br>
-
+    
+    var div = document.createElement("div");
     for (i = 0; i < optionArray.length; i++) {
-        var div = document.createElement("div");
+        
         div.classList.add("div-centered")
-
+       
         var productName = optionArray[i];
+        
+        //add image to listing
+        var img = document.createElement('img');
+        var temp = productName.split('\t$');
+        img.src = 'Photos/' + temp[0] + '.jpg';
+        img.classList.add("img-size")
+        div.appendChild(img);
+
         // create the checkbox and add in HTML DOM
         var checkbox = document.createElement("input");
         checkbox.type = "checkbox";
@@ -70,16 +79,18 @@ function populateListProductChoices(slct2) {
         label.htmlFor = productName;
         label.appendChild(document.createTextNode(productName));
         div.appendChild(label);
-        //add image to listing
-        var img = document.createElement('img');
-        var temp = productName.split('\t$');
-        img.src = 'Photos/' + temp[0] + '.jpg';
-        img.classList.add("img-size")
-        div.appendChild(img)
+        
         s2.appendChild(div);
+        s2.appendChild(document.createElement("br"));
 
         // create a breakline node and add in HTML DOM
-        s2.appendChild(document.createElement("br"));
+        //s2.appendChild(document.createElement("br"));
+       
+
+        
+         if ((i+1)%4 == 0){
+             var div = document.createElement("div");
+         }
 
     }
 }

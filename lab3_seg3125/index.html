@@ -61,11 +61,11 @@
             </div>
             <br>
         </div>
-        <button class="accordion">Step 2: Products</button>
+        <button onclick="populateListProductChoices('displayProduct')" class="accordion">Step 2: Products </button>
         <div class="panel textCenter">
             <h3>Suggested products</h3>
             <p>Here are products we thought you may like based on your preferences.</p>
-            <div>
+            <div >
                 <!-- <input type="checkbox" id="categoryAll" value="All" checked onclick="">All -->
                 <input type="checkbox" id="categoryDairy" value="Dairy" class="filter" onclick="populateListProductChoices('displayProduct')">Dairy
                 <input type="checkbox" id="categoryFruit" value="Fruits" class="filter" onclick="populateListProductChoices( 'displayProduct')">Fruits
@@ -75,8 +75,9 @@
                 <input type="checkbox" id="categoryOther" value="Other" class="filter" onclick="populateListProductChoices('displayProduct')">Other
             </div>
             <br> Please choose the items you would like to buy:
-
-            <div id="displayProduct"></div>
+            
+            <div class="product" id="displayProduct"></div>
+           
             <br>
 
             <button id="addCart" type="button" class="block" onclick="selectedItems()">
