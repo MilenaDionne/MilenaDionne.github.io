@@ -40,22 +40,25 @@ function populateListProductChoices(slct2) {
     s2.innerHTML = "";
 
     // obtain a reduced list of products based on restrictions
+
     var optionArray = restrictListProducts(products, diet.value, organicPreference, categoryFilters);
+    // console.log(op)
 
 
 
     // for each item in the array, create a checkbox element, each containing information such as:
     // <input type="checkbox" name="product" value="Bread">
     // <label for="Bread">Bread/label><br>
-    
-    var div = document.createElement("div");
+
+    var rowDiv = document.createElement("div");
+    rowDiv.classList.add("div-centered")
     for (i = 0; i < optionArray.length; i++) {
-        
-        div.classList.add("div-centered")
-       
+
+        var div = document.createElement('div')
+
         var productName = optionArray[i];
         var photoDiv = document.createElement("div");
-        
+
         //add image to listing
         var img = document.createElement('img');
         var temp = productName.split('\t$');
@@ -78,15 +81,18 @@ function populateListProductChoices(slct2) {
         checkBoxDiv.appendChild(label);
         div.appendChild(photoDiv);
         div.appendChild(checkBoxDiv);
-        
-        s2.appendChild(div);
-        s2.appendChild(document.createElement("br"));
 
-        
-        
-         if ((i+1)%4 == 0){
-             var div = document.createElement("div");
-         }
+        rowDiv.appendChild(div);
+        // s2.appendChild(document.createElement("br"));
+
+
+
+        if ((i + 1) % 4 == 0) {
+
+            var rowDiv = document.createElement("div");
+            rowDiv.classList.add("div-centered")
+        }
+        s2.appendChild(rowDiv)
 
     }
 }
