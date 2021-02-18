@@ -6,84 +6,96 @@ var products = [{
         vegetarian: true,
         glutenFree: true,
         organic: true,
-        price: 1.99
+        price: 1.99,
+        category: ["Vegetables"],
     },
     {
         name: "Bread",
         vegetarian: true,
         glutenFree: false,
         organic: true,
-        price: 2.35
+        price: 2.35,
+        category: ["Grains"],
     },
     {
         name: "Salmon",
         vegetarian: false,
         glutenFree: true,
         organic: true,
-        price: 12.99
+        price: 12.99,
+        category: ["Proteins"],
     },
     {
         name: "Apples",
         vegetarian: true,
         glutenFree: true,
         organic: true,
-        price: 4.00
+        price: 4.00,
+        category: ["Fruits"],
     },
     {
         name: "Bananas",
         vegetarian: true,
         glutenFree: true,
         organic: true,
-        price: 6.00
+        price: 6.00,
+        category: ["Fruits"],
     },
     {
         name: "Carrots",
         vegetarian: true,
         glutenFree: true,
         organic: true,
-        price: 2.50
+        price: 2.50,
+        category: ["Vegetables"],
     },
     {
         name: "Chicken",
         vegetarian: false,
         glutenFree: true,
         organic: true,
-        price: 13.00
+        price: 13.00,
+        category: ["Proteins"],
     },
     {
         name: "Croissant",
         vegetarian: false,
         glutenFree: false,
         organic: true,
-        price: 12.00
+        price: 12.00,
+        category: ["Grains"],
     },
     {
         name: "Lettuce",
         vegetarian: true,
         glutenFree: true,
         organic: true,
-        price: 7.50
+        price: 7.50,
+        category: ["Vegetables"],
     },
     {
         name: "Napkins",
         vegetarian: true,
         glutenFree: true,
         organic: false,
-        price: 3.00
+        price: 3.00,
+        category: ["Other"],
     },
     {
         name: "Paper plates",
         vegetarian: true,
         glutenFree: true,
         organic: false,
-        price: 4.00
+        price: 4.00,
+        category: ["Other"],
     },
     {
         name: "Steak",
         vegetarian: false,
         glutenFree: true,
         organic: true,
-        price: 20.00
+        price: 20.00,
+        category: ["Proteins"],
     }
 ];
 
@@ -92,7 +104,7 @@ var products = [{
 // given restrictions provided, make a reduced list of products
 // prices should be included in this list, as well as a sort based on price
 
-function restrictListProducts(prods, restriction, organicPreference) {
+function restrictListProducts(prods, restriction, organicPreference, categoryFilters) {
 
     //sort list 
     prods.sort(function(a, b) {
@@ -106,6 +118,19 @@ function restrictListProducts(prods, restriction, organicPreference) {
     } else if (organicPreference == 'NonOrganic') {
         prods.sort((a, b) => a.organic - b.organic);
     } // If no preference, nothing to do
+
+    //filters the products list to be displayed
+    if(categoryFilters.length != 0){
+        prods = prods.filter((product)=> {
+            for(var category of product.category){
+                if(categoryFilters.includes(category)){
+                    return true
+                }
+            }
+            return false
+        })
+    }
+
     let product_names = [];
 
     count = 0;

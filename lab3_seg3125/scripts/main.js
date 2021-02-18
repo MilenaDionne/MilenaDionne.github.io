@@ -21,71 +21,72 @@ function openInfo(evt, tabName) {
 
 }
 
-//setup for stickytab function
-window.onscroll = function () { stickyTab() };
-var webTab = document.getElementById("ourTabs");
-var sticky = webTab.offsetTop;
-
 // generate a checkbox list from a list of products
 // it makes each product name as the label for the checkbos
 
-function populateListProductChoices(slct1, slct2) {
-    var s1 = document.getElementById(slct1);
+function populateListProductChoices(slct2) {
+    var diet;
+    for (var d of document.getElementsByName("dietSelect")) {
+        diet = d.checked ? d : diet;
+    }
     var s2 = document.getElementById(slct2);
-    var a = null;
-    var organicPreference = document.getElementsByName("organicPreference")
-    for (var q of organicPreference) {
-        a = q.checked ? q.value : a;
+    var organicPreference;
+    for (var q of document.getElementsByName("organicPreference")) {
+        organicPreference = q.checked ? q.value : organicPreference;
     }
 
-
+    var categoryFilters = getCategoryFilters();
     // s2 represents the <div> in the Products tab, which shows the product list, so we first set it empty
     s2.innerHTML = "";
 
     // obtain a reduced list of products based on restrictions
-    var optionArray = restrictListProducts(products, s1.value, a);
-    console.log(optionArray)
-        //adding a button "add to cart" button on top if there is at least 
-        //one product so the user doesn't have to always scroll all the way down to add to cart
-    var addToCartTop = document.getElementById('addCartTop');
-    if (optionArray.length > 0) {
-        addToCartTop.classList.remove("display-none");
-        addToCartTop.classList.add("display-block");
-    } else {
-        addToCartTop.classList.remove("display-block");
-        addToCartTop.classList.add("display-none");
-    }
+    var optionArray = restrictListProducts(products, diet.value, organicPreference, categoryFilters);
+
+
+
     // for each item in the array, create a checkbox element, each containing information such as:
     // <input type="checkbox" name="product" value="Bread">
     // <label for="Bread">Bread/label><br>
-
+    
+    var div = document.createElement("div");
     for (i = 0; i < optionArray.length; i++) {
-        var div = document.createElement("div");
+        
         div.classList.add("div-centered")
-
+       
         var productName = optionArray[i];
+        var photoDiv = document.createElement("div");
+        
+        //add image to listing
+        var img = document.createElement('img');
+        var temp = productName.split('\t$');
+        img.src = 'Photos/' + temp[0] + '.jpg';
+        img.classList.add("img-size");
+        photoDiv.appendChild(img);
+
+        var checkBoxDiv = document.createElement("div");
         // create the checkbox and add in HTML DOM
         var checkbox = document.createElement("input");
         checkbox.type = "checkbox";
         checkbox.name = "product";
         checkbox.value = productName;
-        div.appendChild(checkbox);
+        checkBoxDiv.appendChild(checkbox);
 
         // create a label for the checkbox, and also add in HTML DOM
         var label = document.createElement('label')
         label.htmlFor = productName;
         label.appendChild(document.createTextNode(productName));
-        div.appendChild(label);
-        //add image to listing
-        var img = document.createElement('img');
-        var temp = productName.split('\t$');
-        img.src = 'Photos/' + temp[0] + '.jpg';
-        img.classList.add("img-size")
-        div.appendChild(img)
+        checkBoxDiv.appendChild(label);
+        div.appendChild(photoDiv);
+        div.appendChild(checkBoxDiv);
+        
         s2.appendChild(div);
-
-        // create a breakline node and add in HTML DOM
         s2.appendChild(document.createElement("br"));
+
+        
+        
+         if ((i+1)%4 == 0){
+             var div = document.createElement("div");
+         }
 
     }
 }
@@ -116,9 +117,10 @@ function selectedItems() {
 
     var cartTab = document.getElementById("cartTab");
     if (chosenProducts.length > 0) {
-        cartTab.innerText = "Cart (" + chosenProducts.length + " items)"
+        var item = (chosenProducts.length == 1) ? " item)" : " items)"
+        cartTab.innerText = "Step 3: Cart (" + chosenProducts.length + item
     } else {
-        cartTab.innerText = "Cart"
+        cartTab.innerText = "Step 3: Cart"
     }
 
 
@@ -133,16 +135,87 @@ function setFontSize() {
     var fontSizeNode = document.getElementById("fontSize");
     var body = document.getElementById('body');
     var fontSizeNumberNode = document.getElementById("fontSizeNumber");
+    var accordions = document.getElementsByClassName('accordion');
 
     body.style.fontSize = fontSizeNode.value + "px";
-    fontSizeNumberNode.innerHTML = fontSizeNode.value
+    fontSizeNumberNode.innerHTML = fontSizeNode.value;
+    var i;
+
+    for (i = 0; i < accordions.length; i++) {
+
+        accordions[i].style.fontSize = fontSizeNode.value + "px"
+    }
 }
 
-function stickyTab() {                      //function to make tab sticky
+function stickyTab() { //function to make tab sticky
     if (window.pageYOffset >= sticky) {
         webTab.classList.add("sticky");
-    }
-    else {
+    } else {
         webTab.classList.remove("sticky");
     }
+}
+/*
+Accordion style taking from : 
+https://www.w3schools.com/howto/howto_js_accordion.asp
+*/
+
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        /* Toggle between adding and removing the "active" class,
+        to highlight the button that controls the panel */
+        this.classList.toggle("active");
+
+        /* Toggle between hiding and showing the active panel */
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+        }
+    });
+}
+
+
+function getCategoryFilters() {
+    var filters = document.getElementsByClassName("filter");
+    var activeFilters = []
+    for (var filter of filters) {
+        if (filter.checked) {
+            activeFilters.push(filter.value)
+        }
+    }
+    return activeFilters
+}
+
+//code for Slideshow provided by:https://www.w3schools.com/howto/howto_js_slideshow.asp
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("slide");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
 }
