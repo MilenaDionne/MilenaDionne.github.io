@@ -21,11 +21,6 @@ function openInfo(evt, tabName) {
 
 }
 
-//setup for stickytab function
-// window.onscroll = function () { stickyTab() };
-// var webTab = document.getElementById("ourTabs");
-// var sticky = webTab.offsetTop;
-
 // generate a checkbox list from a list of products
 // it makes each product name as the label for the checkbos
 
@@ -59,34 +54,35 @@ function populateListProductChoices(slct2) {
         div.classList.add("div-centered")
        
         var productName = optionArray[i];
+        var photoDiv = document.createElement("div");
         
         //add image to listing
         var img = document.createElement('img');
         var temp = productName.split('\t$');
         img.src = 'Photos/' + temp[0] + '.jpg';
-        img.classList.add("img-size")
-        div.appendChild(img);
+        img.classList.add("img-size");
+        photoDiv.appendChild(img);
 
+        var checkBoxDiv = document.createElement("div");
         // create the checkbox and add in HTML DOM
         var checkbox = document.createElement("input");
         checkbox.type = "checkbox";
         checkbox.name = "product";
         checkbox.value = productName;
-        div.appendChild(checkbox);
+        checkBoxDiv.appendChild(checkbox);
 
         // create a label for the checkbox, and also add in HTML DOM
         var label = document.createElement('label')
         label.htmlFor = productName;
         label.appendChild(document.createTextNode(productName));
-        div.appendChild(label);
+        checkBoxDiv.appendChild(label);
+        div.appendChild(photoDiv);
+        div.appendChild(checkBoxDiv);
         
         s2.appendChild(div);
         s2.appendChild(document.createElement("br"));
 
-        // create a breakline node and add in HTML DOM
-        //s2.appendChild(document.createElement("br"));
-       
-
+        
         
          if ((i+1)%4 == 0){
              var div = document.createElement("div");
@@ -158,6 +154,10 @@ function stickyTab() { //function to make tab sticky
         webTab.classList.remove("sticky");
     }
 }
+/*
+Accordion style taking from : 
+https://www.w3schools.com/howto/howto_js_accordion.asp
+*/
 
 var acc = document.getElementsByClassName("accordion");
 var i;
