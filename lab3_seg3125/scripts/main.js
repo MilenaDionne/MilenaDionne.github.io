@@ -88,7 +88,7 @@ function populateListProductChoices(slct2) {
 
 
         if ((i + 1) % 4 == 0) {
-
+            s2.appendChild(document.createElement("br"))
             var rowDiv = document.createElement("div");
             rowDiv.classList.add("div-centered")
         }
@@ -212,7 +212,7 @@ function currentSlide(n) {
 
 function showSlides(n) {
     var i;
-    var slides = document.getElementsByClassName("slide");
+    var slides = document.getElementsByClassName("mySlides");
     var dots = document.getElementsByClassName("dot");
     if (n > slides.length) { slideIndex = 1 }
     if (n < 1) { slideIndex = slides.length }

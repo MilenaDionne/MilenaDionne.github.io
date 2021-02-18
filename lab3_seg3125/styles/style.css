@@ -269,9 +269,9 @@ input[type="radio"] {
 /* Slideshow container */
 
 .slideshow-container {
-    max-width: 1000px;
-    position: relative;
-    margin: auto;
+    /* max-width: 1000px; */
+    /* position: relative; */
+    margin-left: 30%;
 }
 
 
