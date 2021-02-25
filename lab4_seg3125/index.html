@@ -39,20 +39,45 @@
 
     <!-- Bootstrap contains a grid system you can explore https://www.w3schools.com/bootstrap4/bootstrap_grid_system.asp -->
     <!-- It can be useful for placement of information -->
+    <!--
     <div class="row p-3">
         <div class="col-sm-3 pl-5">Service</div>
         <div class="col-sm-3">Calendar</div>
         <div class="col-sm-3">Payment</div>
         <div class="col-sm-3">Where to find us</div>
     </div>
+     -->
+    <!-- Code for scrollspy provided by: https://www.w3schools.com/bootstrap4/bootstrap_scrollspy.asp-->
+    <div class="contain-fluid">
+        <div class=" row">
+            <nav class="col-sm-3 col-4" id="myScrollspy">
+                <ul class="nav nav-pills flex-column position-fixed">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section1">Welcome</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section2">Make Appointment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section3">Our Barbers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section4">Store Info</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+    </div>
+
 
     <!-- When you have messages to tell, remember that center align is not always the best choice -->
     <div class="container-md p-3 my-3 border bg-light text-success">
         <h3>Let us tell you about our expertise</h3>
         <p>We can <mark>cut hair</mark></p>
-        <p class="text-center" >Align wheels</p>
+        <p class="text-center">Align wheels</p>
         <p class="text-uppercase">Write in uppercase</p>
-        <p class="text-center text-uppercase" >centered and uppercase</p>
+        <p class="text-center text-uppercase">centered and uppercase</p>
     </div>
 
 
@@ -60,27 +85,27 @@
     <!-- Might be (or not) useful to show some information to the user -->
     <div class="container">
         <h2>Service description</h2>
-        <p>Here is a list of services offered</p>            
+        <p>Here is a list of services offered</p>
         <table class="table table-primary table-hover">
             <thead>
-            <tr>
-                <th>Service</th>
-                <th>Description</th>
-            </tr>
+                <tr>
+                    <th>Service</th>
+                    <th>Description</th>
+                </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>Haircut</td>
-                <td>Bla bla</td>
-            </tr>
-            <tr>
-                <td>Drying</td>
-                <td>Bla bla</td>
-            </tr>
-            <tr>
-                <td>Coloring</td>
-                <td>Bla bla</td>
-            </tr>
+                <tr>
+                    <td>Haircut</td>
+                    <td>Bla bla</td>
+                </tr>
+                <tr>
+                    <td>Drying</td>
+                    <td>Bla bla</td>
+                </tr>
+                <tr>
+                    <td>Coloring</td>
+                    <td>Bla bla</td>
+                </tr>
             </tbody>
         </table>
     </div>
@@ -88,27 +113,28 @@
 
     <!-- Bootstrap has components for alerts: https://www.w3schools.com/bootstrap4/bootstrap_alerts.asp  -->
     <!-- These can be useful for making sure someone reads something before continuing -->
-    <div class="container">
-        <h2>Alert</h2>
-        <p>We have something important to say</p>
-        <div class="alert alert-danger alert-dismissible">
-            <button type="button" class="close" data-dismiss="alert">&times;</button>
-            <strong>Please read! </strong>You must read.
+    <!--
+        <div class="container">
+            <h2>Alert</h2>
+            <p>We have something important to say</p>
+            <div class="alert alert-danger alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>Please read! </strong>You must read.
+            </div>
         </div>
-    </div>
-
+    -->
     <!-- You'll certainly need buttons at some point in your site -->
     <!-- https://www.w3schools.com/bootstrap4/bootstrap_buttons.asp -->
     <!-- Remember how we talked about choosing a hue and changing the saturation for active/inactive -->
     <!-- This idea is already part of the components in Bootstrap -->
-    <div class="container">
-        <h2>Button States</h2>
-        <button type="button" class="btn btn-warning">Primary Button</button>
-        <button type="button" class="btn btn-warning active">Active Primary</button>
-        <button type="button" class="btn btn-warning" disabled>Disabled Primary</button>
-    </div>
-
-
+    <!--
+        <div class="container">
+            <h2>Button States</h2>
+            <button type="button" class="btn btn-warning">Primary Button</button>
+            <button type="button" class="btn btn-warning active">Active Primary</button>
+            <button type="button" class="btn btn-warning" disabled>Disabled Primary</button>
+        </div>
+    -->
     <!-- Including a modal https://www.w3schools.com/bootstrap4/bootstrap_modal.asp -->
     <!-- Modals are useful for additional information or questions -->
     <!-- Here the modal is used for a little survey -->
@@ -116,40 +142,40 @@
         <h2>Modal Example</h2>
         <!-- Trigger the modal with a button -->
         <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#mySurvey">Open Survey</button>
-          
+
         <!-- Modal -->
         <div class="modal fade" id="mySurvey" role="dialog">
-            <div class="modal-dialog">  
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <div class="container">
-                        <h2>How did you hear about us?</h2>
-                        <p>Tell us:</p>
-                        <form>
-                          <div class="checkbox">
-                            <label><input type="checkbox" value="">Option 1</label>
-                          </div>
-                          <div class="checkbox">
-                            <label><input type="checkbox" value="">Option 2</label>
-                          </div>
-                        </form>
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <h2>How did you hear about us?</h2>
+                            <p>Tell us:</p>
+                            <form>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" value="">Option 1</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" value="">Option 2</label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>     
+            </div>
         </div>
-        </div>    
     </div>
 
     <!-- Presenting the staff with cards: https://www.w3schools.com/bootstrap4/bootstrap_cards.asp -->
     <!-- Card columns allows multiple cards next to each other -->
-    <!-- The first card's button doesn't go anywhere, it could be a modal --> 
+    <!-- The first card's button doesn't go anywhere, it could be a modal -->
     <!-- My second card limits the information seen and uses collapsible to show more -->
     <div class="container p-3">
         <h2>Our Hairdressers</h2>
@@ -196,6 +222,7 @@
     <!-- A different approach would be to make the whole staff information collapsible -->
     <!-- Here a block button (taking the full width) opens/closes the collapsible -->
     <!-- Here a single card is used, but card columns could be used -->
+    <!--
     <div class="container">
         <h2>About Us</h2>
         <a href="#mechanics" class="btn btn-primary btn-block" data-toggle="collapse">Meet our mechanics</a>
@@ -209,26 +236,29 @@
             </div>
         </div>
     </div>
-
+     -->
+    <!--end of comment for about us-->
     <!-- Collapsible with multiple items - accordion -->
     <!-- https://www.w3schools.com/bootstrap4/bootstrap_collapse.asp -->
     <!-- As we want to do a vertical navigation better suited for mobile design, an accordion pattern -->
     <!-- could work well.  You can use other patterns too.  This is just an example. -->
+    <!--
     <div class="container">
         <div class="container-md p-3 my-3 border bg-warning text-white">
             <h1>Erwind's and friends bike shop</h1>
             <p>Bike fixing is our business</p>
         </div>
-        <div id="accordion">
-            <div class="card">
-                <div class="card-header">
-                    <a class="card-link" data-toggle="collapse" href="#collapseService">Choose a service</a>
+     -->
+    <div id="accordion">
+        <div class="card">
+            <div class="card-header">
+                <a class="card-link" data-toggle="collapse" href="#collapseService">Choose a service</a>
+            </div>
+            <div id="collapseService" class="collapse show" data-parent="#accordion">
+                <div class="card-body">
+                    <p>Here is our list of services</p>
                 </div>
-                <div id="collapseService" class="collapse show" data-parent="#accordion">
-                    <div class="card-body">
-                        <p>Here is our list of services</p>
-                    </div>
-                </div>
+            </div>
             <div class="card">
                 <div class="card-header">
                     <a class="collapsed card-link" data-toggle="collapse" href="#collapseDate">Choose a date</a>
@@ -238,6 +268,7 @@
                         <p>What date?</p>
                         <!-- Bootstrap has various input components. Some examples are given here: -->
                         <!-- Component shown here: https://v4-alpha.getbootstrap.com/components/forms/#textual-inputs -->
+
                         <div class="form-group row">
                             <label for="dateTimeInput" class="col-2 col-form-label">Date and time</label>
                             <div class="col-10">
