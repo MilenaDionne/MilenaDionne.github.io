@@ -30,6 +30,9 @@ Lab3 image credits:
 - steak:https://www.purina.com/articles/dog/nutrition/can-dogs-eat-raw-meat
 - Cute_Logo: Ben Rizk
 - Decoration_Pic: Ben Rizk
+- Barber1:https://www.shutterstock.com/photos
+- Barber2:https://www.shutterstock.com/photos
+- Barber3:https://www.shutterstock.com/photos
 
 
 
