@@ -1,4 +1,4 @@
-<!-- This file contains many elements adapted from the online tutoral -->
+﻿<!-- This file contains many elements adapted from the online tutoral -->
 <!-- on Bootstrap 4 as found here: https://www.w3schools.com/bootstrap4/default.asp -->
 
 <!-- Images source: -->
@@ -152,25 +152,40 @@
     <!-- The first card's button doesn't go anywhere, it could be a modal --> 
     <!-- My second card limits the information seen and uses collapsible to show more -->
     <div class="container p-3">
-        <h2>Meet our hairdressers</h2>
+        <h2>Our Hairdressers</h2>
         <div class="card-columns">
-            <div class="card bg-warning" style="width:200px">
-                <img class="card-img-top" src="Images/Jule.jpg" alt="Card image" style="width:100%">
+            <div class="card" style="width:300px">
+                <img class="card-img-top" src="Images/Barber1.png" alt="Card image" style="width:100%">
                 <div class="card-body">
-                    <h4 class="card-title">Jules</h4>
-                    <p class="card-text">Jules has been cutting hair for 10 years.</p>
-                    <a href="#" class="btn btn-primary">See Profile</a>
+                    <h4 class="card-title">Nate Valentine</h4>
+                    <p class="card-text">Nate is a veteran hair salon artist with 10 years of Experience.</p>
+                    <a href="#profile1" class="btn btn-primary" data-toggle="collapse">Contact Info</a>
+                    <div id="profile1" class="collapse p-3">
+                        <p>Email: Nate42@jmail.com</p>
+                    </div>
                 </div>
             </div>
-            <div class="card bg-danger" style="width:200px">
-                <img class="card-img-top" src="Images/Jule.jpg" alt="Card image" style="width:100%">
+            <div class="card" style="width:300px">
+                <img class="card-img-top" src="Images/Barber2.png" alt="Card image" style="width:100%">
                 <div class="card-body">
-                    <h4 class="card-title">Jules</h4>
-                    <p class="card-text">The curly hair specialist</p>
+                    <h4 class="card-title">Hanna Grant</h4>
+                    <p class="card-text">Recent Make-up, Esthetics, and Beauty College graduate.</p>
                     <!-- collapsible part -->
-                    <a href="#profile" class="btn btn-primary" data-toggle="collapse">See Profile</a>
+                    <a href="#profile" class="btn btn-primary" data-toggle="collapse">Contact Info</a>
                     <div id="profile" class="collapse p-3">
-                        <p>Jules has been cutting hair for 10 years ... </p>
+                        <p>Email: HanaG184@jmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card" style="width:300px">
+                <img class="card-img-top" src="Images/Barber3.png" alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">Jenna Hart</h4>
+                    <p class="card-text">Jenna is a confident hair stylist responisble for our most extravagent styles</p>
+                    <!-- collapsible part -->
+                    <a href="#profile2" class="btn btn-primary" data-toggle="collapse">Contact Info</a>
+                    <div id="profile2" class="collapse p-3">
+                        <p>Email: JennaH222@jmail.com</p>
                     </div>
                 </div>
             </div>
@@ -182,7 +197,7 @@
     <!-- Here a block button (taking the full width) opens/closes the collapsible -->
     <!-- Here a single card is used, but card columns could be used -->
     <div class="container">
-        <h2>More information</h2>
+        <h2>About Us</h2>
         <a href="#mechanics" class="btn btn-primary btn-block" data-toggle="collapse">Meet our mechanics</a>
         <div id="mechanics" class="collapse">
             <div class="card bg-warning" style="width:200px">
