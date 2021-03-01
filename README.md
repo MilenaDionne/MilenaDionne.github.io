@@ -33,6 +33,12 @@ Lab3 image credits:
 - Barber1:https://www.shutterstock.com/photos
 - Barber2:https://www.shutterstock.com/photos
 - Barber3:https://www.shutterstock.com/photos
+- Barber4:https://www.shutterstock.com/photos
+- Barber5:https://www.shutterstock.com/photos
+- Cut:https://www.shutterstock.com/photos
+- Shopping:https://www.shutterstock.com/photos
+- Storefront:https://www.shutterstock.com/photos
+- intro:https://www.shutterstock.com/photos
 
 
 
