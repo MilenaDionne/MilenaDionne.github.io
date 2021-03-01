@@ -34,8 +34,8 @@
     <!-- Look in BS4 Typography https://www.w3schools.com/bootstrap4/bootstrap_typography.asp -->
     <!-- Use your own CSS file to change those fonts if they do not correspond to your company's look -->
     <div class="container-md p-3 my-3 border bg-dark text-white">
-        <h1>Welcome to Nice Scissors</h1>
-        <p>We'll take care of your hair!</p>
+        <h1>Welcome to Mother's Luscious Salon</h1>
+        <p>Just like mama used to style!</p>
     </div>
 
     <!-- Bootstrap contains a grid system you can explore https://www.w3schools.com/bootstrap4/bootstrap_grid_system.asp -->
@@ -60,7 +60,7 @@
                         <a class="nav-link" href="#section2">Make Appointment</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#Hairdressers">Our Barbers</a>
+                        <a class="nav-link" href="#Hairdressers">Our Hairdressers</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#section4">Store Info</a>
@@ -71,8 +71,32 @@
 
     </div>
 
+    <!--Opening screen on website-->
+    <div class="text-center">
+        <img src="Images/Storefront.PNG" class="img-fluid rounded" alt="Responsive image" style="width:1125px; height:500px" />
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <img src="Images/Cut.PNG" class="img-fluid rounded" alt="Responsive image" style="width: 450px; height: 200px" />
+                <button type="button" class="btn btn-dark btn-block">Make appointment</button>
+            </div>
+            <div class="col-sm">
+                <img src="Images/intro.PNG" class="img-fluid rounded" alt="Responsive image" style="width: 450px; height: 200px" />
+                <button type="button" class="btn btn-dark btn-block">See our hair stylistst</button>
+            </div>
+            <div class="col-sm">
+                <img src="Images/Shopping.PNG" class="img-fluid rounded" alt="Responsive image" style="width: 450px; height: 200px" />
+                <button type="button" class="btn btn-dark btn-block">Start shopping</button>
+            </div>
+        </div>
+
+
+    </div>
 
     <!-- When you have messages to tell, remember that center align is not always the best choice -->
+    <!--
     <div class="container-md p-3 my-3 border bg-light text-success">
         <h3>Let us tell you about our expertise</h3>
         <p>We can <mark>cut hair</mark></p>
@@ -80,8 +104,7 @@
         <p class="text-uppercase">Write in uppercase</p>
         <p class="text-center text-uppercase">centered and uppercase</p>
     </div>
-
-
+    -->
     <!-- Bootstrap has different types of tables https://www.w3schools.com/bootstrap4/bootstrap_tables.asp -->
     <!-- Might be (or not) useful to show some information to the user -->
     <div class="container">
@@ -168,6 +191,50 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Making appointment-->
+    <div class="container accordion p-3">
+        <div class="card">
+            <div class="card-header">
+                <a class="card-link" data-toggle="collapse" href="#collapseService">Choose a service</a>
+            </div>
+            <div id="collapseService" class="collapse show" data-parent="#accordion">
+                <div class="card-body">
+                    <p>Here is our list of services</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseDate">Choose a date</a>
+                </div>
+                <div id="collapseDate" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                        <p>What date?</p>
+                        <!-- Bootstrap has various input components. Some examples are given here: -->
+                        <!-- Component shown here: https://v4-alpha.getbootstrap.com/components/forms/#textual-inputs -->
+
+                        <div class="form-group row">
+                            <label for="dateTimeInput" class="col-2 col-form-label">Date and time</label>
+                            <div class="col-10">
+                                <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="dateTimeInput">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseClientInfo">Your info</a>
+                </div>
+                <div id="collapseClientInfo" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                        <p>Your information so we can contact you</p>
+                        <p>Form to enter name, email, phone</p>
                     </div>
                 </div>
             </div>
@@ -367,7 +434,7 @@
     <!-- My second card limits the information seen and uses collapsible to show more -->
     <div class="container p-3" id='Hairdressers'>
         <h2>Our Hairdressers</h2>
-        <div class="card-columns">
+        <div class="card-deck">
             <div class="card" style="width:300px">
                 <img class="card-img-top" src="Images/Barber1.PNG" alt="Card image" style="width:100%">
                 <div class="card-body">
@@ -403,6 +470,29 @@
                     </div>
                 </div>
             </div>
+            <div class="card" style="width:300px">
+                <img class="card-img-top" src="Images/Barber4.PNG" alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">Dale Gillian</h4>
+                    <p class="card-text">Dale has made many of our customers leave happy with thier new haircuts.</p>
+                    <a href="#profile3" class="btn btn-primary" data-toggle="collapse">Contact Info</a>
+                    <div id="profile3" class="collapse p-3">
+                        <p>Email: Dale77@jmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card" style="width:300px">
+                <img class="card-img-top" src="Images/Barber5.PNG" alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">Vicky Mona</h4>
+                    <p class="card-text">Vicky is another new hair dresser to our team who has created a great reputation.</p>
+                    <a href="#profile4" class="btn btn-primary" data-toggle="collapse">Contact Info</a>
+                    <div id="profile4" class="collapse p-3">
+                        <p>Email: vmona2@jmail.com</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -437,48 +527,8 @@
             <p>Bike fixing is our business</p>
         </div>
      -->
-    <div id="accordion">
-        <div class="card">
-            <div class="card-header">
-                <a class="card-link" data-toggle="collapse" href="#collapseService">Choose a service</a>
-            </div>
-            <div id="collapseService" class="collapse show" data-parent="#accordion">
-                <div class="card-body">
-                    <p>Here is our list of services</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseDate">Choose a date</a>
-                </div>
-                <div id="collapseDate" class="collapse" data-parent="#accordion">
-                    <div class="card-body">
-                        <p>What date?</p>
-                        <!-- Bootstrap has various input components. Some examples are given here: -->
-                        <!-- Component shown here: https://v4-alpha.getbootstrap.com/components/forms/#textual-inputs -->
-
-                        <div class="form-group row">
-                            <label for="dateTimeInput" class="col-2 col-form-label">Date and time</label>
-                            <div class="col-10">
-                                <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="dateTimeInput">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseClientInfo">Your info</a>
-                </div>
-                <div id="collapseClientInfo" class="collapse" data-parent="#accordion">
-                    <div class="card-body">
-                        <p>Your information so we can contact you</p>
-                        <p>Form to enter name, email, phone</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    
+    
 
 </body>
 
