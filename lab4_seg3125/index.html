@@ -20,6 +20,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- Your own additional style sheet -->
     <link href="styles/style.css" rel="stylesheet" type="text/css">
@@ -33,10 +34,34 @@
     <!-- Bootstrap has its own font for H1, H2, p, etc.  -->
     <!-- Look in BS4 Typography https://www.w3schools.com/bootstrap4/bootstrap_typography.asp -->
     <!-- Use your own CSS file to change those fonts if they do not correspond to your company's look -->
-    <div class="container-md p-3 my-3 border bg-dark text-white">
-        <h1>Welcome to Mother's Luscious Salon</h1>
-        <p>Just like mama used to style!</p>
-    </div>
+
+    <section class="d-flex align-items-center">
+        <div class="container d-flex justify-content-center justify-content-md-between">
+            <div class="d-flex align-items-center">
+            </div>
+            <div class="d-none d-md-flex align-items-center">
+                <i class="material-icons">place</i>
+                <a class="text-dark" href="https://www.google.com/maps/place/Lees+Ave,+Ottawa,+ON/@45.4247543,-75.7046237,13.6z/data=!4m5!3m4!1s0x4cce059ec54f044b:0x7c2d088cbea9d11e!8m2!3d45.414371!4d-75.6740323">406 Lees Avenue, Ottawa, ON</a>
+
+                <i class="bi d-flex align-items-center ml-4"></i>
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>
+                </svg> <a class="text-dark" href="mailto:example@example.com">bestsalon@hotmail.com</a>
+                
+                <i class="bi d-flex align-items-center ml-4"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-phone" viewBox="0 0 16 16">
+                <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z"/>
+                <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                </svg><span class="text-dark">999-999-9999</span>
+            </div>
+        </div>
+    </section>
+    <!-- <div class="container-md p-3 my-3 text-center">
+        <p>Call at: 999-999-9999</p>
+        <a href="https://www.google.com/maps/place/Lees+Ave,+Ottawa,+ON/@45.4247543,-75.7046237,13.6z/data=!4m5!3m4!1s0x4cce059ec54f044b:0x7c2d088cbea9d11e!8m2!3d45.414371!4d-75.6740323" class="stretched-link">406 Lees Avenue, Ottawa, ON</a>
+    </div>  -->
+    
 
     <!-- Bootstrap contains a grid system you can explore https://www.w3schools.com/bootstrap4/bootstrap_grid_system.asp -->
     <!-- It can be useful for placement of information -->
@@ -54,26 +79,34 @@
             <nav class="col-sm-3 col-4" id="myScrollspy">
                 <ul class="nav nav-pills flex-column position-fixed">
                     <li class="nav-item">
-                        <a class="nav-link" href="#section1">Welcome</a>
+                        <a class="nav-link text-dark" href="#HomeSection">Welcome</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#section2">Make Appointment</a>
+                        <a class="nav-link text-dark" href="#section2">Make Appointment</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#Hairdressers">Our Hairdressers</a>
+                        <a class="nav-link text-dark" href="#Hairdressers">Our Hairdressers</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#section4">Store Info</a>
+                        <a class="nav-link text-dark" href="#section4">Store Info</a>
                     </li>
                 </ul>
             </nav>
         </div>
-
     </div>
+    
 
     <!--Opening screen on website-->
-    <div class="text-center">
-        <img src="Images/Storefront.PNG" class="img-fluid rounded" alt="Responsive image" style="width:1125px; height:500px" />
+    <div class="container position-relative pb-1" id='HomeSection'>
+        <div class = "row">
+            <div class="col-md">
+                <img src="Images/Main-Page.jpg" alt="Responsive image" style="width:100%;  height: 400px; overflow: hidden;">
+                <div class="position-absolute text-white p-3" style="background-color: rgba(0, 0, 0, 0.8); top:50%; left: 50%; transform: translate(-50%, -50%);">
+                    <h2 style="font-family:Segoe UI,Arial,sans-serif;font-weight:400;text-align: center;">Mother's Luscious Salon</h2>
+                    <p class="text-center">Just like mama used to style!</p>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="container">
@@ -91,8 +124,6 @@
                 <button type="button" class="btn btn-dark btn-block">Start shopping</button>
             </div>
         </div>
-
-
     </div>
 
     <!-- When you have messages to tell, remember that center align is not always the best choice -->
@@ -110,7 +141,7 @@
     <div class="container">
         <h2>Service description</h2>
         <p>Here is a list of services offered</p>
-        <table class="table table-primary table-hover">
+        <table class="table table-dark table-hover">
             <thead>
                 <tr>
                     <th>Service</th>
@@ -163,9 +194,8 @@
     <!-- Modals are useful for additional information or questions -->
     <!-- Here the modal is used for a little survey -->
     <div class="container">
-        <h2>Modal Example</h2>
         <!-- Trigger the modal with a button -->
-        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#mySurvey">Open Survey</button>
+        <button type="button" class="btn btn-dark btn-lg" data-toggle="modal" data-target="#mySurvey">Open Survey</button>
 
         <!-- Modal -->
         <div class="modal fade" id="mySurvey" role="dialog">
@@ -201,7 +231,7 @@
     <div class="container accordion p-3">
         <div class="card">
             <div class="card-header">
-                <a class="card-link" data-toggle="collapse" href="#collapseService">Choose a service</a>
+                <a class="card-link" data-toggle="collapse" href="#collapseService">Make appointment</a>
             </div>
             <div id="collapseService" class="collapse show" data-parent="#accordion">
                 <div class="card-body">
@@ -246,7 +276,7 @@
     <div class="container accordion p-3">
         <div class="card">
             <div class="card-header">
-                <a class="card-link" data-toggle="collapse" href="#collapseService">Buy our products!</a>
+                <a class="card-link" data-toggle="collapse" href="#collapseService">Check out products</a>
             </div>
             <div id="collapseService" class="collapse show" data-parent="#accordion">
 

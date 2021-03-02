@@ -9,3 +9,8 @@ h1 {
     text-shadow: 3px 3px 1px black;
     
   }
+
+.gold-theme {
+   background-color: burlywood;
+   border-color: burlywood;
+}
