@@ -39,6 +39,12 @@ Lab3 image credits:
 - Shopping:https://www.shutterstock.com/photos
 - Storefront:https://www.shutterstock.com/photos
 - intro:https://www.shutterstock.com/photos
+- Beard and tattoo : https://www.matandmax.com/ca-en/products/hair-care/beard-products/styling-and-care/clubman-beard-and-tattoo-oil-1oz.html
+- 2-in-1 Beard Conditioner : https://www.matandmax.com/ca-en/products/hair-care/beard-products/cleansers/clubman-2-in-1-beard-conditioner-3oz.html
+- Beard Balm : https://www.matandmax.com/ca-en/products/hair-care/beard-products/styling-and-care/clubman-beard-balm-conditioning-style-wax-2oz.html
+- Tea Tree : https://www.matandmax.com/ca-en/products/hair-care/bundles/duos/paul-mitchell-tea-tree-tea-tree-duo-33-8oz.html
+- Invigo : https://www.matandmax.com/ca-en/products/hair-care/bundles/duos/wella-invigo-brilliance-fine-normal-duo-33-8oz.html
+- Hair Booster : https://www.matandmax.com/ca-en/products/hair-care/hair-loss/hair-care/nioxin-hair-booster-3-4oz.html
 
 
 
