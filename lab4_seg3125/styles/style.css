@@ -1,16 +1,22 @@
-
 /* Style sheet
    color picker www.w3schools.com/colors/colors_picker.asp
 */
 
+
 /* Bootstrap default font-family is Helvetica Neue */
+
 h1 {
     font-family: "Times New Roman", Times, serif;
     text-shadow: 3px 3px 1px black;
-    
-  }
+}
 
 .gold-theme {
-   color: rgb(167, 107, 29);
-   font-size: medium;
+    color: rgb(167, 107, 29);
+    font-size: medium;
+}
+
+.btn-gold-theme {
+    background-color: rgb(167, 107, 29);
+    font-size: medium;
+    color: white;
 }
