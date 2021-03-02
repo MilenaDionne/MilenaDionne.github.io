@@ -11,6 +11,6 @@ h1 {
   }
 
 .gold-theme {
-   background-color: burlywood;
-   border-color: burlywood;
+   color: rgb(167, 107, 29);
+   font-size: medium;
 }
