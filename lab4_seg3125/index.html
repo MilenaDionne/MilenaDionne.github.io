@@ -96,16 +96,16 @@
         <div class="row">
             <div class="col-sm">
                 <img src="Images/Cut.PNG" class="img-fluid rounded" alt="Responsive image" style="width: 450px; height: 200px" />
-                <button type="button" class="btn btn-dark btn-block">Make appointment</button>
+                <button type="button" class="btn btn-dark btn-block" onclick="document.getElementById('Appointment').scrollIntoView()">Make appointment</button>
             </div>
 
             <div class="col-sm">
                 <img src="Images/Shopping.PNG" class="img-fluid rounded" alt="Responsive image" style="width: 450px; height: 200px" />
-                <button type="button" class="btn btn-dark btn-block">Start shopping</button>
+                <button type="button" class="btn btn-dark btn-block" onclick="document.getElementById('Products').scrollIntoView()">Start shopping</button>
             </div>
             <div class="col-sm">
                 <img src="Images/intro.PNG" class="img-fluid rounded" alt="Responsive image" style="width: 450px; height: 200px" />
-                <button type="button" class="btn btn-dark btn-block">See our hair stylistst</button>
+                <button type="button" class="btn btn-dark btn-block" onclick="document.getElementById('Hairdressers').scrollIntoView()">See our hair stylistst</button>
             </div>
         </div>
     </div>
@@ -172,77 +172,22 @@
             </div>
             <div id="collapseService" class="collapse show" data-parent="#accordion">
                 <div class="card-body">
-                    <p>Select a hairdresser</p>
-                    <div class="card-deck">
-                        <div class="card" style="width:300px">
-                            <img class="card-img-top" src="Images/Barber1.PNG" alt="Card image" style="width:100%">
-                            <div class="card-body">
-                                <h4 class="card-title">Nate Valentine</h4>
-                                <a href="#Hairdressers" class="btn btn-dark">See more</a>
-                            </div>
-                        </div>
-
-                        <div class="card" style="width:300px">
-                            <img class="card-img-top" src="Images/Barber2.PNG" alt="Card image" style="width:100%">
-                            <div class="card-body">
-                                <h4 class="card-title">Hanna Grant</h4>
-                                <a href="#Hairdressers" class="btn btn-dark">See more</a>
-                            </div>
-                        </div>
-
-                        <div class="card" style="width:300px">
-                            <img class="card-img-top" src="Images/Barber3.PNG" alt="Card image" style="width:100%">
-                            <div class="card-body">
-                                <h4 class="card-title">Jenna Hart</h4>
-                                <a href="#Hairdressers" class="btn btn-dark">See more</a>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <br>
-                    <div class="card-deck">
-                        <div class="card" style="width:300px">
-                            <img class="card-img-top" src="Images/Barber4.PNG" alt="Card image" style="width:100%">
-                            <div class="card-body">
-                                <h4 class="card-title">Dale Gillian</h4>
-                                <a href="#Hairdressers" class="btn btn-dark">See more</a>
-                            </div>
-                        </div>
-
-                        <div class="card" style="width:300px">
-                            <img class="card-img-top" src="Images/Barber5.PNG" alt="Card image" style="width:100%">
-                            <div class="card-body">
-                                <h4 class="card-title">Vicky Mona</h4>
-                                <a href="#Hairdressers" class="btn btn-dark">See more</a>
-                            </div>
-                        </div>
-
-                        <div class="card" style="width:300px">
-                            <img class="card-img-top" src="Images/Barber6.png" alt="Card image" style="width:100%">
-                            <div class="card-body">
-                                <h4 class="card-title">I have no preference.</h4>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <br>
                     <br>
                     <div>
                         <label for="serviceform">What would you like to do?</label>
                         <br>
                         <select class="custom-select" name="serviceform" id="serviceform">
-                            <option value="boys0-8">Boys Cut (Age 0-8) - $19.00</option>
-                            <option value="boys9-12">Boys Cut (Age 9-12) - $26.00</option>
-                            <option value="girls0-8">Girls Cut (Age 0-8) - $23.00</option>
-                            <option value="girls9-12">Girls Cut (Age 9-12) - $30.00</option>
+                            <option value="boys0-12">Boys Cut (Age 0-12) - $19.00</option>
+                            <option value="girls0-12">Girls Cut (Age 0-12) - $22.00</option>
+                            <option value="boysshampoo">Boys Cut + shampoo (Age 0-12) - $29.00</option>
+                            <option value="girlsshampoo">Girls Cut + shampoo(Age 0-12) - $32.00</option>
                             <option value="mensbuzz">Buzzcut - $17.00</option>
                             <option value="cleanup">Beard & Neck Trim - $18.00</option>
                             <option value="menscut">Mens Cut & Style - $30.00</option>
                             <option value="womenstrim">Bang Trim - $9.00</option>
                             <option value="womensconsult">Hair consultation - $0.00</option>
                             <option value="womenscut">Ladies Cut & Style - $44.00</option>
+                            <option value="permenent">Permanent - $70.00</option>
                         </select>
                     </div>
                     <br>
