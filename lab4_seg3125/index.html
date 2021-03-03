@@ -255,43 +255,162 @@
     </div>
 
     <!--Making appointment-->
-    <div class="container accordion p-3">
+   <div class="container accordion p-3">
         <div class="card">
             <div class="card-header">
                 <a class="card-link gold-theme" data-toggle="collapse" href="#collapseService">Make appointment</a>
             </div>
             <div id="collapseService" class="collapse show" data-parent="#accordion">
                 <div class="card-body">
-                    <p>Here is our list of services</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <a class="collapsed card-link gold-theme" data-toggle="collapse" href="#collapseDate">Choose a date</a>
-                </div>
-                <div id="collapseDate" class="collapse" data-parent="#accordion">
-                    <div class="card-body">
-                        <p>What date?</p>
-                        <!-- Bootstrap has various input components. Some examples are given here: -->
-                        <!-- Component shown here: https://v4-alpha.getbootstrap.com/components/forms/#textual-inputs -->
+                    <p>Select a hairdresser</p>
+                        <div class="card-deck">
+                        <div class="card" style="width:300px">
+                            <img class="card-img-top" src="Images/Barber1.PNG" alt="Card image" style="width:100%">
+                            <div class="card-body">
+                                <h4 class="card-title">Nate Valentine</h4>
+                                <a href="#Hairdressers" class="btn btn-dark">See more</a>
+                            </div>
+                        </div>
 
-                        <div class="form-group row">
-                            <label for="dateTimeInput" class="col-2 col-form-label">Date and time</label>
-                            <div class="col-10">
-                                <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="dateTimeInput">
+                        <div class="card" style="width:300px">
+                            <img class="card-img-top" src="Images/Barber2.PNG" alt="Card image" style="width:100%">
+                            <div class="card-body">
+                                <h4 class="card-title">Hanna Grant</h4>
+                                <a href="#Hairdressers" class="btn btn-dark">See more</a>
+                            </div>
+                        </div>
+
+                        <div class="card" style="width:300px">
+                            <img class="card-img-top" src="Images/Barber3.PNG" alt="Card image" style="width:100%">
+                            <div class="card-body">
+                                <h4 class="card-title">Jenna Hart</h4>
+                                <a href="#Hairdressers" class="btn btn-dark">See more</a>
+                            </div>
+                        </div>
+
+                </div>
+
+                <br>
+                 <div class="card-deck">
+                   <div class="card" style="width:300px">
+                            <img class="card-img-top" src="Images/Barber4.PNG" alt="Card image" style="width:100%">
+                            <div class="card-body">
+                                <h4 class="card-title">Dale Gillian</h4>
+                                <a href="#Hairdressers" class="btn btn-dark">See more</a>
+                            </div>
+                        </div>
+
+                        <div class="card" style="width:300px">
+                            <img class="card-img-top" src="Images/Barber5.PNG" alt="Card image" style="width:100%">
+                            <div class="card-body">
+                                <h4 class="card-title">Vicky Mona</h4>
+                                <a href="#Hairdressers" class="btn btn-dark">See more</a>
+                            </div>
+                        </div>
+
+                        <div class="card" style="width:300px">
+                            <img class="card-img-top" src="Images/Barber6.PNG" alt="Card image" style="width:100%">
+                            <div class="card-body">
+                                <h4 class="card-title">I have no preference.</h4>
                             </div>
                         </div>
                     </div>
+
+                <br>
+
+        
+
+
+                <br>
+                <div>
+                      <label for="serviceform">What would you like to do?</label>
+                      <br>
+                        <select class="custom-select" name="serviceform" id="serviceform">
+                            <option value="boys0-8">Boys Cut (Age 0-8) - $19.00</option>
+                            <option value="boys9-12">Boys Cut (Age 9-12) - $26.00</option>
+                            <option value="girls0-8">Girls Cut (Age 0-8) - $23.00</option>
+                            <option value="girls9-12">Girls Cut (Age 9-12) - $30.00</option>
+                            <option value="mensbuzz">Buzzcut - $17.00</option>
+                            <option value="cleanup">Beard & Neck Trim - $18.00</option>
+                            <option value="menscut">Mens Cut & Style - $30.00</option>
+                            <option value="womenstrim">Bang Trim - $9.00</option>
+                            <option value="womensconsult">Hair consultation - $0.00</option>
+                            <option value="womenscut">Ladies Cut & Style - $44.00</option>
+                        </select>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                             <div class="col-10">
+                         <button type="submit" class="btn btn-dark">Submit</button>
+                        </div>
+                     </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <a class="card-link gold-theme" data-toggle="collapse" href="#collapseDate">Choose a date</a>
                 </div>
+                <div id="collapseDate" class="collapse show" data-parent="#accordion">
+                    <div class="card-body">
+                        <!-- Bootstrap has various input components. Some examples are given here: -->
+                        <!-- Component shown here: https://v4-alpha.getbootstrap.com/components/forms/#textual-inputs -->
+                        <p>Please select a day and time you would like to come in.</p>
+                        <div class="form-group">
+                            <label for="example-date-input" class="col-2 col-form-label">Date</label>
+                        <div class="col-10">
+                        <input class="form-control" type="date" placeholder="2021-03-10" id="example-date-input">
+                        </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="example-time-input" class="col-2 col-form-label">Time</label>
+                          <div class="col-10">
+                            <input class="form-control" type="time" placeholder="13:45:00" id="example-time-input">
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                             <div class="col-10">
+                         <button type="submit" class="btn btn-dark">Submit</button>
+                        </div>
+                     </div>
             </div>
             <div class="card">
                 <div class="card-header">
                     <a class="collapsed card-link gold-theme" data-toggle="collapse" href="#collapseClientInfo">Your info</a>
                 </div>
-                <div id="collapseClientInfo" class="collapse" data-parent="#accordion">
+                <div id="collapseClientInfo" class="collapse show" data-parent="#accordion">
                     <div class="card-body">
-                        <p>Your information so we can contact you</p>
-                        <p>Form to enter name, email, phone</p>
+                        <p>Please provide your information so we can contact you with your appointment information.</p>
+
+                        <div class="form-group">
+                            <label for="example-text-input" class="col-2 col-form-label">Name</label>
+                            <div class="col-10">
+                            <input class="form-control" type="text" placeholder="John Doe" id="example-text-input">
+                        </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="example-text-input" class="col-2 col-form-label">Email</label>
+                            <div class="col-10">
+                            <input class="form-control" type="text" placeholder="email@email.com" id="example-text-input">
+                        </div>
+                        </div>
+
+                         <div class="form-group">
+                            <label for="example-text-input" class="col-2 col-form-label">Phone number</label>
+                            <div class="col-10">
+                            <input class="form-control" type="text" placeholder ="(613)-000-0000" id="example-text-input">
+                        </div>
+                        </div>
+
+                         <div class="form-group">
+                             <div class="col-10">
+                         <button type="submit" class="btn btn-dark">Submit</button>
+                        </div>
+                     </div>
+
+                       
+
                     </div>
                 </div>
             </div>
