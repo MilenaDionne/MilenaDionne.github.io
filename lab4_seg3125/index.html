@@ -168,7 +168,7 @@
             <div class="container accordion p-3" id='Appointment'>
                 <div class="card">
                     <div class="card-header">
-                        <a class="card-link gold-theme" data-toggle="collapse" href="#collapseService">Make appointment</a>
+                        <a class="card-link gold-theme" data-toggle="collapse" href="#collapseService">Step 1: Make appointment</a>
                     </div>
                     <div id="collapseService" class="collapse show">
                         <div class="card-body">
@@ -191,12 +191,16 @@
                         </select>
                             </div>
                             <br>
+                            <a class=" btn btn-dark card-link " data-toggle="collapse" href="#collapseDate">Next Step</a>
+
+
+
                         </div>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-header">
-                        <a class="card-link gold-theme" data-toggle="collapse" href="#collapseDate">Choose a date</a>
+                        <a class="card-link gold-theme" data-toggle="collapse" href="#collapseDate">Step 2: Choose a date</a>
                     </div>
                     <div id="collapseDate" class="collapse">
                         <div class="card-body">
@@ -216,12 +220,13 @@
                                     <input class="form-control" type="time" placeholder="13:45:00" id="example-time-input">
                                 </div>
                             </div>
+                            <a class="btn btn-dark card-link " data-toggle="collapse" href="#collapseClientInfo">Next Step</a>
                         </div>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-header">
-                        <a class="collapsed card-link gold-theme" data-toggle="collapse" href="#collapseClientInfo">Your info</a>
+                        <a class="collapsed card-link gold-theme" data-toggle="collapse" href="#collapseClientInfo">Step 3: Your info</a>
                     </div>
                     <div id="collapseClientInfo" class="collapse">
                         <div class="card-body">
@@ -561,8 +566,6 @@
         </div>
     </div>
         
-        
-
 
         <div class="contain-fluid col order-3 no-gutters mr-3"> 
             <div class="card position-fixed dark">
