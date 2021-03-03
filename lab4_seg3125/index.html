@@ -29,11 +29,6 @@
 
 <body>
 
-    <!-- Medium size container, padding 3, margins 3, background dark, text is white -->
-    <!-- Should show the name of your company with an image or logo -->
-    <!-- Bootstrap has its own font for H1, H2, p, etc.  -->
-    <!-- Look in BS4 Typography https://www.w3schools.com/bootstrap4/bootstrap_typography.asp -->
-    <!-- Use your own CSS file to change those fonts if they do not correspond to your company's look -->
 
     <section class="d-flex align-items-center">
         <div class="container d-flex justify-content-center justify-content-md-between">
@@ -57,20 +52,7 @@
             </div>
         </div>
     </section>
-    <!-- <div class="container-md p-3 my-3 text-center">
-        <p>Call at: 999-999-9999</p>
-        <a href="https://www.google.com/maps/place/Lees+Ave,+Ottawa,+ON/@45.4247543,-75.7046237,13.6z/data=!4m5!3m4!1s0x4cce059ec54f044b:0x7c2d088cbea9d11e!8m2!3d45.414371!4d-75.6740323" class="stretched-link">406 Lees Avenue, Ottawa, ON</a>
-    </div>  -->
-    <!-- Bootstrap contains a grid system you can explore https://www.w3schools.com/bootstrap4/bootstrap_grid_system.asp -->
-    <!-- It can be useful for placement of information -->
-    <!--
-    <div class="row p-3">
-        <div class="col-sm-3 pl-5">Service</div>
-        <div class="col-sm-3">Calendar</div>
-        <div class="col-sm-3">Payment</div>
-        <div class="col-sm-3">Where to find us</div>
-    </div>
-     -->
+
     <!-- Code for scrollspy provided by: https://www.w3schools.com/bootstrap4/bootstrap_scrollspy.asp-->
     <div class="contain-fluid">
         <div class="row">
@@ -128,19 +110,7 @@
         </div>
     </div>
 
-    <!-- When you have messages to tell, remember that center align is not always the best choice -->
-    <!--
-    <div class="container-md p-3 my-3 border bg-light text-success">
-        <h3>Let us tell you about our expertise</h3>
-        <p>We can <mark>cut hair</mark></p>
-        <p class="text-center">Align wheels</p>
-        <p class="text-uppercase">Write in uppercase</p>
-        <p class="text-center text-uppercase">centered and uppercase</p>
-    </div>
-    -->
-    <!-- Bootstrap has different types of tables https://www.w3schools.com/bootstrap4/bootstrap_tables.asp -->
-    <!-- Might be (or not) useful to show some information to the user -->
-
+    <!-- Services descriptions -->
     <div class="container pt-2 pb-2">
         <div class="card">
             <div class="card-header">
@@ -193,69 +163,9 @@
     </div>
 
 
-    <!-- Bootstrap has components for alerts: https://www.w3schools.com/bootstrap4/bootstrap_alerts.asp  -->
-    <!-- These can be useful for making sure someone reads something before continuing -->
-    <!--
-        <div class="container">
-            <h2>Alert</h2>
-            <p>We have something important to say</p>
-            <div class="alert alert-danger alert-dismissible">
-                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                <strong>Please read! </strong>You must read.
-            </div>
-        </div>
-    -->
-    <!-- You'll certainly need buttons at some point in your site -->
-    <!-- https://www.w3schools.com/bootstrap4/bootstrap_buttons.asp -->
-    <!-- Remember how we talked about choosing a hue and changing the saturation for active/inactive -->
-    <!-- This idea is already part of the components in Bootstrap -->
-    <!--
-        <div class="container">
-            <h2>Button States</h2>
-            <button type="button" class="btn btn-warning">Primary Button</button>
-            <button type="button" class="btn btn-warning active">Active Primary</button>
-            <button type="button" class="btn btn-warning" disabled>Disabled Primary</button>
-        </div>
-    -->
-    <!-- Including a modal https://www.w3schools.com/bootstrap4/bootstrap_modal.asp -->
-    <!-- Modals are useful for additional information or questions -->
-    <!-- Here the modal is used for a little survey -->
-    <div class="container">
-        <!-- Trigger the modal with a button -->
-        <button type="button" class="btn btn-dark btn-lg" data-toggle="modal" data-target="#mySurvey">Open Survey</button>
-
-        <!-- Modal -->
-        <div class="modal fade" id="mySurvey" role="dialog">
-            <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="container">
-                            <h2>How did you hear about us?</h2>
-                            <p>Tell us:</p>
-                            <form>
-                                <div class="checkbox">
-                                    <label><input type="checkbox" value="">Option 1</label>
-                                </div>
-                                <div class="checkbox">
-                                    <label><input type="checkbox" value="">Option 2</label>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!--Making appointment-->
-   <div class="container accordion p-3"  id='Appointment'>
+    <div class="container accordion p-3" id='Appointment'>
         <div class="card">
             <div class="card-header">
                 <a class="card-link gold-theme" data-toggle="collapse" href="#collapseService">Make appointment</a>
@@ -263,7 +173,7 @@
             <div id="collapseService" class="collapse show" data-parent="#accordion">
                 <div class="card-body">
                     <p>Select a hairdresser</p>
-                        <div class="card-deck">
+                    <div class="card-deck">
                         <div class="card" style="width:300px">
                             <img class="card-img-top" src="Images/Barber1.PNG" alt="Card image" style="width:100%">
                             <div class="card-body">
@@ -288,11 +198,11 @@
                             </div>
                         </div>
 
-                </div>
+                    </div>
 
-                <br>
-                 <div class="card-deck">
-                   <div class="card" style="width:300px">
+                    <br>
+                    <div class="card-deck">
+                        <div class="card" style="width:300px">
                             <img class="card-img-top" src="Images/Barber4.PNG" alt="Card image" style="width:100%">
                             <div class="card-body">
                                 <h4 class="card-title">Dale Gillian</h4>
@@ -316,15 +226,15 @@
                         </div>
                     </div>
 
-                <br>
-
-        
+                    <br>
 
 
-                <br>
-                <div>
-                      <label for="serviceform">What would you like to do?</label>
-                      <br>
+
+
+                    <br>
+                    <div>
+                        <label for="serviceform">What would you like to do?</label>
+                        <br>
                         <select class="custom-select" name="serviceform" id="serviceform">
                             <option value="boys0-8">Boys Cut (Age 0-8) - $19.00</option>
                             <option value="boys9-12">Boys Cut (Age 9-12) - $26.00</option>
@@ -337,125 +247,125 @@
                             <option value="womensconsult">Hair consultation - $0.00</option>
                             <option value="womenscut">Ladies Cut & Style - $44.00</option>
                         </select>
-                        </div>
-                        <br>
-                        <div class="form-group">
-                             <div class="col-10">
-                         <button type="submit" class="btn btn-dark">Submit</button>
-                        </div>
-                     </div>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <a class="card-link gold-theme" data-toggle="collapse" href="#collapseDate">Choose a date</a>
-                </div>
-                <div id="collapseDate" class="collapse show" data-parent="#accordion">
-                    <div class="card-body">
-                        <!-- Bootstrap has various input components. Some examples are given here: -->
-                        <!-- Component shown here: https://v4-alpha.getbootstrap.com/components/forms/#textual-inputs -->
-                        <p>Please select a day and time you would like to come in.</p>
-                        <div class="form-group">
-                            <label for="example-date-input" class="col-2 col-form-label">Date</label>
+                    </div>
+                    <br>
+                    <div class="form-group">
                         <div class="col-10">
-                        <input class="form-control" type="date" placeholder="2021-03-10" id="example-date-input">
+                            <button type="submit" class="btn btn-dark">Submit</button>
                         </div>
-                        </div>
-
-                        <div class="form-group">
-                          <label for="example-time-input" class="col-2 col-form-label">Time</label>
-                          <div class="col-10">
-                            <input class="form-control" type="time" placeholder="13:45:00" id="example-time-input">
-                          </div>
-                        </div>
-
-                        <div class="form-group">
-                             <div class="col-10">
-                         <button type="submit" class="btn btn-dark">Submit</button>
-                        </div>
-                     </div>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <a class="collapsed card-link gold-theme" data-toggle="collapse" href="#collapseClientInfo">Your info</a>
-                </div>
-                <div id="collapseClientInfo" class="collapse show" data-parent="#accordion">
-                    <div class="card-body">
-                        <p>Please provide your information so we can contact you with your appointment information.</p>
-
-                        <div class="form-group">
-                            <label for="example-text-input" class="col-2 col-form-label">Name</label>
-                            <div class="col-10">
-                            <input class="form-control" type="text" placeholder="John Doe" id="example-text-input">
-                        </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="example-text-input" class="col-2 col-form-label">Email</label>
-                            <div class="col-10">
-                            <input class="form-control" type="text" placeholder="email@email.com" id="example-text-input">
-                        </div>
-                        </div>
-
-                         <div class="form-group">
-                            <label for="example-text-input" class="col-2 col-form-label">Phone number</label>
-                            <div class="col-10">
-                            <input class="form-control" type="text" placeholder ="(613)-000-0000" id="example-text-input">
-                        </div>
-                        </div>
-
-                         <div class="form-group">
-                             <div class="col-10">
-                         <button type="submit" class="btn btn-dark">Submit</button>
-                        </div>
-                     </div>
-
-                       
-
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
+                <div class="card">
+                    <div class="card-header">
+                        <a class="card-link gold-theme" data-toggle="collapse" href="#collapseDate">Choose a date</a>
+                    </div>
+                    <div id="collapseDate" class="collapse show" data-parent="#accordion">
+                        <div class="card-body">
+                            <!-- Bootstrap has various input components. Some examples are given here: -->
+                            <!-- Component shown here: https://v4-alpha.getbootstrap.com/components/forms/#textual-inputs -->
+                            <p>Please select a day and time you would like to come in.</p>
+                            <div class="form-group">
+                                <label for="example-date-input" class="col-2 col-form-label">Date</label>
+                                <div class="col-10">
+                                    <input class="form-control" type="date" placeholder="2021-03-10" id="example-date-input">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="example-time-input" class="col-2 col-form-label">Time</label>
+                                <div class="col-10">
+                                    <input class="form-control" type="time" placeholder="13:45:00" id="example-time-input">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-10">
+                                    <button type="submit" class="btn btn-dark">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <a class="collapsed card-link gold-theme" data-toggle="collapse" href="#collapseClientInfo">Your info</a>
+                            </div>
+                            <div id="collapseClientInfo" class="collapse show" data-parent="#accordion">
+                                <div class="card-body">
+                                    <p>Please provide your information so we can contact you with your appointment information.</p>
+
+                                    <div class="form-group">
+                                        <label for="example-text-input" class="col-2 col-form-label">Name</label>
+                                        <div class="col-10">
+                                            <input class="form-control" type="text" placeholder="John Doe" id="example-text-input">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="example-text-input" class="col-2 col-form-label">Email</label>
+                                        <div class="col-10">
+                                            <input class="form-control" type="text" placeholder="email@email.com" id="example-text-input">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="example-text-input" class="col-2 col-form-label">Phone number</label>
+                                        <div class="col-10">
+                                            <input class="form-control" type="text" placeholder="(613)-000-0000" id="example-text-input">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-10">
+                                            <button type="submit" class="btn btn-dark">Submit</button>
+                                        </div>
+                                    </div>
 
 
-    <!--Shopping products-->
-    <div class="container accordion p-3" id="Products">
-        <div class="card">
-            <div class="card-header">
-                <a class="card-link gold-theme" data-toggle="collapse" href="#collapseService">Check out our Products!</a>
-            </div>
-            <div id="collapseService" class="collapse show" data-parent="#accordion">
 
-                <div class="card-deck text-center justify-content-center">
-                    <div class="row p-3">
-                        <div class="card" style="width: 18rem;">
-                            <img src="./Images/paul_mitchell_shampoo_cond.jpg" class="card-img-top img-fluid" alt="...">
-                            <div class="card-body d-flex flex-column">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                                <h5 class="card-title">Tea Tree</h5>
-                                <table class="table">
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">Brand</th>
-                                            <td>Paul Mitchell</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">Price</th>
-                                            <td>56$</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">Content</th>
-                                            <td>
-                                                <ul>
-                                                    <li>Shampoo 33.8oz</li>
-                                                    <li>Conditioner 33.8oz</li>
-                                                </ul>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <button type="button" class="btn mb-2 btn-dark mt-3" data-toggle="modal" data-target="#TeaTreeInfo">More information</button>
-                                <button class="btn btn-dark mt-auto">Add to cart</a>
+
+                <!--Shopping products-->
+                <div class="container accordion p-3" id="Products">
+                    <div class="card">
+                        <div class="card-header">
+                            <a class="card-link gold-theme" data-toggle="collapse" href="#collapseService">Check out our Products!</a>
+                        </div>
+                        <div id="collapseService" class="collapse show" data-parent="#accordion">
+
+                            <div class="card-deck text-center justify-content-center">
+                                <div class="row p-3">
+                                    <div class="card" style="width: 18rem;">
+                                        <img src="./Images/paul_mitchell_shampoo_cond.jpg" class="card-img-top img-fluid" alt="...">
+                                        <div class="card-body d-flex flex-column">
+
+                                            <h5 class="card-title">Tea Tree</h5>
+                                            <table class="table">
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">Brand</th>
+                                                        <td>Paul Mitchell</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Price</th>
+                                                        <td>56$</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Content</th>
+                                                        <td>
+                                                            <ul>
+                                                                <li>Shampoo 33.8oz</li>
+                                                                <li>Conditioner 33.8oz</li>
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <button type="button" class="btn mb-2 btn-dark mt-3" data-toggle="modal" data-target="#TeaTreeInfo">More information</button>
+                                            <button class="btn btn-dark mt-auto">Add to cart</a>
                             </div>
                         </div>
                         <div class="card" style="width: 18rem;">
@@ -484,7 +394,7 @@
                                     </tbody>
                                 </table>
                                 <button type="button" class="btn mb-2 btn-dark mt-3" data-toggle="modal" data-target="#InvigoInfo">More information</button>
-                                <button class="btn btn-dark mt-auto">Add to cart</a>
+                                            <button class="btn btn-dark mt-auto">Add to cart</a>
                             </div>
                         </div>
                         <div class="card" style="width: 18rem;">
@@ -513,7 +423,7 @@
                                 </table>
                                 </p>
                                 <button type="button" class="btn mb-2 btn-dark mt-5" data-toggle="modal" data-target="#HairBoosterInfo">More information</button>
-                                <button class="btn btn-dark mt-auto">Add to cart</a>
+                                            <button class="btn btn-dark mt-auto">Add to cart</a>
                             </div>
                         </div>
                     </div>
@@ -543,7 +453,7 @@
                                     </tbody>
                                 </table>
                                 <button type="button" class="btn mb-2 btn-dark mt-4" data-toggle="modal" data-target="#TwoforOneBeardInfo">More information</button>
-                                <button class="btn btn-dark mt-auto">Add to cart</a>
+                                            <button class="btn btn-dark mt-auto">Add to cart</a>
                             </div>
                         </div>
                         <div class="card" style="width: 18rem;">
@@ -571,7 +481,7 @@
                                     </tbody>
                                 </table>
                                 <button type="button" class="btn mb-2 btn-dark mt-5" data-toggle="modal" data-target="#BeardTattooInfo">More information</button>
-                                <button class="btn btn-dark mt-auto">Add to cart</a>
+                                            <button class="btn btn-dark mt-auto">Add to cart</a>
                             </div>
                         </div>
                         <div class="card" style="width: 18rem;">
@@ -599,7 +509,7 @@
                                     </tbody>
                                 </table>
                                 <button type="button" class="btn mb-2 btn-dark mt-5" data-toggle="modal" data-target="#BeardBalmInfo">More information</button>
-                                <button class="btn btn-dark mt-auto">Add to cart</a>
+                                            <button class="btn btn-dark mt-auto">Add to cart</a>
                             </div>
                         </div>
                     </div>
@@ -707,18 +617,6 @@
         </div>
 
 
-        <!--end of comment for about us-->
-        <!-- Collapsible with multiple items - accordion -->
-        <!-- https://www.w3schools.com/bootstrap4/bootstrap_collapse.asp -->
-        <!-- As we want to do a vertical navigation better suited for mobile design, an accordion pattern -->
-        <!-- could work well.  You can use other patterns too.  This is just an example. -->
-        <!--
-        <div class="container">
-            <div class="container-md p-3 my-3 border bg-warning text-white">
-                <h1>Erwind's and friends bike shop</h1>
-                <p>Bike fixing is our business</p>
-            </div>
-         -->
         <!-- products additional information -->
         <div class="modal fade" id="TeaTreeInfo" role="dialog">
             <div class="modal-dialog modal-xl">
@@ -726,461 +624,461 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-7">
-                                    <h2>Tea Tree</h2>
-                                    <table class="table">
-                                        <tbody>
-                                            <tr>
-                                                <th scope="row" class="w-25">Brand</th>
-                                                <td class="pl-4">Paul Mitchell</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Price</th>
-                                                <td class="pl-4">56$</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Content</th>
-                                                <td>
-                                                    <ul>
-                                                        <li>Shampoo 33.8oz</li>
-                                                        <li>Conditioner 33.8oz</li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Features</th>
-                                                <td>
-                                                    <ul>
-                                                        <li>Ideal for all hair types</li>
-                                                        <li>Safe for colored hair</li>
-                                                        <li>Energizes hair and scalp</li>
-                                                        <li>Tea tree oil deeply cleans scalp, without drying it out</li>
-                                                        <li>Deep hydration</li>
-                                                        <li>Prevents moisture loss</li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">How to use</th>
-                                                <td>
-                                                    <ul>
-                                                        <li>Apply a small amount of shampoo to clean damp hair</li>
-                                                        <li>Rinse completely</li>
-                                                        <li>After shampooing, apply desired amount of conditioner in the palm of your hand</li>
-                                                        <li>Massage into wet hair</li>
-                                                        <li>Leave on 1-2 minutes before rinsing</li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-7">
+                                                        <h2>Tea Tree</h2>
+                                                        <table class="table">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th scope="row" class="w-25">Brand</th>
+                                                                    <td class="pl-4">Paul Mitchell</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">Price</th>
+                                                                    <td class="pl-4">56$</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">Content</th>
+                                                                    <td>
+                                                                        <ul>
+                                                                            <li>Shampoo 33.8oz</li>
+                                                                            <li>Conditioner 33.8oz</li>
+                                                                        </ul>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">Features</th>
+                                                                    <td>
+                                                                        <ul>
+                                                                            <li>Ideal for all hair types</li>
+                                                                            <li>Safe for colored hair</li>
+                                                                            <li>Energizes hair and scalp</li>
+                                                                            <li>Tea tree oil deeply cleans scalp, without drying it out</li>
+                                                                            <li>Deep hydration</li>
+                                                                            <li>Prevents moisture loss</li>
+                                                                        </ul>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">How to use</th>
+                                                                    <td>
+                                                                        <ul>
+                                                                            <li>Apply a small amount of shampoo to clean damp hair</li>
+                                                                            <li>Rinse completely</li>
+                                                                            <li>After shampooing, apply desired amount of conditioner in the palm of your hand</li>
+                                                                            <li>Massage into wet hair</li>
+                                                                            <li>Leave on 1-2 minutes before rinsing</li>
+                                                                        </ul>
+                                                                    </td>
+                                                                </tr>
 
 
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="col-5">
-                                    <img src="./Images/paul_mitchell_shampoo_cond.jpg" class="card-img-top img-fluid" alt="...">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal fade" id="InvigoInfo" role="dialog">
-            <div class="modal-dialog modal-xl">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-7">
-                                    <h2>Invigo</h2>
-                                    <table class="table">
-                                        <tbody>
-                                            <tr>
-                                                <th scope="row" class="w-25">Brand</th>
-                                                <td>Wella</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Price</th>
-                                                <td>45$</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Content</th>
-                                                <td>
-                                                    <ul>
-                                                        <li>Shampoo 33.8oz</li>
-                                                        <li>Conditioner 33.8oz</li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Features</th>
-                                                <td>
-                                                    <ul>
-                                                        <li>System for colored hair</li>
-                                                        <li>Fine to normal hair</li>
-                                                        <li>Copper encapsulating molecules : Maintain color vibrancy</li>
-                                                        <li>Histidine and Vitamin E : Control the oxidation after coloration and protect</li>
-                                                        <li>Lime caviar : Contain anti-oxidants and vitamins</li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">How to use</th>
-                                                <td>
-                                                    <ul>
-                                                        <li>Apply shampoo into wet hair</li>
-                                                        <li>Lather</li>
-                                                        <li>Rinse thoroughly</li>
-                                                        <li>Apply conditioner to clean, damp hair</li>
-                                                        <li>Distribute evenly</li>
-                                                        <li>Rinse thoroughly</li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="col-5">
-                                    <img src="./Images/wella.jpg" class="card-img-top img-fluid" alt="...">
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <div class="col-5">
+                                                        <img src="./Images/paul_mitchell_shampoo_cond.jpg" class="card-img-top img-fluid" alt="...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="modal fade" id="HairBoosterInfo" role="dialog">
-            <div class="modal-dialog modal-xl">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-7">
-                                    <h2>Nioxin</h2>
-                                    <table class="table">
-                                        <tbody>
-                                            <tr>
-                                                <th scope="row">Brand</th>
-                                                <td>Nioxin</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Price</th>
-                                                <td>46$</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Content</th>
-                                                <td>
-                                                    <ul>
-                                                        <li>Hair Booster 3.4oz</li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Features</th>
-                                                <td>
-                                                    <ul>
-                                                        <li>Stimulates zones touched by hair loss.</li>
-                                                        <li>Stimulates fragilized hair.</li>
-                                                        <li>Concentrated formula.</li>
-                                                        <li>Targets hairline or crown.</li>
-                                                        <li>Completes your Nioxin 3 part system.</li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">How to use</th>
-                                                <td>
-                                                    <ul>
-                                                        <li>Use twice a day, morning and evening.</li>
-                                                        <li>Apply before Scalp Treatment</li>
-                                                        <li>May cause redness du to the vitamin formula.</li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="col-5">
-                                    <img src="./Images/hair-booster.jpg" class="card-img-top img-fluid" alt="...">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal fade" id="TwoforOneBeardInfo" role="dialog">
-            <div class="modal-dialog modal-xl">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-7">
-                                    <h2>2 in 1 Beard Conditioner</h2>
-                                    <table class="table">
-                                        <tbody>
-                                            <tr>
-                                                <th scope="row" class="w-25">Brand</th>
-                                                <td>Clubman</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Price</th>
-                                                <td>11$</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Content</th>
-                                                <td>
-                                                    <ul>
-                                                        <li>Beard Conditioner 3oz</li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Features</th>
-                                                <td>
-                                                    <ul>
-                                                        <li>Controls frizz</li>
-                                                        <li>Prevents skin from flaking</li>
-                                                        <li>Discplines unmanageable hair</li>
-                                                        <li>Invigorates beard and face</li>
-                                                        <li>Versatile and lightweight formula</li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">How to use</th>
-                                                <td>
-                                                    <ul>
-                                                        <li>Apply a small quantity in your hands</li>
-                                                        <li>Spread evenly on face</li>
-                                                        <li>Work through beard</li>
-                                                        <li>Do not rinse</li>
-                                                        <li>If needed, reapply</li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Tips for a perfect beard</th>
-
-                                                <td>
-                                                    <ul>
-                                                        <li>Before shaving, wash your face to remove the impurities</li>
-                                                        <li>Use a quality shaving cream appropriate for your skin</li>
-                                                        <li>After shaving, rinse with cold water to reduce the inflammation</li>
-                                                        <li>Apply a small amount of after-shave for a natural fragrance</li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="col-5">
-                                    <img src="./Images/clubman-2-in-1-beard-cond.jpg" class="card-img-top img-fluid" alt="...">
+                            <div class="modal fade" id="InvigoInfo" role="dialog">
+                                <div class="modal-dialog modal-xl">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-7">
+                                                        <h2>Invigo</h2>
+                                                        <table class="table">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th scope="row" class="w-25">Brand</th>
+                                                                    <td>Wella</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">Price</th>
+                                                                    <td>45$</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">Content</th>
+                                                                    <td>
+                                                                        <ul>
+                                                                            <li>Shampoo 33.8oz</li>
+                                                                            <li>Conditioner 33.8oz</li>
+                                                                        </ul>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">Features</th>
+                                                                    <td>
+                                                                        <ul>
+                                                                            <li>System for colored hair</li>
+                                                                            <li>Fine to normal hair</li>
+                                                                            <li>Copper encapsulating molecules : Maintain color vibrancy</li>
+                                                                            <li>Histidine and Vitamin E : Control the oxidation after coloration and protect</li>
+                                                                            <li>Lime caviar : Contain anti-oxidants and vitamins</li>
+                                                                        </ul>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">How to use</th>
+                                                                    <td>
+                                                                        <ul>
+                                                                            <li>Apply shampoo into wet hair</li>
+                                                                            <li>Lather</li>
+                                                                            <li>Rinse thoroughly</li>
+                                                                            <li>Apply conditioner to clean, damp hair</li>
+                                                                            <li>Distribute evenly</li>
+                                                                            <li>Rinse thoroughly</li>
+                                                                        </ul>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <div class="col-5">
+                                                        <img src="./Images/wella.jpg" class="card-img-top img-fluid" alt="...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="modal fade" id="BeardTattooInfo" role="dialog">
-            <div class="modal-dialog modal-xl">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-7">
-                                    <h2>Beard Tattoo</h2>
-                                    <table class="table">
-                                        <tbody>
-                                            <tr>
-                                                <th scope="row" class="w-25">Brand</th>
-                                                <td>Clubman</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Price</th>
-                                                <td>11$</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Content</th>
-                                                <td>
-                                                    <ul>
-                                                        <li>Beard and Tattoo oil 1oz</li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Features</th>
-                                                <td>
-                                                    <ul>
-                                                        <li>Moisturizes dry skin</li>
-                                                        <li>Leaves skin with a well-being sensation</li>
-                                                        <li>Beautifies beard</li>
-                                                        <li>Incredibly invigorates</li>
-                                                        <li>Offers radiance</li>
-                                                        <li>Doesn't leave residu</li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">How to use</th>
-                                                <td>
-                                                    <ul>
-                                                        <li>Apply 1-2 drops in your hands</li>
-                                                        <li>Work through beard or face</li>
-                                                        <li>For maximal shine, reapply</li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Tips for a perfect beard</th>
+                            <div class="modal fade" id="HairBoosterInfo" role="dialog">
+                                <div class="modal-dialog modal-xl">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-7">
+                                                        <h2>Nioxin</h2>
+                                                        <table class="table">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th scope="row">Brand</th>
+                                                                    <td>Nioxin</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">Price</th>
+                                                                    <td>46$</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">Content</th>
+                                                                    <td>
+                                                                        <ul>
+                                                                            <li>Hair Booster 3.4oz</li>
+                                                                        </ul>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">Features</th>
+                                                                    <td>
+                                                                        <ul>
+                                                                            <li>Stimulates zones touched by hair loss.</li>
+                                                                            <li>Stimulates fragilized hair.</li>
+                                                                            <li>Concentrated formula.</li>
+                                                                            <li>Targets hairline or crown.</li>
+                                                                            <li>Completes your Nioxin 3 part system.</li>
+                                                                        </ul>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">How to use</th>
+                                                                    <td>
+                                                                        <ul>
+                                                                            <li>Use twice a day, morning and evening.</li>
+                                                                            <li>Apply before Scalp Treatment</li>
+                                                                            <li>May cause redness du to the vitamin formula.</li>
+                                                                        </ul>
+                                                                    </td>
+                                                                </tr>
 
-                                                <td>
-                                                    <ul>
-                                                        <li>Before shaving, wash your face to remove the impurities</li>
-                                                        <li>Use a quality shaving cream appropriate for your skin</li>
-                                                        <li>After shaving,rinse with cold water to reduce the inflammation</li>
-                                                        <li>Apply a small amount of after-shave for a natural fragrance</li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="col-5">
-                                    <img src="./Images/clubman-beard-and-tattoo-oil.jpg" class="card-img-top img-fluid" alt="...">
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <div class="col-5">
+                                                        <img src="./Images/hair-booster.jpg" class="card-img-top img-fluid" alt="...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="modal fade" id="BeardBalmInfo" role="dialog">
-            <div class="modal-dialog modal-xl">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-7">
-                                    <h2>Beard Balm</h2>
-                                    <table class="table">
-                                        <tbody>
-                                            <tr>
-                                                <th scope="row" class="w-25">Brand</th>
-                                                <td>Clubman</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Price</th>
-                                                <td>11$</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Content</th>
-                                                <td>
-                                                    <ul>
-                                                        <li>Conditioning style wax 2oz</li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Features</th>
-                                                <td>
-                                                    <ul>
-                                                        <li>Controls frizz</li>
-                                                        <li>For a finished look</li>
-                                                        <li>Offers incredible control</li>
-                                                        <li>Disciplines rebel hairs</li>
-                                                        <li>Lighweight formula</li>
-                                                        <li>Doesn't leave a stiff texture or oily residu</li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">How to use</th>
-                                                <td>
-                                                    <ul>
-                                                        <li>Apply a small quantity in hands</li>
-                                                        <li>Work evenly in beard</li>
-                                                        <li>Do not rinse</li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Tips for a perfect beard</th>
-                                                <td>
-                                                    <ul>
-                                                        <li>Before shaving, wash your face to remove the impurities</li>
-                                                        <li>Use a quality shaving cream appropriate for your skin</li>
-                                                        <li>After shaving, rinse with cold water to reduce the inflammation</li>
-                                                        <li>Apply a small amount of after-shave for a natural fragrance</li>
-                                                    </ul>
-                                                </td>
+                            <div class="modal fade" id="TwoforOneBeardInfo" role="dialog">
+                                <div class="modal-dialog modal-xl">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-7">
+                                                        <h2>2 in 1 Beard Conditioner</h2>
+                                                        <table class="table">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th scope="row" class="w-25">Brand</th>
+                                                                    <td>Clubman</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">Price</th>
+                                                                    <td>11$</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">Content</th>
+                                                                    <td>
+                                                                        <ul>
+                                                                            <li>Beard Conditioner 3oz</li>
+                                                                        </ul>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">Features</th>
+                                                                    <td>
+                                                                        <ul>
+                                                                            <li>Controls frizz</li>
+                                                                            <li>Prevents skin from flaking</li>
+                                                                            <li>Discplines unmanageable hair</li>
+                                                                            <li>Invigorates beard and face</li>
+                                                                            <li>Versatile and lightweight formula</li>
+                                                                        </ul>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">How to use</th>
+                                                                    <td>
+                                                                        <ul>
+                                                                            <li>Apply a small quantity in your hands</li>
+                                                                            <li>Spread evenly on face</li>
+                                                                            <li>Work through beard</li>
+                                                                            <li>Do not rinse</li>
+                                                                            <li>If needed, reapply</li>
+                                                                        </ul>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">Tips for a perfect beard</th>
 
-                                            </tr>
+                                                                    <td>
+                                                                        <ul>
+                                                                            <li>Before shaving, wash your face to remove the impurities</li>
+                                                                            <li>Use a quality shaving cream appropriate for your skin</li>
+                                                                            <li>After shaving, rinse with cold water to reduce the inflammation</li>
+                                                                            <li>Apply a small amount of after-shave for a natural fragrance</li>
+                                                                        </ul>
+                                                                    </td>
+                                                                </tr>
 
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="col-5">
-                                    <img src="./Images/clubman-beard-balm-cond.jpg" class="card-img-top img-fluid" alt="...">
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <div class="col-5">
+                                                        <img src="./Images/clubman-2-in-1-beard-cond.jpg" class="card-img-top img-fluid" alt="...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+                            <div class="modal fade" id="BeardTattooInfo" role="dialog">
+                                <div class="modal-dialog modal-xl">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-7">
+                                                        <h2>Beard Tattoo</h2>
+                                                        <table class="table">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th scope="row" class="w-25">Brand</th>
+                                                                    <td>Clubman</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">Price</th>
+                                                                    <td>11$</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">Content</th>
+                                                                    <td>
+                                                                        <ul>
+                                                                            <li>Beard and Tattoo oil 1oz</li>
+                                                                        </ul>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">Features</th>
+                                                                    <td>
+                                                                        <ul>
+                                                                            <li>Moisturizes dry skin</li>
+                                                                            <li>Leaves skin with a well-being sensation</li>
+                                                                            <li>Beautifies beard</li>
+                                                                            <li>Incredibly invigorates</li>
+                                                                            <li>Offers radiance</li>
+                                                                            <li>Doesn't leave residu</li>
+                                                                        </ul>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">How to use</th>
+                                                                    <td>
+                                                                        <ul>
+                                                                            <li>Apply 1-2 drops in your hands</li>
+                                                                            <li>Work through beard or face</li>
+                                                                            <li>For maximal shine, reapply</li>
+                                                                        </ul>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">Tips for a perfect beard</th>
+
+                                                                    <td>
+                                                                        <ul>
+                                                                            <li>Before shaving, wash your face to remove the impurities</li>
+                                                                            <li>Use a quality shaving cream appropriate for your skin</li>
+                                                                            <li>After shaving,rinse with cold water to reduce the inflammation</li>
+                                                                            <li>Apply a small amount of after-shave for a natural fragrance</li>
+                                                                        </ul>
+                                                                    </td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <div class="col-5">
+                                                        <img src="./Images/clubman-beard-and-tattoo-oil.jpg" class="card-img-top img-fluid" alt="...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal fade" id="BeardBalmInfo" role="dialog">
+                                <div class="modal-dialog modal-xl">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-7">
+                                                        <h2>Beard Balm</h2>
+                                                        <table class="table">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th scope="row" class="w-25">Brand</th>
+                                                                    <td>Clubman</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">Price</th>
+                                                                    <td>11$</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">Content</th>
+                                                                    <td>
+                                                                        <ul>
+                                                                            <li>Conditioning style wax 2oz</li>
+                                                                        </ul>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">Features</th>
+                                                                    <td>
+                                                                        <ul>
+                                                                            <li>Controls frizz</li>
+                                                                            <li>For a finished look</li>
+                                                                            <li>Offers incredible control</li>
+                                                                            <li>Disciplines rebel hairs</li>
+                                                                            <li>Lighweight formula</li>
+                                                                            <li>Doesn't leave a stiff texture or oily residu</li>
+                                                                        </ul>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">How to use</th>
+                                                                    <td>
+                                                                        <ul>
+                                                                            <li>Apply a small quantity in hands</li>
+                                                                            <li>Work evenly in beard</li>
+                                                                            <li>Do not rinse</li>
+                                                                        </ul>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">Tips for a perfect beard</th>
+                                                                    <td>
+                                                                        <ul>
+                                                                            <li>Before shaving, wash your face to remove the impurities</li>
+                                                                            <li>Use a quality shaving cream appropriate for your skin</li>
+                                                                            <li>After shaving, rinse with cold water to reduce the inflammation</li>
+                                                                            <li>Apply a small amount of after-shave for a natural fragrance</li>
+                                                                        </ul>
+                                                                    </td>
+
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <div class="col-5">
+                                                        <img src="./Images/clubman-beard-balm-cond.jpg" class="card-img-top img-fluid" alt="...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
 </body>
 
