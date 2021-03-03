@@ -15,6 +15,7 @@ labs links:
 * lab 2: https://milenadionne.github.io/lab2_seg3125/
 * lab 3: https://milenadionne.github.io/lab3_seg3125/
 * lab 4: https://milenadionne.github.io/lab4_seg3125/
+* lab 5: https://milenadionne.github.io/lab4_seg3125/
 
 Lab3 image credits:
 - apples:https://bluecure.org/foodpage/apples/
@@ -31,7 +32,7 @@ Lab3 image credits:
 - steak:https://www.purina.com/articles/dog/nutrition/can-dogs-eat-raw-meat
 - Cute_Logo: Ben Rizk
 
-Lab4 image credits:
+Lab4 and Lab5 image credits:
 - Decoration_Pic: Ben Rizk
 - Barber1:https://www.shutterstock.com/photos
 - Barber2:https://www.shutterstock.com/photos
