@@ -14,6 +14,8 @@ labs links:
 * lab 1: https://milenadionne.github.io/lab1_seg3125/
 * lab 2: https://milenadionne.github.io/lab2_seg3125/
 * lab 3: https://milenadionne.github.io/lab3_seg3125/
+* lab 4: https://milenadionne.github.io/lab4_seg3125/
+* lab 5: https://milenadionne.github.io/lab4_seg3125/
 
 Lab3 image credits:
 - apples:https://bluecure.org/foodpage/apples/
@@ -29,6 +31,8 @@ Lab3 image credits:
 - salmon:https://www.freepik.com/free-photo/raw-salmon-meat_3568678.htm
 - steak:https://www.purina.com/articles/dog/nutrition/can-dogs-eat-raw-meat
 - Cute_Logo: Ben Rizk
+
+Lab4 and Lab5 image credits:
 - Decoration_Pic: Ben Rizk
 - Barber1:https://www.shutterstock.com/photos
 - Barber2:https://www.shutterstock.com/photos
@@ -45,6 +49,6 @@ Lab3 image credits:
 - Tea Tree : https://www.matandmax.com/ca-en/products/hair-care/bundles/duos/paul-mitchell-tea-tree-tea-tree-duo-33-8oz.html
 - Invigo : https://www.matandmax.com/ca-en/products/hair-care/bundles/duos/wella-invigo-brilliance-fine-normal-duo-33-8oz.html
 - Hair Booster : https://www.matandmax.com/ca-en/products/hair-care/hair-loss/hair-care/nioxin-hair-booster-3-4oz.html
-
+- Main_Page : https://images.squarespace-cdn.com/content/v1/5e4ccbf4767d493566246e62/1608175953694-NTXA05HGMF0XO0V36DSB/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/Main-Page.jpg?format=2500w
 
 
