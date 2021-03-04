@@ -173,23 +173,139 @@
                 </div>
                 <div id="collapseService" class="collapse show">
                     <div class="card-body">
-                        <br>
                         <div>
-                            <label for="serviceform">What would you like to do?</label>
-                            <br>
-                            <select class="custom-select" name="serviceform" id="serviceform">
-                            <option value="boys0-12">Boys Cut (Age 0-12) - $19.00</option>
-                            <option value="girls0-12">Girls Cut (Age 0-12) - $22.00</option>
-                            <option value="boysshampoo">Boys Cut + shampoo (Age 0-12) - $29.00</option>
-                            <option value="girlsshampoo">Girls Cut + shampoo(Age 0-12) - $32.00</option>
-                            <option value="mensbuzz">Buzzcut - $17.00</option>
-                            <option value="cleanup">Beard & Neck Trim - $18.00</option>
-                            <option value="menscut">Mens Cut & Style - $30.00</option>
-                            <option value="womenstrim">Bang Trim - $9.00</option>
-                            <option value="womensconsult">Hair consultation - $0.00</option>
-                            <option value="womenscut">Ladies Cut & Style - $44.00</option>
-                            <option value="permenent">Permanent - $70.00</option>
-                        </select>
+                            <p>Check out our hairstyles and pick one that suits you!</p>
+                            <ul class="nav nav-tabs" role="tablist">
+                              <li class="nav-item"><a data-toggle="tab" class="nav-link active" href="#womensstyles">Women's</a></li>
+                              <li class="nav-item"><a data-toggle="tab" class="nav-link" href="#mensstyles">Men's</a></li>
+                              <li class="nav-item"><a data-toggle="tab" class="nav-link" href="#kidsstyles">Kids'</a></li>
+                            </ul>
+
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active" id="womensstyles">
+                                 <div class="card-deck">
+                                    <div class="card" style="width:300px">
+                                        <img class="card-img-top" src="Images/bangtrim.jpg" alt="Bang trim image" style="width:100%">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Bang trim</h4>
+                                            <p class="card-text">$9.00</p>
+                                            <a href="womensstyles" class="btn btn-dark">Select</a>
+                                            
+                                        </div>
+                                    </div>
+
+                                    <div class="card" style="width:300px">
+                                        <img class="card-img-top" src="Images/ladiescut.jpg" alt="Ladies cut image" style="width:100%">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Ladies cut & style</h4>
+                                            <p class="card-text">$44.00</p>
+                                            <a href="womensstyles" class="btn btn-dark">Select</a>
+                                            
+                                        </div>
+                                    </div>
+
+                                    <div class="card" style="width:300px">
+                                        <img class="card-img-top" src="Images/perm.jpg" alt="Perm image" style="width:100%">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Permanent</h4>
+                                            <p class="card-text">$72.00</p>
+                                            <a href="womensstyles" class="btn btn-dark">Select</a>
+                                            
+                                        </div>
+                                    </div>
+
+                                    <div class="card" style="width:300px">
+                                        <img class="card-img-top" src="Images/consult.jpg" alt="Hair consultation" style="width:100%">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Hair consultation</h4>
+                                            <p class="card-text">FREE!</p>
+                                            <a href="womensstyles" class="btn btn-dark">Select</a>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="mensstyles">
+                                <div class="card-deck">
+                                    <div class="card" style="width:300px">
+                                        <img class="card-img-top" src="Images/buzzcut.jpg" alt="Buzzcu image" style="width:100%">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Buzzcut</h4>
+                                            <p class="card-text">$17.00</p>
+                                            <a href="mensstyles" class="btn btn-dark">Select</a>
+                                            
+                                        </div>
+                                    </div>
+
+                                    <div class="card" style="width:300px">
+                                        <img class="card-img-top" src="Images/menscut.jpg" alt="Mens cut image" style="width:100%">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Mens cut & style</h4>
+                                            <p class="card-text">$30.00</p>
+                                            <a href="mensstyles" class="btn btn-dark">Select</a>
+                                            
+                                        </div>
+                                    </div>
+
+                                    <div class="card" style="width:300px">
+                                        <img class="card-img-top" src="Images/beardtrim.jpg" alt="Beard trim image" style="width:100%">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Beard & neck trim</h4>
+                                            <p class="card-text">$18.00</p>
+                                            <a href="mensstyles" class="btn btn-dark">Select</a>
+                                            
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+
+                            <div class="tab-pane fade" id="kidsstyles">
+                                <div class="card-deck">
+                                    <div class="card" style="width:300px">
+                                        <img class="card-img-top" src="Images/boyscut.jpg" alt="Boys cut image" style="width:100%">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Boys cut</h4>
+                                            <p class="card-text">$19.00</p>
+                                            <a href="mensstyles" class="btn btn-dark">Select</a>
+                                            
+                                        </div>
+                                    </div>
+
+                                    <div class="card" style="width:300px">
+                                        <img class="card-img-top" src="Images/boysshampoo.jpg" alt="Boys shampoo image" style="width:100%">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Boys cut + shampoo</h4>
+                                            <p class="card-text">$29.00</p>
+                                            <a href="mensstyles" class="btn btn-dark">Select</a>
+                                            
+                                        </div>
+                                    </div>
+
+                                    <div class="card" style="width:300px">
+                                        <img class="card-img-top" src="Images/girlshaircut.png" alt="Girls cut image" style="width:100%">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Girls cut</h4>
+                                            <p class="card-text">$22.00</p>
+                                            <a href="mensstyles" class="btn btn-dark">Select</a>
+                                            
+                                        </div>
+                                    </div>
+
+                                    <div class="card" style="width:300px">
+                                        <img class="card-img-top" src="Images/girlsshampoo.jpg" alt="Girls shampoo image" style="width:100%">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Girls cut + shampoo</h4>
+                                            <p class="card-text">$32.00</p>
+                                            <a href="mensstyles" class="btn btn-dark">Select</a>
+                                            
+                                        </div>
+                                    </div>
+                            </div>
+                            </div>
+                        </div>
+
+                            
                         </div>
                         <br>
                         <a class=" btn btn-dark card-link " data-toggle="collapse" href="#collapseDate">Next Step</a>
