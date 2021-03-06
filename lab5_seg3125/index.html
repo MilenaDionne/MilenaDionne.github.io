@@ -21,6 +21,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="./scripts/main.js"></script>
 
     <!-- Your own additional style sheet -->
     <link href="styles/style.css" rel="stylesheet" type="text/css">
@@ -565,13 +566,57 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="card">
+                        <div class="card-header card-link gold-theme" data-toggle="collapse" href="#collapsePaymentInfo">Step 5: Enter payment information</div>
+                        <div class="card-body">
+                            <p>Please provide you credit card information</p>
+
+                            <!-- https://getbootstrap.com/docs/4.0/examples/checkout/ -->
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="cc-name">Name on card</label>
+                                    <input type="text" class="form-control" id="cc-name" placeholder="" required="">
+                                    <small class="text-muted">Full name as displayed on card</small>
+                                    <div class="invalid-feedback">
+                                        Name on card is required
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="cc-number">Credit card number</label>
+                                    <input type="text" class="form-control" id="cc-number" placeholder="" required data-toggle="tooltip" data-placement="bottom" title="16 digits on the front">
+                                    <div class="invalid-feedback">
+                                        Credit card number is required
+                                    </div>
+                                </div>
+                                <div class="row ml-0">
+                                    <div class="col-md-3 mb-3">
+                                        <label for="cc-expiration">Expiration</label>
+                                        <input type="text" class="form-control" id="cc-expiration" placeholder="MM/YY" required data-toggle="tooltip" data-placement="bottom" title="Month/Year">
+                                        <div class="invalid-feedback">
+                                            Expiration date required
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 mb-3">
+                                        <label for="cc-expiration">CVV</label>
+                                        <input type="text" class="form-control" id="cc-cvv" placeholder="123" required data-toggle="tooltip" data-placement="bottom" title="3 digits on the back">
+                                        <div class="invalid-feedback">
+                                            Security code required
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Presenting the staff with cards: https://www.w3schools.com/bootstrap4/bootstrap_cards.asp -->
                 <!-- Card columns allows multiple cards next to each other -->
-                <!-- The first card's button doesn't go anywhere, it could be a modal -->
+                <!-- The first card's button doesn 't go anywhere, it could be a modal -->
                 <!-- My second card limits the information seen and uses collapsible to show more -->
-                <div class="container p-3" id='Hairdressers'>
+                <div class="container p-3" id='Hairdressers '>
                     <h2>Our Hairdressers</h2>
                     <div class="card-deck">
                         <div class="card" style="width:300px">
@@ -641,7 +686,7 @@
                 <!-- A different approach would be to make the whole staff information collapsible -->
                 <!-- Here a block button (taking the full width) opens/closes the collapsible -->
                 <!-- Here a single card is used, but card columns could be used -->
-                <div class="container text-center" id='StoreInfo'>
+                <div class="container text-center" id='StoreInfo '>
                     <div class="card">
                         <h2>Store Info</h2>
                         <p>
@@ -1135,5 +1180,7 @@
 
         </div>
 </body>
+<script src="./scripts/main.js"></script>
+
 
 </html>
