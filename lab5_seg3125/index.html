@@ -28,26 +28,29 @@
 </head>
 
 
-<body>
-
-
+<body data-spy="scroll" data-target="#myScrollspy" data-offset="1">
 
     <!-- Code for scrollspy provided by: https://www.w3schools.com/bootstrap4/bootstrap_scrollspy.asp-->
     <div class="contain-fluid">
+        <div>
+            <p class="position-fixed" style="font-size: 30px; color:white; background-color:#4b5359; width:250px; border-radius:5px">Directory </p>
+        </div>
+        <br>
+        <br>
         <div class="row">
             <nav class="col-sm-3 col-4 ml-lg-5" id="myScrollspy">
                 <ul class="nav nav-pills flex-column position-fixed">
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="#HomeSection">Welcome</a>
+                        <a class="nav-link active" href="#HomeSection">Welcome</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="#Appointment">Make Appointment</a>
+                        <a class="nav-link" href="#Appointment">Make Appointment</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="#Hairdressers">Our Hairdressers</a>
+                        <a class="nav-link" href="#Hairdressers">Our Hairdressers</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="#StoreInfo">Store Info</a>
+                        <a class="nav-link" href="#StoreInfo">Store Info</a>
                     </li>
                 </ul>
             </nav>
@@ -98,8 +101,8 @@
                 </div>
 
                 <div class="col-sm">
-                    <img src="Images/Shopping.PNG" class="img-fluid rounded" alt="Responsive image" style="width: 450px; height: 200px" />
-                    <button type="button" class="btn btn-dark btn-block" onclick="document.getElementById('Products').scrollIntoView()">Start shopping</button>
+                    <img src="Images/Storefront.PNG" class="img-fluid rounded" alt="Responsive image" style="width: 450px; height: 200px" />
+                    <button type="button" class="btn btn-dark btn-block" onclick="document.getElementById('Store Info').scrollIntoView()">Learn more about us</button>
                 </div>
                 <div class="col-sm">
                     <img src="Images/intro.PNG" class="img-fluid rounded" alt="Responsive image" style="width: 450px; height: 200px" />
@@ -619,7 +622,7 @@
                     <!-- Card columns allows multiple cards next to each other -->
                     <!-- The first card's button doesn 't go anywhere, it could be a modal -->
                     <!-- My second card limits the information seen and uses collapsible to show more -->
-                    <div class="container p-3" id='Hairdressers '>
+                    <div class="container p-3" id='Hairdressers'>
                         <h2>Our Hairdressers</h2>
                         <div class="card-deck">
                             <div class="card" style="width:300px">
@@ -659,7 +662,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="container">
+                    <div class="container" style="margin-left: 570px">
                         <div class="card-columns">
                             <div class="card" style="width:300px">
                                 <img class="card-img-top" src="Images/Barber4.PNG" alt="Card image" style="width:100%">
@@ -689,7 +692,7 @@
                     <!-- A different approach would be to make the whole staff information collapsible -->
                     <!-- Here a block button (taking the full width) opens/closes the collapsible -->
                     <!-- Here a single card is used, but card columns could be used -->
-                    <div class="container text-center" id='StoreInfo '>
+                    <div class="container text-center" id='Store Info'>
                         <div class="card">
                             <h2>Store Info</h2>
                             <p>
@@ -1182,7 +1185,7 @@
                 </div>
 
             </div>
-</body>
+</bodydata-spy="scroll">
 <script src="./scripts/main.js"></script>
 
 
