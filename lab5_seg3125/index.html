@@ -21,7 +21,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="./scripts/main.js"></script>
 
     <!-- Your own additional style sheet -->
     <link href="styles/style.css" rel="stylesheet" type="text/css">
@@ -562,32 +561,32 @@
                         </div>
                     </div>
 
-                    <div class="card">
-                        <div class="card-header card-link gold-theme" data-toggle="collapse" href="#collapsePaymentInfo">Step 5: Enter payment information</div>
-                        <div id="collapsePaymentInfo" class="collapse">
-                        <div class="card-body">
-                            <p>Please provide you credit card information</p>
-                            <form>
-                            <!-- https://getbootstrap.com/docs/4.0/examples/checkout/ -->
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="cc-name">Name on card</label>
-                                    <input type="text" class="form-control" id="cc-name" placeholder="" required="">
-                                    <small class="text-muted">Full name as displayed on card</small>
-                                    <div class="invalid-feedback">
-                                        Name on card is required
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label for="cc-number">Credit card number</label>
-                                    <input type="text" class="form-control" id="cc-number" placeholder="" required data-toggle="tooltip" data-placement="bottom" title="16 digits on the front">
-                                    <div class="invalid-feedback">
-                                        Credit card number is required
-                                    </div>
-                                </div>
-
-
+            <div class="card">
+                <div class="card-header card-link gold-theme" data-toggle="collapse" href="#collapsePaymentInfo">Step 5: Enter payment information</div>
+                <div id="collapsePaymentInfo" class="">
+                <div class="card-body">
+                    <p>Please provide you credit card information</p>
+                    <form>
+                    <!-- https://getbootstrap.com/docs/4.0/examples/checkout/ -->
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="cc-name">Name on card</label>
+                            <input type="text" class="form-control" id="cc-name" placeholder="" required="">
+                            <small class="text-muted">Full name as displayed on card</small>
+                            <div class="invalid-feedback">
+                                Name on card is required
                             </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="cc-number">Credit card number</label>
+                            <input type="text" class="form-control" id="cc-number" required data-toggle="tooltip" data-placement="bottom" title="16 digits, no spaces"  maxlength="16">
+                            <div class="invalid-feedback">
+                                Credit card number is required
+                            </div>
+                        </div>
+
+
+                    </div>
                             <div class="row">
                                 <div class="col-md-3 mb-3">
                                     <label for="cc-expiration">Expiration</label>
