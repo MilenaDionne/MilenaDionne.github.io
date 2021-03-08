@@ -20,3 +20,7 @@ h1 {
     font-size: medium;
     color: white;
 }
+
+.border-3 {
+    border-width: 3px !important;
+}
