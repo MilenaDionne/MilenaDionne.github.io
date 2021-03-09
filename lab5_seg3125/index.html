@@ -1,4 +1,4 @@
-﻿<!-- This file contains many elements adapted from the online tutoral -->
+<!-- This file contains many elements adapted from the online tutoral -->
 <!-- on Bootstrap 4 as found here: https://www.w3schools.com/bootstrap4/default.asp -->
 
 <!-- Images source: -->
@@ -26,6 +26,12 @@
     <link href="styles/style.css" rel="stylesheet" type="text/css">
 </head>
 
+    <!-- Datepicker libraries-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smalot-bootstrap-datetimepicker/2.4.4/js/bootstrap-datetimepicker.min.js" integrity="sha512-4lTnmq2kNbykTiOPulgEvxRgqegB5/YMhMqaBWvxji/9wRgR9W/TSGF51/mIG1hQ6janxTojpr41y5/gaW9LRA==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/smalot-bootstrap-datetimepicker/2.4.4/css/bootstrap-datetimepicker.min.css" integrity="sha512-m9g5oqvMhf2FsilNZqftBnOR1GW+dJpb1a8RN+R3Aw1dVI2AeDfpSOa9Sm48xMacONC1vJlM2iIadPy4uLEC4Q==" crossorigin="anonymous" />
+    
 
 <body data-spy="scroll" data-target="#myScrollspy" data-offset="1">
 
@@ -331,23 +337,31 @@
                         <!-- Bootstrap has various input components. Some examples are given here: -->
                         <!-- Component shown here: https://v4-alpha.getbootstrap.com/components/forms/#textual-inputs -->
                         <p>Please select a day and time you would like to come in.</p>
-                        <div class="form-group">
-                            <label for="example-date-input" class="col-2 col-form-label">Date</label>
-                            <div class="col-10">
-                                <input class="form-control" type="date" placeholder="2021-03-10" id="example-date-input">
-                            </div>
-                        </div>
 
-                        <div class="form-group">
-                            <label for="example-time-input" class="col-2 col-form-label">Time</label>
-                            <div class="col-10">
-                                <input class="form-control" type="time" placeholder="13:45:00" id="example-time-input">
-                            </div>
-                        </div>
+
+
+                        <div class="input-append date " id="datetimepicker" data-date="2021-03-17 00:00" data-date-format="yyyy-mm-dd hh:ii">
+                            <input class="span2" size="16" type="text" value="2021-03-17 00:00">
+                            <span class="add-on"><i class="icon-remove"></i></span>
+                            <span class="add-on"><i class="icon-th"></i></span>
+                        </div>      
+
+
+
+                        <br>
                         <a class="btn btn-dark card-link " data-toggle="collapse" href="#collapseStylist">Next Step</a>
                     </div>
                 </div>
             </div>
+
+
+            <script type="text/javascript">
+                $('#datetimepicker').datetimepicker('setDaysOfWeekDisabled', [0,6]);
+                $('#datetimepicker').datetimepicker('setStartDate', '2021-03-01');
+                
+            </script>
+
+
             <div class="card">
                 <div class="card-header">
                     <a class="collapsed card-link gold-theme" data-toggle="collapse" href="#collapseStylist">Step 3: Select a stylists</a>
