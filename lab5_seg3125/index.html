@@ -569,20 +569,19 @@
                 <div id="collapsePaymentInfo" class="">
                 <div class="card-body">
                     <p>Please provide you credit card information</p>
-                    <form>
+                    <form class="needs-validation" id="cc-form" novalidate>
                     <!-- https://getbootstrap.com/docs/4.0/examples/checkout/ -->
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="cc-name">Name on card</label>
-                            <input type="text" class="form-control" id="cc-name" placeholder="" required="" data-toggle="tooltip" data-placement="bottom" title="Letters only are accepted">
-                            <small class="text-muted">Full name as displayed on card</small>
+                            <input type="text" data-valid="valid" class="form-control ui-icon ui-icon-circle-check" id="cc-name"  required data-toggle="tooltip" data-placement="bottom" title="Full name as displayed on card">
                             <div class="invalid-feedback">
                                 Name on card is required
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="cc-number">Credit card number</label>
-                            <input type="tel" class="form-control" id="cc-number" maxlength="16">
+                            <input type="tel" class="form-control" id="cc-number" placeholder="0000000000000000" maxlength="16" data-toggle="tooltip" data-placement="bottom" title="Located on the front of your card">
                             <div class="invalid-feedback">
                                 Credit card number is required
                             </div>
@@ -593,14 +592,14 @@
                             <div class="row">
                                 <div class="col-md-3 mb-3">
                                     <label for="cc-expiration">Expiration</label>
-                                    <input type="text" class="form-control" id="cc-expiration" placeholder="MM/YY" required>
+                                    <input type="text" class="form-control" id="cc-expiration" placeholder="MM/YY" required maxlength="5">
                                     <div class="invalid-feedback">
                                         Expiration date required
                                     </div>
                                 </div>
                                 <div class="col-md-3 mb-3">
                                     <label for="cc-expiration">CVV</label>
-                                    <input type="tel" class="form-control" id="cc-cvv" placeholder="123" required maxlength="3">
+                                    <input type="tel" class="form-control" id="cc-cvv" placeholder="123" required maxlength="3" data-toggle="tooltip" data-placement="bottom" title="Located on the back of your card">
                                     <div class="invalid-feedback">
                                         Security code required
                                     </div>
@@ -608,7 +607,7 @@
                             </div>
 
                             <div class="row col-md-3 mb-3">
-                                <button class="btn btn-dark" type="submit">Complete appointment</button>
+                                <button class="btn btn-dark" disabled type="submit" id="cc-completed">Complete appointment</button>
                                     </div>
                                     </form>
                                 </div>
@@ -616,7 +615,6 @@
                             </div>
                         </div>
                     </div>
-
                     <!-- Presenting the staff with cards: https://www.w3schools.com/bootstrap4/bootstrap_cards.asp -->
                     <!-- Card columns allows multiple cards next to each other -->
                     <!-- The first card's button doesn 't go anywhere, it could be a modal -->
@@ -1184,8 +1182,8 @@
                 </div>
 
             </div>
-</bodydata-spy="scroll">
-<script src="./scripts/main.js"></script>
+            </bodydata-spy="scroll">
+            <script src="./scripts/main.js"></script>
 
 
 </html>
