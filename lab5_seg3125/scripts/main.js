@@ -26,6 +26,16 @@ var appointment = {
     time: null
 }
 
+
+var products_prices = {
+    'Tea Tree': 56,
+    'Invigo': 45,
+    'Hair Booster': 46,
+    '2 in 1 Beard Conditioner': 11,
+    'Beard and Tattoo oil': 11,
+    'Beard Balm': 11
+}
+
 //Validates the input with a regex
 //Adjust the tooltip with the validation
 jQuery.cc_validator = function(id, regex, invalid_message) {
@@ -154,6 +164,22 @@ $('.hairdresser').click(function() {
     $('#next2').removeClass('disabled');
 })
 
+
+$('.product').click(function() {
+
+    if ($(this).text() == 'Remove product') {
+        $(this).text('Buy product');
+        $(this).removeClass('btn-light').addClass('btn-dark')
+        appointment['products'].splice(appointment['products'].findIndex(function(prod) { prod == $(this).prev().prev().prev().text() }), 1);
+
+    } else {
+        //Really not pretty, but didnt find a better way, but I know there is
+        appointment['products'].push($(this).prev().prev().prev().text());
+        console.log(appointment['products'])
+        $(this).text('Remove product');
+        $(this).removeClass('btn-dark').addClass('btn-light')
+    }
+});
 
 $('#datetimepicker').datetimepicker('setDaysOfWeekDisabled', [0, 6]);
 $('#datetimepicker').datetimepicker('setStartDate', '2021-03-01');

@@ -37,3 +37,7 @@ h1 {
 .card-img-top {
     height: 15em;
 }
+
+.m-tab {
+    margin-bottom: 2rem!important;
+}
