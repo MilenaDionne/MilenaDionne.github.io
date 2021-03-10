@@ -61,15 +61,22 @@ jQuery.cc_name_validator = function(id) {
     $(id).val(text_replace)
 }
 
-//user information
+
+
+//User information
+
 //Name
 $('#stp5-name').on('input', function () { jQuery.cc_name_validator('#stp5-name') });
 $('#stp5-name').on('input', function () { jQuery.cc_validator('#stp5-name', "[a]|[^a]", 'Only letters, spaces, dashes (-) and apostrophes (\')') });
 
+//phone number
 $('#stp5-phoneN').on('input', function () { jQuery.only_numbers('#stp5-phoneN') })
-$('#stp5-phoneN').on('input', function () { jQuery.cc_validator('#stp5-phoneN', '[0-9]{15}', 'Requires 10 digits, no spaces') });
+$('#stp5-phoneN').on('input', function () { jQuery.cc_validator('#stp5-phoneN', '[0-9]{9}', 'Requires 10 digits, no spaces') });
 
-//payment information
+//email this step was done with the help of a portion of code from: https://stackoverflow.com/questions/2507030/email-validation-using-jquery
+$('#stp5-email').on('input', function () { jQuery.cc_validator('#stp5-email', "^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$", 'This is not a valid email') }); 
+
+//Payment information
 //Name
 $('#cc-name').on('input', function() { jQuery.cc_name_validator('#cc-name') });
 $('#cc-name').on('input', function() { jQuery.cc_validator('#cc-name', "[a]|[^a]", 'Only letters, spaces, dashes (-) and apostrophes (\')') });
