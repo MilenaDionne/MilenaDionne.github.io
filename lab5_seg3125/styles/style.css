@@ -33,3 +33,7 @@ h1 {
 .nav-pills .nav-link {
     color: rgb(167, 107, 29);
 }
+
+.card-img-top {
+    height: 15em;
+}

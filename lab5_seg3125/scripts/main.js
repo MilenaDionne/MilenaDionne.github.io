@@ -8,11 +8,22 @@ jQuery.validator = function(regex, str) {
     var reg = new RegExp(regex)
     return reg.test(str)
 }
-var cc_validation = {
-    '#cc-number': false,
-    '#cc-cvv': false,
-    '#cc-name': false,
-    '#cc-expiration': false
+var appointment = {
+    cc: {
+        number: null,
+        cvv: null,
+        name: null,
+        expiration: null
+    },
+    service: null,
+    hairdresser: null,
+    info: {
+        name: null,
+        email: null,
+        phone: null
+    },
+    products: [],
+    time: null
 }
 
 //Validates the input with a regex
@@ -59,21 +70,22 @@ jQuery.only_numbers = function(id) {
 jQuery.cc_name_validator = function(id) {
     var text_replace = $(id).val().replace(/[^A-Za-z, ,--,']/g, '')
     $(id).val(text_replace)
+
 }
 
 
 
 
 //Name
-$('#stp5-name').on('input', function () { jQuery.cc_name_validator('#stp5-name') });
-$('#stp5-name').on('input', function () { jQuery.cc_validator('#stp5-name', "[a]|[^a]", 'Only letters, spaces, dashes (-) and apostrophes (\')') });
+$('#stp5-name').on('input', function() { jQuery.cc_name_validator('#stp5-name') });
+$('#stp5-name').on('input', function() { jQuery.cc_validator('#stp5-name', "[a]|[^a]", 'Only letters, spaces, dashes (-) and apostrophes (\')') });
 
 //phone number
-$('#stp5-phoneN').on('input', function () { jQuery.only_numbers('#stp5-phoneN') })
-$('#stp5-phoneN').on('input', function () { jQuery.cc_validator('#stp5-phoneN', '[0-9]{9}', 'Requires 10 digits, no spaces') });
+$('#stp5-phoneN').on('input', function() { jQuery.only_numbers('#stp5-phoneN') })
+$('#stp5-phoneN').on('input', function() { jQuery.cc_validator('#stp5-phoneN', '[0-9]{9}', 'Requires 10 digits, no spaces') });
 
 //email this step was done with the help of a portion of code from: https://stackoverflow.com/questions/2507030/email-validation-using-jquery
-$('#stp5-email').on('input', function () { jQuery.cc_validator('#stp5-email', "^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$", 'This is not a valid email') }); 
+$('#stp5-email').on('input', function() { jQuery.cc_validator('#stp5-email', "^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$", 'This is not a valid email') });
 
 //Payment information
 //Name
@@ -115,13 +127,22 @@ $('#cc-form').on('input', function() {
     $('#cc-completed').prop('disabled', enableButton);
 });
 
-function selectedItems(id) {
-    var c = document.getElementById('displayCart');
-    alert(id+" is selected");
-    c.appendChild(document.createTextNode("- " + id));
-    c.appendChild(document.createElement("br"));
-}
 
-function removeItems(){
+$('.service').click(function() {
+    appointment['service'] = $(this).val();
+    $('.service').map(function(_, val) {
+        $(val).parent().parent().removeClass(['border-3', 'border', 'border-dark'])
+    });
+    ($(this).parent().parent().addClass(['border-3', 'border', 'border-dark']))
+    $('#next1').removeClass('disabled')
+})
+
+
+
+
+function removeItems() {
     document.getElementById('displayCart').innerHTML = "";
 }
+
+$('#datetimepicker').datetimepicker('setDaysOfWeekDisabled', [0, 6]);
+$('#datetimepicker').datetimepicker('setStartDate', '2021-03-01');
