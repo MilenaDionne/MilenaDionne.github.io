@@ -137,6 +137,17 @@ $('.service').click(function() {
     $('#next1').removeClass('disabled')
 })
 
+$('.hairdresser').click(function() {
+    appointment['hairdresser'] = this.id;
+    $('.hairdresser').map(function(_, val) {
+        $(val).parent().parent().removeClass(['border-3', 'border', 'border-dark'])
+    });
+    console.log(appointment['hairdresser']);
+    ($(this).parent().parent().addClass(['border-3', 'border', 'border-dark']))
+    $('#next2').removeClass('disabled');
+})
+
+
 
 
 
