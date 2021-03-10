@@ -61,6 +61,15 @@ jQuery.cc_name_validator = function(id) {
     $(id).val(text_replace)
 }
 
+//user information
+//Name
+$('#stp5-name').on('input', function () { jQuery.cc_name_validator('#stp5-name') });
+$('#stp5-name').on('input', function () { jQuery.cc_validator('#stp5-name', "[a]|[^a]", 'Only letters, spaces, dashes (-) and apostrophes (\')') });
+
+$('#stp5-phoneN').on('input', function () { jQuery.only_numbers('#stp5-phoneN') })
+$('#stp5-phoneN').on('input', function () { jQuery.cc_validator('#stp5-phoneN', '[0-9]{15}', 'Requires 10 digits, no spaces') });
+
+//payment information
 //Name
 $('#cc-name').on('input', function() { jQuery.cc_name_validator('#cc-name') });
 $('#cc-name').on('input', function() { jQuery.cc_validator('#cc-name', "[a]|[^a]", 'Only letters, spaces, dashes (-) and apostrophes (\')') });
