@@ -21,6 +21,15 @@ h1 {
     color: white;
 }
 
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+    background-color: rgb(167, 107, 29);
+}
+
 .border-3 {
     border-width: 3px !important;
+}
+
+.nav-pills .nav-link {
+    color: rgb(167, 107, 29);
 }
