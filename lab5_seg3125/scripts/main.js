@@ -57,7 +57,9 @@ jQuery.cc_validator = function(id, regex, invalid_message) {
             $(id).after($('<small class="text-danger" id="' + id.replace('#', '') + '-small-red"></small>').text(invalid_message))
         }
     }
-    cc_validation[id] = isValid
+    var step = id.includes('#stp5-') ? 'info' : 'cc'
+    appointment[step][id.split('-')[1]] = $(id).val().length > 0 && isValid ? $(id).val() : null;
+    console.log(appointment)
     return expirationMonthValid
 }
 
@@ -81,8 +83,8 @@ $('#stp5-name').on('input', function() { jQuery.cc_name_validator('#stp5-name') 
 $('#stp5-name').on('input', function() { jQuery.cc_validator('#stp5-name', "[a]|[^a]", 'Only letters, spaces, dashes (-) and apostrophes (\')') });
 
 //phone number
-$('#stp5-phoneN').on('input', function() { jQuery.only_numbers('#stp5-phoneN') })
-$('#stp5-phoneN').on('input', function() { jQuery.cc_validator('#stp5-phoneN', '[0-9]{9}', 'Requires 10 digits, no spaces') });
+$('#stp5-phone').on('input', function() { jQuery.only_numbers('#stp5-phone') })
+$('#stp5-phone').on('input', function() { jQuery.cc_validator('#stp5-phone', '[0-9]{9}', 'Requires 10 digits, no spaces') });
 
 //email this step was done with the help of a portion of code from: https://stackoverflow.com/questions/2507030/email-validation-using-jquery
 $('#stp5-email').on('input', function() { jQuery.cc_validator('#stp5-email', "^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$", 'This is not a valid email') });
@@ -108,7 +110,6 @@ $('#cc-expiration').on('input', function(event) {
         $(this).val($(this).val().slice(0, 2) + '/' + $(this).val().slice(2))
     }
     var ex = jQuery.cc_validator('#cc-expiration', '[0-9]{1}/[0-9]{1}', 'Requires 4 digits, no spaces. MM/YY');
-    console.log(ex)
     if (!ex) {
         $('#cc-expiration').removeClass(['border', 'border-3', 'border-success'])
         $('#cc-expiration').addClass(['border', 'border-3', 'border-danger']);
@@ -121,10 +122,16 @@ $('#cc-expiration').on('input', function(event) {
 });
 
 $('#cc-form').on('input', function() {
-    var c = Object.values(cc_validation).filter(bool => bool == false)
-    console.log(c.length)
-    var enableButton = Object.values(cc_validation).filter(bool => bool == false).length != 0
+    var enableButton = Object.values(appointment['cc']).filter(bool => bool == null).length != 0;
     $('#cc-completed').prop('disabled', enableButton);
+});
+
+$('#collapseClientInfo').on('input', function() {
+    var enableButton = Object.values(appointment['info']).filter(bool => bool == null).length != 0;
+    $('#next3').removeClass('disabled')
+    if (enableButton) {
+        $('#next3').addClass('disabled');
+    }
 });
 
 
@@ -147,13 +154,6 @@ $('.hairdresser').click(function() {
     $('#next2').removeClass('disabled');
 })
 
-
-
-
-
-function removeItems() {
-    document.getElementById('displayCart').innerHTML = "";
-}
 
 $('#datetimepicker').datetimepicker('setDaysOfWeekDisabled', [0, 6]);
 $('#datetimepicker').datetimepicker('setStartDate', '2021-03-01');
