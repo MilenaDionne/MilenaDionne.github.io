@@ -63,7 +63,6 @@ jQuery.cc_name_validator = function(id) {
 
 
 
-//User information
 
 //Name
 $('#stp5-name').on('input', function () { jQuery.cc_name_validator('#stp5-name') });
@@ -115,3 +114,14 @@ $('#cc-form').on('input', function() {
     var enableButton = Object.values(cc_validation).filter(bool => bool == false).length != 0
     $('#cc-completed').prop('disabled', enableButton);
 });
+
+function selectedItems(id) {
+    var c = document.getElementById('displayCart');
+    alert(id+" is selected");
+    c.appendChild(document.createTextNode("- " + id));
+    c.appendChild(document.createElement("br"));
+}
+
+function removeItems(){
+    document.getElementById('displayCart').innerHTML = "";
+}
