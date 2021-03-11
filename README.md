@@ -15,7 +15,8 @@ labs links:
 * lab 2: https://milenadionne.github.io/lab2_seg3125/
 * lab 3: https://milenadionne.github.io/lab3_seg3125/
 * lab 4: https://milenadionne.github.io/lab4_seg3125/
-* lab 5: https://milenadionne.github.io/lab4_seg3125/
+* lab 5: https://milenadionne.github.io/lab5_seg3125/
+* lab 6: https://github.com/MilenaDionne/MilenaDionne.github.io/tree/master/lab6_seg3125
 
 Lab3 image credits:
 - apples:https://bluecure.org/foodpage/apples/
