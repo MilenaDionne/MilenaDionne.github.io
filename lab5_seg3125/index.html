@@ -202,7 +202,7 @@
                     <a class="card-link gold-theme" data-toggle="collapse" href="#collapseService">Step 1: Select a
                         service</a>
                 </div>
-                <div id="collapseService" class="collapse">
+                <div id="collapseService" class="collapse show">
                     <div class="card-body">
                         <div>
                             <p>Check out our hairstyles and pick one that suits you!</p>
@@ -436,7 +436,7 @@
 
 
                         <br>
-                        <a class="btn btn-dark card-link " data-toggle="collapse" href="#collapseStylist">Next Step</a>
+                        <a class="btn btn-dark card-link " data-toggle="collapse" href="#collapseProductstInfo">Next Step</a>
                     </div>
                 </div>
             </div>
@@ -446,7 +446,7 @@
                     <a class="collapsed card-link gold-theme" data-toggle="collapse" href="#collapseProductstInfo">Step
                         4: Buy separate products (optional)</a>
                 </div>
-                <div class="collapse show" id="collapseProductstInfo">
+                <div class="collapse " id="collapseProductstInfo">
                     <div class="card-body">
 
                         <div class="card-deck text-center justify-content-center">
@@ -634,7 +634,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div><a class="btn btn-dark card-link " data-toggle="collapse" href="#collapseCart">Next
+                        </div><a class="btn btn-dark card-link " data-toggle="collapse" href="#collapseClientInfo">Next
                             Step</a>
                     </div>
                 </div>
@@ -682,10 +682,10 @@
             <div class="card">
                 <div class="card-header card-link gold-theme" data-toggle="collapse" href="#collapsePaymentInfo">
                     Step 6: Enter payment information</div>
-                <div id="collapsePaymentInfo" class="">
+                <div id="collapsePaymentInfo" class="collapse">
                     <div class="card-body">
                         <p>Please provide you credit card information</p>
-                        <form class="needs-validation" id="cc-form" novalidate>
+                        <form class="needs-validation" id="cc-form">
                             <!-- https://getbootstrap.com/docs/4.0/examples/checkout/ -->
                             <div class="row">
                                 <div class="col-md-6 mb-3">
@@ -732,8 +732,7 @@
                             </div>
 
                             <div class="row col-md-3 mb-3">
-                                <button class="btn btn-dark" disabled type="submit" id="cc-completed">Complete
-                                    appointment</button>
+                                <button class="btn btn-dark"  disabled type="submit" id="cc-completed" data-toggle="modal" data-target="#completeModal">Complete appointment</button>
                                     </div>
                                     </form>
                                 </div>
@@ -823,7 +822,7 @@
                     <div class="card">
                         <h2>Store Info</h2>
                         <p>
-                            MON - FRI: 9AM - 7PM<br> SAT: 9AM - 6PM <br> SUN: 10AM - 5PM
+                            MON - FRI: 9AM - 7PM
                         </p>
                         <iframe style="border:0; width: 100%; height:270px;" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBZKvpXQsSho6h5kDg2Al1Uz-uxXu9oB64
             &q=Lees+Ave,+Ottawa,+ON" frameborder="0" allowfullscreen>
@@ -1317,6 +1316,52 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+        </div>
+
+
+        <div class="modal fade" id="completeModal">
+            <div class="modal-dialog ">
+                <div class="modal-content">
+                    <div class="modal-header"><button type="button" class="close" data-dismiss="modal">&times;</button></div>
+                    <div class="modal-body" id="allInfo">
+                        <table class="table">
+                            <tr>
+                                <th>Your information</th>
+                                <td id="completedInfo"></td>
+                            </tr>
+                            <tr>
+                                <th>Service</th>
+                                <td id="completedService"></td>
+                            </tr>
+                            <tr>
+                                <th>Hairdresser</th>
+                                <td id="completedHairdresser"></td>
+                            </tr>
+                            <tr>
+                                <th>Date and time</th>
+                                <td id="completedDT"></td>
+                            </tr>
+                            <tr>
+                                <th>Product(s)</th>
+                                <td id="completedProducts"></td>
+                            </tr>
+
+                            <tr>
+                                <th>Credit card</th>
+                                <td id="completedCC"></td>
+                            </tr>
+                            <tr>
+                                <th>Total</th>
+                                <td id="completedTotal"></td>
+                            </tr>
+                        </table>
+                        <button class="btn btn-dark" id='completedPayment'>Confirm payment</button>
+                    </div>
+                </div>
+
+
             </div>
 
         </div>

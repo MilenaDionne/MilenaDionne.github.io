@@ -10,10 +10,10 @@ jQuery.validator = function(regex, str) {
 }
 var appointment = {
     cc: {
-        number: null,
-        cvv: null,
         name: null,
-        expiration: null
+        number: null,
+        expiration: null,
+        cvv: null,
     },
     service: null,
     hairdresser: null,
@@ -27,14 +27,30 @@ var appointment = {
 }
 
 
-var products_prices = {
-    'Tea Tree': 56,
-    'Invigo': 45,
-    'Hair Booster': 46,
-    '2 in 1 Beard Conditioner': 11,
-    'Beard and Tattoo oil': 11,
-    'Beard Balm': 11
+var prices = {
+    products: {
+        'Tea Tree': 56,
+        'Invigo': 45,
+        'Hair Booster': 46,
+        '2 in 1 Beard Conditioner': 11,
+        'Beard and Tattoo oil': 11,
+        'Beard Balm': 11
+    },
+    'haircut': {
+        'Bang trim': 9,
+        'Ladies cut & style': 44,
+        'Permanent': 72,
+        'Hair consultation': 0,
+        'Buzzcut': 17,
+        'Mens cut & style': 30,
+        'Beard & neck trim': 18,
+        'Boys cut': 19,
+        'Boys cut + shampoo': 29,
+        'Girls cut': 22,
+        'Girls cut + shampoo': 32
+    }
 }
+
 
 //Validates the input with a regex
 //Adjust the tooltip with the validation
@@ -69,7 +85,6 @@ jQuery.cc_validator = function(id, regex, invalid_message) {
     }
     var step = id.includes('#stp5-') ? 'info' : 'cc'
     appointment[step][id.split('-')[1]] = $(id).val().length > 0 && isValid ? $(id).val() : null;
-    console.log(appointment)
     return expirationMonthValid
 }
 
@@ -127,6 +142,7 @@ $('#cc-expiration').on('input', function(event) {
         $('#cc-expiration-small-red').remove();
         if ($('#cc-expiration-small-red').length == 0) {
             $('#cc-expiration').after($('<small class="text-danger" id="' + '#cc-expiration'.replace('#', '') + '-small-red"></small>').text('Month must be between 01 and 12'))
+            appointment['cc']['expiration'] = null
         }
     }
 });
@@ -136,6 +152,40 @@ $('#cc-form').on('input', function() {
     $('#cc-completed').prop('disabled', enableButton);
 });
 
+
+//Clicking on the last button of the step creates a modal pop up
+$('#cc-completed').click(function() {
+    $('#completedService').text(appointment['service'] + ' - ' + prices['haircut'][appointment['service']] + ' $');
+    $('#completedHairdresser').text(appointment['hairdresser']);
+    $('#completedDT').text(appointment['time']);
+    var total = prices['haircut'][appointment['service']];
+    //Adding producst list
+    var prodList = $('<ul></ul>')
+    appointment['products'].map(function(prod) {
+        total += prices['products'][prod];
+        prodList.append($('<li>' + prod + ' - ' + prices['products'][prod] + '$</li>'))
+    });
+
+    $('#completedProducts').empty().append(prodList)
+        //Adding personal information
+    $('#completedInfo').empty();
+    Object.entries(appointment['info']).map(function(value) {
+        $('#completedInfo').append('<p>' + value[0] + ': ' + value[1] + '</p>')
+    });
+
+    //Adding credit card info
+    $('#completedCC').empty();
+    Object.entries(appointment['cc']).map(function(key, _) {
+        $('#completedCC').append($('<p>' + key[0] + ': ' + key[1] + '</p>'))
+    });
+
+    $('#completedTotal').text(total + '$')
+
+
+
+});
+
+
 $('#collapseClientInfo').on('input', function() {
     var enableButton = Object.values(appointment['info']).filter(bool => bool == null).length != 0;
     $('#next3').removeClass('disabled')
@@ -144,7 +194,7 @@ $('#collapseClientInfo').on('input', function() {
     }
 });
 
-
+//Showing users selection with borders
 $('.service').click(function() {
     appointment['service'] = $(this).val();
     $('.service').map(function(_, val) {
@@ -159,23 +209,21 @@ $('.hairdresser').click(function() {
     $('.hairdresser').map(function(_, val) {
         $(val).parent().parent().removeClass(['border-3', 'border', 'border-dark'])
     });
-    console.log(appointment['hairdresser']);
     ($(this).parent().parent().addClass(['border-3', 'border', 'border-dark']))
     $('#next2').removeClass('disabled');
 })
 
-
+//Handeling products bought by user
 $('.product').click(function() {
 
     if ($(this).text() == 'Remove product') {
         $(this).text('Buy product');
         $(this).removeClass('btn-light').addClass('btn-dark')
-        appointment['products'].splice(appointment['products'].findIndex(function(prod) { prod == $(this).prev().prev().prev().text() }), 1);
+        appointment['products'].splice(appointment['products'].findIndex(function(prod) { prod == $(this).prev().prev().prev().text() }) - 1, 1);
 
     } else {
         //Really not pretty, but didnt find a better way, but I know there is
         appointment['products'].push($(this).prev().prev().prev().text());
-        console.log(appointment['products'])
         $(this).text('Remove product');
         $(this).removeClass('btn-dark').addClass('btn-light')
     }
@@ -183,3 +231,11 @@ $('.product').click(function() {
 
 $('#datetimepicker').datetimepicker('setDaysOfWeekDisabled', [0, 6]);
 $('#datetimepicker').datetimepicker('setStartDate', '2021-03-01');
+$('#datetimepicker').change(function() {
+    appointment['time'] = $(this).datetimepicker('getDate').toDateString() + ' ' + $(this).datetimepicker('getDate').toTimeString().split(':00 GMT')[0]
+});
+
+$('#completedPayment').click(function() {
+    $(this).text('Payment completed!')
+    $(this).removeClass('btn-dark').addClass('btn-gold-theme')
+});
