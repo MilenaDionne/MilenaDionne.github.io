@@ -2,6 +2,10 @@
 <html>
 
 <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="styles.css" />
     <title>uOttawa survey</title>
 </head>
@@ -17,14 +21,14 @@
     <h5>Picture is from https://www.uottawa.ca/en. </h5>
     <br>
     <br>
-    <form action="index.php" name="my form" method="POST">
+    <form action="" name="my form" method="POST">
         <ol>
             <div>
                 <li>
                     <!--could be "I am a" -->
                     <label for="role" class="underline">Who are you?</label>
                     <br>
-                    <select name="role">
+                    <select name="Q1">
                 <option value="student" class="dropdown">Student</option>
                 <option value="employee" class="dropdown">Employee</option>
                 <option value="enroll" class="dropdown">Someone looking to enroll</option>S
@@ -35,24 +39,22 @@
                 <br>
                 <li>
                     <p1 class="underline">How did you hear about uOttawa?</p1><br>
-                    <input type="checkbox">Family and friend<br>
-                    <input type="checkbox">Google <br>
-                    <input type="checkbox">Facebook<br>
-                    <input type="checkbox">Instagram<br>
-                    <input type="checkbox">Other social media<br>
-                    <input type="checkbox">Television<br>
-                    <input type="checkbox">Email<br>
-                    <input type="checkbox">Newspaper<br>
-                    <input type="checkbox">Radio<br>
-                    <input type="checkbox">Other<br>
-
+                    <input type="checkbox" name="Q2" value='Family and friend'>Family and friend<br>
+                    <input type="checkbox" name="Q2" value="Google">Google<br>
+                    <input type="checkbox" name="Q2" value="Facebook">Facebook<br>
+                    <input type="checkbox" name="Q2" value="Instagram">Instagram<br>
+                    <input type="checkbox" name="Q2" value="Television">Television<br>
+                    <input type="checkbox" name="Q2" value="Email">Email<br>
+                    <input type="checkbox" name="Q2" value="Newspaper">Newspaper<br>
+                    <input type="checkbox" name="Q2" value="Radio">Radio<br>
+                    <input type="checkbox" name="Q2" value="Other media">Other media<br>
                 </li>
             </div>
             <div>
                 <br>
                 <li>
                     <p1 class="underline">What do you like about this website? (e.g. colors, images, content)</p1><br>
-                    <textarea rows="8" cols="60"></textarea>
+                    <textarea rows="8" cols="60" name="Q3"></textarea>
                 </li>
             </div>
 
@@ -60,8 +62,8 @@
                 <br>
                 <li>
                     <p1 class="underline">In you opinion, are there too many fonts and/or sizes of text on this website?</p1><br>
-                    <input type="radio" name="radio" value="yes">Yes
-                    <input type="radio" name="radio" value="No">No<br>
+                    <input type="radio" name="Q4" value="yes">Yes
+                    <input type="radio" name="Q4" value="No">No<br>
                 </li>
             </div>
 
@@ -72,22 +74,23 @@
                 <p1 class="underline">Select all that apply :</p1>
                 <br>
 
-                <input type="checkbox">I am looking for information about this university<br>
-                <input type="checkbox">I need assistance from this university<br>
-                <input type="checkbox">I am looking be apart of this university<br><br></li>
+                <input type="checkbox" name="Q5" value="I am looking for information about this university">I am looking for information about this university<br>
+                <input type="checkbox" name="Q5" value="I need assistance from this university">I need assistance from this university<br>
+                <input type="checkbox" name="Q5" value="I am looking be apart of this university">I am looking be apart of this university<br><br></li>
 
             <div>
                 <li>
                     <p1 class="underline">Do you have any comments?</p1><br>
-                    <textarea rows="8" cols="60"></textarea>
+                    <textarea rows="8" cols="60" name="Q6"></textarea>
                 </li>
             </div>
         </ol>
 
-        <button type="submit" value="Submit!" class="sumbit">Submit</button>
+        <input type="submit" value="Submit!" class="sumbit" />
 
         <p id="signature" class="signature"> This website was made by: Milena Dionne, Jean-Luc Blais-Amyot, Ben Rizk, and Yousuf Ahmed</p>
     </form>
+    <script src="/action.js"></script>
 </body>
 
 </html>

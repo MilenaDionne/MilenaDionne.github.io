@@ -6,6 +6,9 @@ var fs = require('fs');
 // read the data file
 function readData(fileName) {
     let dataRead = fs.readFileSync('./data/' + fileName + '.json');
+    if (dataRead.length === 0) {
+        return []
+    }
     let infoRead = JSON.parse(dataRead);
     return infoRead;
 }
@@ -20,7 +23,6 @@ function writeData(info, fileName) {
 // to match with the file names
 // I assume we always just add 1 to a single item
 function combineCounts(name, value) {
-    // console.log(value);
     info = readData(name);
     // will be useful for text entry, since the item typed in might not be in the list
     var found = 0;
@@ -66,22 +68,21 @@ module.exports = function(app) {
     // the action.js code will POST, and what is sent in the POST
     // will be recuperated here, parsed and used to update the data files
     app.post('/index', urlencodedParser, function(req, res) {
-        console.log(req.body);
-        // var json = req.body;
-        // for (var key in json) {
-        //     console.log(key + ": " + json[key]);
-        //     // in the case of checkboxes, the user might check more than one
-        //     if ((key === "color") && (json[key].length === 2)) {
-        //         for (var item in json[key]) {
-        //             combineCounts(key, json[key][item]);
-        //         }
-        //     } else {
-        //         combineCounts(key, json[key]);
-        //     }
-        // }
+        var json = req.body;
+
+        for (var key in json) {
+            // in the case of checkboxes, the user might check more than one
+            if (((key === "Q2") || (key === "Q5")) && (json[key].length > 1) && Array.isArray(json[key])) {
+                for (var item in json[key]) {
+                    combineCounts(key, json[key][item]);
+                }
+            } else {
+                combineCounts(key, json[key]);
+            }
+        }
         // mystery line... (if I take it out, the SUBMIT button does change)
         // if anyone can figure this out, let me know!
-        // res.sendFile(__dirname + "/index.html");
+        res.sendFile(__dirname + "/index.html");
     });
 
 
