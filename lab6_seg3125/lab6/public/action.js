@@ -8,7 +8,7 @@ $(document).ready(function() {
 
         $.ajax({
             type: 'POST',
-            url: '/UOSurvey',
+            url: '/index',
             data: $(this).serializeArray(),
             success: function(data) {
                 console.log("Sent with ", data)
