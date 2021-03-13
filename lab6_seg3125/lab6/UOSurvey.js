@@ -46,17 +46,17 @@ module.exports = function(app) {
 
     // when a user goes to localhost:3000/analysis
     // serve a template (ejs file) which will include the data from the data files
-    // app.get('/analysis', function(req, res) {
-    //     var Q1 = readData("Q1");
-    //     var Q2 = readData("Q2");
-    //     var Q3 = readData("Q3");
-    //     var Q4 = readData("Q4");
-    //     var Q5 = readData("Q5");
-    //     var Q6 = readData("Q6");
+     app.get('/analysis', function(req, res) {
+         var Q1 = readData("Q1");
+         var Q2 = readData("Q2");
+         var Q3 = readData("Q3");
+         var Q4 = readData("Q4");
+         var Q5 = readData("Q5");
+         var Q6 = readData("Q6");
 
-    //     res.render('showResults', { results: [Q1, Q2, Q3, Q4, Q5, Q6] });
-    //     console.log([Q1, Q2, Q3, Q4, Q5, Q6]);
-    // });
+         res.render('showResults', { results: [Q1, Q2, Q3, Q4, Q5, Q6] });
+         console.log([Q1, Q2, Q3, Q4, Q5, Q6]);
+     });
 
     // when a user goes to localhost:3000/niceSurvey
     // serve a static html (the survey itself to fill in)
