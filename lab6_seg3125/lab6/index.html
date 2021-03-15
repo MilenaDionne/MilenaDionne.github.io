@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    
     <br>
     <img src="/images/uottawalogo.png" alt="uOttawa Logo" width="10%" class="center">
     <h1>uOttawa Website Survey</h1>
@@ -20,77 +21,178 @@
     <a href="https://www.uottawa.ca/en"><img src="/images/uottawaWebPage.PNG" alt="uOttawa Web Page Screenshot" width="75%" class="center"></a>
     <h5>Picture is from https://www.uottawa.ca/en. </h5>
     <br>
-    <br>
-    <form action="" name="my form" method="POST">
-        <ol>
-            <div>
-                <li>
-                    <!--could be "I am a" -->
-                    <label for="role" class="underline">Who are you?</label>
+    <div class="container border border-secondary rounded" >
+        <div class="row justify-content-md-center rounded-top">
+            <button class="btn btn-light questions m-1" onclick="currentDiv(1)">1</button> 
+            <button class="btn btn-light questions m-1" onclick="currentDiv(2)">2</button> 
+            <button class="btn btn-light questions m-1" onclick="currentDiv(3)">3</button> 
+            <button class="btn btn-light questions m-1" onclick="currentDiv(4)">4</button>        
+            <button class="btn btn-light questions m-1" onclick="currentDiv(5)">5</button>    
+            <button class="btn btn-light questions m-1" onclick="currentDiv(6)">6</button>    
+        </div>
+
+        <div class="row justify-content-md-center" >
+            <form action="" name="my form" method="POST" class=" m-4" style="height: 400px;">
+                <div class="form-group mySlides" >
+                    <label for="role">Who are you?</label>
+                    <select name="Q1" class="form-control">
+                      <option value="Student">Student</option>
+                      <option value="Employee">Employee</option>
+                      <option value="Enroll">Someone looking to enroll</option>
+                      <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group mySlides">
+                    <label>How did you hear about uOttawa?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Q2" value="Family and friend">
+                        <label class="form-check-label">
+                            Family and friend
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Q2" value="Google">
+                        <label class="form-check-label">
+                            Google
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Q2" value="Facebook">
+                        <label class="form-check-label">
+                            Facebook
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Q2" value="Instagram">
+                        <label class="form-check-label">
+                            Instagram
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Q2" value="Television">
+                        <label class="form-check-label">
+                            Television
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Q2" value="Email">
+                        <label class="form-check-label">
+                            Email
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Q2" value="Newspaper">
+                        <label class="form-check-label">
+                            Newspaper
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Q2" value="Radio">
+                        <label class="form-check-label">
+                            Radio
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Q2" value="Other media">
+                        <label class="form-check-label">
+                            Other media
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group mySlides" >
+                    <label>What do you like about this website? (e.g. colors, images, content)</label>
+                    <textarea class="form-control" cols="60" name="Q3" rows="8"></textarea>
+                </div>
+
+                <div class="form-group mySlides">
+                    <label>In you opinion, are there too many fonts and/or sizes of text on this website?</label>
                     <br>
-                    <select name="Q1">
-                <option value="Student" class="dropdown">Student</option>
-                <option value="Employee" class="dropdown">Employee</option>
-                <option value="Enroll" class="dropdown">Someone looking to enroll</option>S
-                <option value="Other" class="dropdown"> Other</option>
-            </select></li>
-            </div>
-            <div>
-                <br>
-                <li>
-                    <p1 class="underline">How did you hear about uOttawa?</p1><br>
-                    <input type="checkbox" name="Q2" value='Family and friend'>Family and friend<br>
-                    <input type="checkbox" name="Q2" value="Google">Google<br>
-                    <input type="checkbox" name="Q2" value="Facebook">Facebook<br>
-                    <input type="checkbox" name="Q2" value="Instagram">Instagram<br>
-                    <input type="checkbox" name="Q2" value="Television">Television<br>
-                    <input type="checkbox" name="Q2" value="Email">Email<br>
-                    <input type="checkbox" name="Q2" value="Newspaper">Newspaper<br>
-                    <input type="checkbox" name="Q2" value="Radio">Radio<br>
-                    <input type="checkbox" name="Q2" value="Other media">Other media<br>
-                </li>
-            </div>
-            <div>
-                <br>
-                <li>
-                    <p1 class="underline">What do you like about this website? (e.g. colors, images, content)</p1><br>
-                    <textarea rows="8" cols="60" name="Q3"></textarea>
-                </li>
-            </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="Q4" value="Yes">
+                        <label class="form-check-label">
+                            Yes
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="Q4" value="No">
+                        <label class="form-check-label">
+                            No
+                        </label>
+                    </div>
+                </div>
 
-            <div>
-                <br>
-                <li>
-                    <p1 class="underline">In you opinion, are there too many fonts and/or sizes of text on this website?</p1><br>
-                    <input type="radio" name="Q4" value="yes">Yes
-                    <input type="radio" name="Q4" value="No">No<br>
-                </li>
-            </div>
+                <div class="form-group mySlides">
+                    <label>Select all that apply :</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Q5" value="I am looking for information about this university">
+                        <label class="form-check-label">
+                            I am looking for information about this university
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Q5" value="I need assistance from this university">
+                        <label class="form-check-label">
+                            I need assistance from this university
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Q5" value="I am looking be apart of this university">
+                        <label class="form-check-label">
+                            I am looking be apart of this university
+                        </label>
+                    </div>
+                </div>
+            
+    
+                <div class="form-group mySlides" >
+                    <label>Do you have any comments?</label>
+                    <textarea class="form-control" cols="60" name="Q6" rows="8"></textarea>
+                </div>
 
-
-
-            <br>
-            <li>
-                <p1 class="underline">Select all that apply :</p1>
-                <br>
-
-                <input type="checkbox" name="Q5" value="I am looking for information about this university">I am looking for information about this university<br>
-                <input type="checkbox" name="Q5" value="I need assistance from this university">I need assistance from this university<br>
-                <input type="checkbox" name="Q5" value="I am looking be apart of this university">I am looking be apart of this university<br><br></li>
-
-            <div>
-                <li>
-                    <p1 class="underline">Do you have any comments?</p1><br>
-                    <textarea rows="8" cols="60" name="Q6"></textarea>
-                </li>
-            </div>
-        </ol>
-
-        <input type="submit" value="Submit!" class="sumbit" />
-
-        <p id="signature" class="signature"> This website was made by: Milena Dionne, Jean-Luc Blais-Amyot, Ben Rizk, and Yousuf Ahmed</p>
-    </form>
+               
+                <input type="submit" value="Submit!" class="sumbit" style="bottom: 0;"/>  
+            </form>
+            
+        </div>
+        <div class="row justify-content-md-center">
+            <button class="btn btn-light mr-2" onclick="plusDivs(-1)">❮ Prev</button>
+            
+            <button class="btn btn-light ml-2" onclick="plusDivs(1)">Next ❯</button>
+        </div>
+       
+    </div>
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+        
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+        
+        function currentDiv(n) {
+            showDivs(slideIndex = n);
+        }
+        
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("questions");
+            if (n > x.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = x.length}
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" current", "");
+            }
+            x[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " current";
+        }
+    </script>
+    
     <script src="/action.js"></script>
+    <p id="signature" class="signature"> This website was made by: Milena Dionne, Jean-Luc Blais-Amyot, Ben Rizk, and Yousuf Ahmed</p>
 </body>
 
 </html>
