@@ -1,14 +1,1 @@
-[
-  {
-    "Q5": "I am looking for information about this university",
-    "count": 3
-  },
-  {
-    "Q5": "I need assistance from this university",
-    "count": 2
-  },
-  {
-    "Q5": "I am looking be apart of this university",
-    "count": 5
-  }
-]
+[{"Q5":"I am looking for information about this university","count":3},{"Q5":"I need assistance from this university","count":5},{"Q5":"I am looking be apart of this university","count":5}]

@@ -1,10 +1,1 @@
-[
-  {
-    "Q4": "Yes",
-    "count": 3
-  },
-  {
-    "Q4": "No",
-    "count": 2
-  }
-]
+[{"Q4":"Yes","count":3},{"Q4":"No","count":2},{"Q4":"yes","count":3}]
