@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ItemsContainer from './ItemsContainer';
 class App extends Component {
   size = {
     XS: 'Extra Small',
@@ -14,23 +15,25 @@ class App extends Component {
 
     items: [{
       id: 1,
-      name: 'Blue T-Shirt',
-      imgSrc: '../images/Blue_T-Shirt_M_Blue_None_30_JL.jpg',
+      name: 'Biking-Shirt',
+      imgSrc: '../images/Biking-Shirt_T-Shirt_M_Blue_None_30_JL.jpg',
       cost: 30,
       size: this.size.M,
+      type: 'T-Shirt',
       mainColor: 'Blue',
-      secondarColor: null,
+      secondaryColor: 'Red',
       description: 'Perfect T-Shirt for biking',
       owner: {
         name: 'JL',
         email: 'fakeemail@gmail.com',
-        phone: '8191234568'
+        phone: '819-123-4568'
       }
-    }]
+    },]
   }
   render() {
     return (
       <div className="App" >
+        {/* <ItemsContainer items={this.state.items} sizes={this.size}></ItemsContainer> */}
       </div>
     );
   }
