@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import ItemsContainer from './ItemsContainer';
-import Navbar_app from './components/Navbar';
-import Home from './components/Home';
 class App extends Component {
   size = {
     XS: 'Extra Small',
@@ -11,9 +9,6 @@ class App extends Component {
     XL: 'Extra Large',
     XXL: 'Extra Extra Large'
   }
-
-  
-
 
   state = {
     idCount: 2,
@@ -38,17 +33,7 @@ class App extends Component {
   render() {
     return (
       <div className="App" >
-      <Navbar_app/>
-      <div className=" jumbotron text-center bg-dark text-white">
-        <h1>Clothing Sale</h1>
-      </div>
-      
-
-      <Home/>
-
-      
-      <br></br>
-        { <ItemsContainer items={this.state.items} sizes={this.size}></ItemsContainer> }
+        {/* <ItemsContainer items={this.state.items} sizes={this.size}></ItemsContainer> */}
       </div>
     );
   }
