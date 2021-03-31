@@ -1,33 +1,33 @@
 // JavaScript source code
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { render } from 'react-dom';
 import ReactTooltip from "react-tooltip";
 
 class CategoryTab extends Component {
 
-    state{
-    size: "none"
-    price: "0"
+    state = {
+    size: "none",
+    price: "0",
     type: "none"
     }
 
-render(){
-    return (){
-        <div style="margin-top:100px">
-            <p style="font-size:24px; color:white; background-color:black; width: 200px">Filters:</p>
-            <form>
-               <label for="size">Filter by size:</label>
-                <select name="sizes" id="sizes">
-                    <option value="extra small">extra small</option>
-                    <option value="small">small</option>
-                    <option value="medium">medium</option>
-                    <option value="large">large</option>
-                    <option value="extra large">extra large</option>
-                </select>   
-            </form>
-            <br>
-                <form>
-                    <label for="size">Filter by price:</label>
+    render(){
+        return () => {
+            <div style="margin-top:100px">
+               <p style="font-size:24px; color:white; background-color:black; width: 200px">Filters:</p>
+              <form>
+                <label for="size">Filter by size:</label>
+                    <select name="sizes" id="sizes">
+                        <option value="extra small">extra small</option>
+                        <option value="small">small</option>
+                        <option value="medium">medium</option>
+                        <option value="large">large</option>
+                        <option value="extra large">extra large</option>
+                     </select>   
+             </form>
+             <br></br>
+             <form>
+                <label for="price">Filter by price:</label>
                     <select name="prices" id="prices">
                         <option value="0-9">$0-$9</option>
                         <option value="10-19">$10-$19</option>
@@ -36,10 +36,10 @@ render(){
                         <option value="40+">$40+</option>
                     </select>
                 </form>
-            <br>
+            <br></br>
                <form>
-                    <label for="size">Filter by type:</label>
-                    <select name="cars" id="cars">
+                    <label for="type">Filter by type:</label>
+                    <select name="tupes" id="types">
                             <option value="headwear">headwear</option>
                             <option value="shirt">shirt</option>
                             <option value="pants">pants</option>
@@ -48,8 +48,8 @@ render(){
                 </select>   
                </form>
         </div>
+        }
     }
-}
-
 
 }
+export default CategoryTab;
