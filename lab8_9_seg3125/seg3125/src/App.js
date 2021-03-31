@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import ItemsContainer from './ItemsContainer';
 import Navbar_app from './components/Navbar';
-import SearchBar from './SearchBar';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
