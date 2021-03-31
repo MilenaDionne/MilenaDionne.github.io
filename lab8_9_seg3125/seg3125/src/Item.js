@@ -46,7 +46,7 @@ class Item extends Component {
                 <ReactTooltip id={item.id + 'type'}>Type of clothes</ReactTooltip>
                 <ItemModalView
                     show={this.state.show}
-                    modalSize="m"
+                    modalSize="lg"
                     item={item}
                     closeModal={this.closeModal}
 

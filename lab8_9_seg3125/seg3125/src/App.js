@@ -8,6 +8,7 @@ import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 import NewPost from './components/NewPost'
 import FilterContainer from './FilterContainer'
+import PageTitle from './PageTitle'
 
 class App extends Component {
   size = {
@@ -57,51 +58,34 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="App" >
-
-        <div className="jumbotron text-center bg-dark text-white">
-          <h1>Trendy Apparel Trade</h1>
-        </div>
+      <div className="App">
         <Row>
-          <Col className="bg-white" sm={2}>
-             <h3>Categories</h3>
-             <FilterContainer/>
-          </Col>
-          {<NewPost></NewPost>}
-          <Col sm={7}>
-            <Form inline>
-              <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-              <Button variant="outline-success">Search</Button>
-            </Form>
-          </Col>
-          <Col className="bg-white" sm={2}>
-            <h2>Sort by</h2>
-          </Col>
-
+          <PageTitle></PageTitle>
         </Row>
+        <Row>
+          <Col className="bg-white ml-1" sm={2}>
+            <h3>Filters</h3>
+            <FilterContainer></FilterContainer>
+          </Col>
 
-
-        <br></br>
-        { <ItemsContainer items={this.state.items} sizes={this.size}></ItemsContainer>}
+          <Col sm={9}>
+            <Row>
+              <Col sm={2}><NewPost /></Col>
+              <Col sm={10}>
+                <Form inline>
+                  <FormControl type="text" placeholder="Search" className="mr-sm-2" style={{ width: '70%' }} />
+                  <Button variant="outline-success">Search</Button>
+                  <p className="ml-5">Sort By (to be implemented...)</p>
+                </Form>
+              </Col>
+            </Row>
+            {<ItemsContainer items={this.state.items} sizes={this.size}></ItemsContainer>}
+          </Col>
+        </Row>
       </div>
     );
   }
 }
 
-/*
- * 
- *  <ul className="nav nav-pills flex-column">
-              <li className="nav-item">
-                <a className="nav-link" href="#">Link</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">Link</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">Link</a>
-              </li>
-            </ul>
- * 
- * */
 
 export default App;
