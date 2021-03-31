@@ -53,3 +53,7 @@ Lab4 and Lab5 image credits:
 - Main_Page : https://images.squarespace-cdn.com/content/v1/5e4ccbf4767d493566246e62/1608175953694-NTXA05HGMF0XO0V36DSB/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/Main-Page.jpg?format=2500w
 
 
+lab 8 and 9 images:
+- type of clothes: https://iconscout.com/icon/clothes-366
+- dollar icon : https://www.freepik.com/free-icon/dollar-symbol_703030.html
+

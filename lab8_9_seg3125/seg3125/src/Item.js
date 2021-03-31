@@ -13,7 +13,7 @@ class Item extends Component {
         const { item } = this.props;
 
         return (
-            <div className="card img-fluid" style={{ width: '18rem' }}>
+            <div className="card img-fluid m-3" style={{ width: '18rem' }}>
                 <div className="card-body card-title text-center font-weight-bold">
                     {item.name}
                 </div >
@@ -21,15 +21,29 @@ class Item extends Component {
                     <img src={item.imgSrc} alt="" className="card-img" />
                 </div>
                 <div className="row text-center">
-                    <span className="col" data-tip data-for={item.id + 'type'}>{item.type}</span>
-                    <ReactTooltip id={item.id + 'type'}>Type of clothe</ReactTooltip>
-                    <span className="col" data-tip data-for={item.id + 'size'}>{item.size}</span>
-                    <ReactTooltip id={item.id + 'size'}>Size</ReactTooltip>
-                    <span className="col" data-tip data-for={item.id + 'cost'}>{item.cost}$</span>
-                    <ReactTooltip id={item.id + 'cost'}>Price</ReactTooltip>
+                    <span className="col">
+                        <img src="./icons/typeClothes.png" alt="" className="img-fluid" style={{ width: '1rem' }} />
+                        <span className="" data-tip data-for={item.id + 'type'}>
+                            {item.type}
+                        </span>
+                    </span>
+
+
+                    <span className="col">
+                        <img src="./icons/size.png" alt="" className="img-fluid" style={{ width: '1rem' }} />
+                        <span className="" data-tip data-for={item.id + 'size'}>{item.size}</span>
+                    </span>
+
+                    <span className="col">
+                        <img src="./icons/dollarIcon.png" alt="" className="img-fluid" style={{ width: '1rem' }} />
+                        <span className="" data-tip data-for={item.id + 'cost'}>{item.cost}</span>
+                    </span>
+
                 </div>
                 <button className="btn btn-primary " onClick={() => this.setState({ show: true })}>More information</button>
-
+                <ReactTooltip id={item.id + 'size'}>Size</ReactTooltip>
+                <ReactTooltip id={item.id + 'cost'}>Price</ReactTooltip>
+                <ReactTooltip id={item.id + 'type'}>Type of clothes</ReactTooltip>
                 <ItemModalView
                     show={this.state.show}
                     modalSize="m"

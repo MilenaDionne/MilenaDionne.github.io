@@ -11,7 +11,7 @@ class ItemsContainer extends Component {
         })
 
         return (
-            <div className="container">
+            <div className="container row">
                 {list}
             </div>
         )
