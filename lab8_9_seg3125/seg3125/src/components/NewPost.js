@@ -5,6 +5,7 @@ import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
+import FormGroup from 'react-bootstrap/esm/FormGroup'
 
 
 
@@ -27,30 +28,23 @@ const NewPost = () => {
                     <div className="modal-body">
                         <div className="row">
                             <div className="col-6">
-                                <button className="bg-white btn-default btn-block h-100 text-xl-center" title="add image">+
-                                </button>
+                                <button type="button" className="btn bg-light w-100 h-100" title="add image"><h1>+</h1></button>
                             </div>
                             <div className="col-6">
-                                <table className="table">
-                                    <tbody>
-                                        <tr>
-                                            <th className="pr-4" scope="row">Clothes type</th>
-                                           
-                                        </tr>
-                                        <tr>
-                                            <th className="pr-4" scope="row">Price</th>
-                                            
-                                        </tr>
-                                        <tr>
-                                            <th className="pr-4" scope="row">Size</th>
-                                           
-                                        </tr>
-                                        <tr>
-                                        
-                                        </tr>
-
-                                    </tbody>
-                                </table>
+                                <Form>
+                                    <FormGroup>
+                                        <label> 
+                                            Clothes type
+                                        </label>
+                                        <select id="inputState" class="form-control">
+                                            <option selected>Choose type..</option>
+                                            <option>Tops</option>
+                                            <option>Dresses</option>
+                                            <option>Hats</option>
+                                            <option>Jewelry</option>
+                                        </select>
+                                    </FormGroup>
+                                </Form>
                             </div>
                         </div>
                     </div>

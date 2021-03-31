@@ -38,7 +38,7 @@ class App extends Component {
   render() {
     return (
       <div className="App" >
-      <Navbar_app/>
+     
       <div className=" jumbotron text-center bg-dark text-white">
         <h1>Clothing Sale</h1>
       </div>
