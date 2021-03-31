@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
 import ItemsContainer from './ItemsContainer';
-import Navbar_app from './components/Navbar';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import Button from 'react-bootstrap/Button'
-import Form from 'react-bootstrap/Form'
-import FormControl from 'react-bootstrap/FormControl'
 import NewPost from './components/NewPost'
 import FilterContainer from './FilterContainer'
 import PageTitle from './PageTitle'
+import Search from './Search'
 
 class App extends Component {
   size = {
@@ -72,11 +69,7 @@ class App extends Component {
             <Row>
               <Col sm={2}><NewPost /></Col>
               <Col sm={10}>
-                <Form inline>
-                  <FormControl type="text" placeholder="Search" className="mr-sm-2" style={{ width: '70%' }} />
-                  <Button variant="outline-success">Search</Button>
-                  <p className="ml-5">Sort By (to be implemented...)</p>
-                </Form>
+                <Search />
               </Col>
             </Row>
             {<ItemsContainer items={this.state.items} sizes={this.size}></ItemsContainer>}

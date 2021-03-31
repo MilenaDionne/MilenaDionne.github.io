@@ -1,10 +1,7 @@
 import React, { Component } from 'react'
 import ReactTooltip from "react-tooltip";
 import Modal from 'react-bootstrap/Modal';
-import ModalDialog from 'react-bootstrap/ModalDialog';
 import ModalTitle from 'react-bootstrap/ModalTitle';
-import ModalHeader from 'react-bootstrap/ModalHeader';
-import ModalFooter from 'react-bootstrap/ModalFooter';
 import ModalBody from 'react-bootstrap/ModalBody';
 
 class ItemModalView extends Component {
@@ -55,43 +52,55 @@ class ItemModalView extends Component {
                             <img src={item.imgSrc} alt="" className="img-fluid" />
                         </div>
                         <div className="col-6">
-                            <table className="table">
+                            <table className="table text-center">
                                 <tbody>
                                     <tr>
-                                        <th className="pr-4" scope="row">Clothes type</th>
+                                        <th className="pr-4" scope="row">
+                                            Clothes type
+                                        <img src="./icons/typeClothes.png" alt="" className="img-fluid ml-2" style={{ width: '1.2rem' }} />
+                                        </th>
                                         <td>{item.type}</td>
                                     </tr>
                                     <tr>
-                                        <th className="pr-4" scope="row">Price</th>
-                                        <td>{item.cost}</td>
+                                        <th className="pr-4" scope="row">
+                                            Size
+                                            <img src="./icons/size.png" alt="" className="img-fluid ml-2" style={{ width: '1.2rem' }} />
+                                        </th>
+                                        <td>{item.size}</td>
                                     </tr>
                                     <tr>
-                                        <th className="pr-4" scope="row">Size</th>
-                                        <td>{item.size}$</td>
+                                        <th className="pr-4" scope="row">
+                                            Price
+                                        <img src="./icons/dollarIcon.png" alt="" className="img-fluid ml-2" style={{ width: '1rem' }} />
+                                        </th>
+                                        <td>{item.cost}$</td>
                                     </tr>
+
                                     <tr>
                                         <th className="pr-4" scope="row">{item.secondaryColor ? 'Colors' : 'Color'}</th>
-                                        <td>{item.mainColor}{item.secondaryColor ? ' and ' + item.secondaryColor : ''}</td>
+                                        <td>
+                                            <ul>
+                                                <li>{item.mainColor}</li>
+                                                {item.secondaryColor ?
+                                                    <li>{item.secondaryColor}</li>
+                                                    : ''}
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th className="pr-4" scope="row">Description</th>
+                                        <td>{item.description}</td>
                                     </tr>
 
                                 </tbody>
                             </table>
                         </div>
                     </div>
-                    <div>
-                        <strong> Owner's comment :</strong>  {item.description}
-                    </div>
+
                     <div className="text-center mt-2 mb-2">
                         <button className="btn btn-primary" onClick={this.btnOnClick}>{this.state.contactOwnerBtnText}</button>
                     </div>
                     <div hidden={this.state.hideOwnerInfo}>
-                        {/* <div className="row">
-                            <span className="col"><strong>Name : </strong>  {item.owner.name}</span>
-                            <span className="col"><strong>Email: </strong>{item.owner.email}</span>
-                        </div>
-                        <div className="row">
-                            <span className="col"><strong>Phone number :</strong> {item.owner.phone}</span>
-                        </div> */}
 
                         <table className="table text-center">
                             <tbody>
