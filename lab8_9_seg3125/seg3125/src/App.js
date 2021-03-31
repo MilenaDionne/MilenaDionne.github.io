@@ -7,6 +7,7 @@ import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 import NewPost from './components/NewPost'
+import FilterContainer from './FilterContainer'
 
 class App extends Component {
   size = {
@@ -63,18 +64,8 @@ class App extends Component {
         </div>
         <Row>
           <Col className="bg-white" sm={2}>
-            <h3>Categories</h3>
-            <ul className="nav nav-pills flex-column">
-              <li className="nav-item">
-                <a className="nav-link" href="#">Link</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">Link</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">Link</a>
-              </li>
-            </ul>
+             <h3>Categories</h3>
+             <FilterContainer/>
           </Col>
           {<NewPost></NewPost>}
           <Col sm={7}>
@@ -96,5 +87,21 @@ class App extends Component {
     );
   }
 }
+
+/*
+ * 
+ *  <ul className="nav nav-pills flex-column">
+              <li className="nav-item">
+                <a className="nav-link" href="#">Link</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">Link</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">Link</a>
+              </li>
+            </ul>
+ * 
+ * */
 
 export default App;
