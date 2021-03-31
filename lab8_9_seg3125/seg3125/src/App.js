@@ -46,35 +46,33 @@ class App extends Component {
         <div className="jumbotron text-center bg-dark text-white">
             <h1>Trendy Apparel Trade</h1>
         </div>
-      <Row>
-          <Col className="bg-white" sm={2}>
-              <Col>
+        <Row>
+            <Col className="bg-white" sm={2}>  
               <h3>Categories</h3>
-                  <ul className="nav nav-pills flex-column">
-                      <li className="nav-item">
-                          <a className="nav-link" href="#">Link</a>
-                      </li>
-                      <li className="nav-item">
-                          <a className="nav-link" href="#">Link</a>
-                      </li>
-                      <li className="nav-item">
-                          <a className="nav-link" href="#">Link</a>
-                      </li>
-                  </ul>
-              </Col>
-          </Col>
-          { <NewPost></NewPost> }
-          <Col sm={7}>
-              <Form inline>
-                  <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                  <Button variant="outline-success">Search</Button>
-              </Form>
-          </Col>
-          <Col className="bg-white" sm={2}>
-          <h2>Sort by</h2>
-      </Col>
-            
-      </Row>
+              <ul className="nav nav-pills flex-column">
+                  <li className="nav-item">
+                      <a className="nav-link" href="#">Link</a>
+                  </li>
+                  <li className="nav-item">
+                      <a className="nav-link" href="#">Link</a>
+                  </li>
+                  <li className="nav-item">
+                      <a className="nav-link" href="#">Link</a>
+                  </li>
+              </ul>
+            </Col>
+            { <NewPost></NewPost> }
+            <Col sm={7}>
+                <Form inline>
+                    <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+                    <Button variant="outline-success">Search</Button>
+                </Form>
+            </Col>
+            <Col className="bg-white" sm={2}>
+            <h2>Sort by</h2>
+        </Col>
+              
+        </Row>
       
 
       <br></br>

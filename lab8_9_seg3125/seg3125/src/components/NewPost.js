@@ -17,7 +17,7 @@ class NewPost extends Component {
                 New post
             </button>
             <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div className="modal-dialog" role="document">
+                <div className="modal-dialog modal-xl" role="document">
                     <div className="modal-content">
                         <div className="modal-header">
                             <h5 className="modal-title" id="exampleModalLabel">New post</h5>
@@ -32,18 +32,56 @@ class NewPost extends Component {
                                 </div>
                                 <div className="col-6">
                                     <Form>
-                                        <FormGroup>
-                                            <label> 
+                                        <Form.Group as={Row}>
+                                            <Form.Label column sm="3"> 
                                                 Clothes type
-                                            </label>
-                                            <select id="inputState" className="form-control">
-                                                <option selected>Choose type..</option>
-                                                <option>Tops</option>
-                                                <option>Dresses</option>
-                                                <option>Hats</option>
-                                                <option>Jewelry</option>
-                                            </select>
-                                        </FormGroup>
+                                            </Form.Label>
+                                            <Col sm="9">
+                                                <Form.Control as="select" className="my-1 mr-sm-2" custom>
+                                                    <option value="0">Choose type..</option>
+                                                    <option value="1">Tops</option>
+                                                    <option value="2">Dresses</option>
+                                                    <option value="3">Hats</option>
+                                                    <option value="4">Jewelry</option>
+                                                </Form.Control>
+                                            </Col>
+                                        </Form.Group>
+                                        <Form.Group as={Row}>
+                                            <Form.Label column sm="2">
+                                                Price
+                                            </Form.Label>
+                                            <Col sm="10">
+                                                <Form.Control type="price" placeholder="Price" />
+                                            </Col>
+                                        </Form.Group>
+                                        <Form.Group as={Row}>
+                                            <Form.Label column sm="2"> 
+                                                Size
+                                            </Form.Label>
+                                            <Col sm="10">
+                                            <Form.Control as="select" className="my-1 mr-sm-2" custom>
+                                                <option value="0">Choose size..</option>
+                                                <option value="1">Small</option>
+                                                <option value="2">Medium</option>
+                                                <option value="3">Large</option>
+                                            </Form.Control>
+                                            </Col>
+                                        </Form.Group>
+                                        <Form.Group>
+                                            <Form.Label>
+                                                Colors
+                                            </Form.Label>
+                                            <Col>
+                                                <Form.Control as="select" className="my-1 mr-sm-2" custom>
+                                                    <option value="0">Main color</option>
+                                                    <option value="1">Red</option>
+                                                    <option value="2">Blue</option>
+                                                    <option value="3">Yellow</option>
+                                                    <option value="3">Black</option>
+                                                    <option value="3">White</option>
+                                                </Form.Control>
+                                            </Col>
+                                        </Form.Group>
                                     </Form>
                                 </div>
                             </div>
