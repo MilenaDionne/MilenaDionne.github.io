@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ItemsContainer from './ItemsContainer';
 import Navbar_app from './components/Navbar';
 import Home from './components/Home';
+import SearchBar from './SearchBar';
 class App extends Component {
   size = {
     XS: 'Extra Small',
