@@ -5,6 +5,7 @@ import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
+import NewPost from './NewPost'
 
 
 
@@ -13,27 +14,22 @@ const Home = () => {
         
         <Row>
             <Col className="bg-white" sm={2}>
-                <Row>
                 <Col>
                 <h3>Categories</h3>
-                    <ul class="nav nav-pills flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
+                    <ul className="nav nav-pills flex-column">
+                        <li className="nav-item">
+                            <a className="nav-link" href="#">Link</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
+                        <li className="nav-item">
+                            <a className="nav-link" href="#">Link</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
+                        <li className="nav-item">
+                            <a className="nav-link" href="#">Link</a>
                         </li>
                     </ul>
                 </Col>
-                
-                </Row>
             </Col>
-            <Col className="bg-white" sm={1}>
-                <Button className="btn-dark">New Post</Button>
-            </Col>
+            <NewPost/>
             <Col sm={7}>
                 <Form inline>
                     <FormControl type="text" placeholder="Search" className="mr-sm-2" />
