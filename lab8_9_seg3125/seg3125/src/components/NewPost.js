@@ -40,6 +40,7 @@ class NewPost extends Component {
                                                         <option value="2">Dresses</option>
                                                         <option value="3">Hats</option>
                                                         <option value="4">Jewelry</option>
+                                                        <option value="5">Pants</option>
                                                     </Form.Control>
                                                 </Col>
                                             </Form.Group>

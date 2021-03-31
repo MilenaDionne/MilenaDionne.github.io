@@ -5,9 +5,10 @@ class Filter extends Component {
 
    render() {
       const { name, value, filters } = this.props;
-      const valueList = filters.map(value => {
+      console.log(filters)
+      const valueList = filters.map((value, key) => {
          return (
-            <option>{value}</option>
+            <option key={key}>{value}</option>
          )
       })
       return (

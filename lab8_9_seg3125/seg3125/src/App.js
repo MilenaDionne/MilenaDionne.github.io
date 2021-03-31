@@ -51,7 +51,23 @@ class App extends Component {
         email: 'fakeemail@gmail.com',
         phone: '819-123-4568'
       }
-    },]
+    },],
+
+
+    filters: [
+      {
+        name: 'Size',
+        values: ["", ...Object.values(this.size)]
+      },
+      {
+        name: 'Price',
+        values: ["", "0-9", "10-19", "20-29", "30-39", "40+"]
+      },
+      {
+        name: 'Type',
+        values: ["", "Dresses", "Hats", "Jewerly", "Pants", "Tops"]
+      }
+    ]
   }
   render() {
     return (
@@ -62,7 +78,7 @@ class App extends Component {
         <Row>
           <Col className="bg-white ml-1" sm={2}>
             <h3>Filters</h3>
-            <FilterContainer></FilterContainer>
+            <FilterContainer filters={this.state.filters}></FilterContainer>
           </Col>
 
           <Col sm={9}>
