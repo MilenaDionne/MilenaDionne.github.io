@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 class Filter extends Component {
 
    render() {
-      const { name, value, filters } = this.props;
+      const { name, filters } = this.props;
       const valueList = filters.map((value, key) => {
          return (
             <option key={key}>{value}</option>
