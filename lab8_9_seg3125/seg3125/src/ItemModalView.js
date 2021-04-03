@@ -1,38 +1,45 @@
 import React, { Component } from 'react'
-import ReactTooltip from "react-tooltip";
 import Modal from 'react-bootstrap/Modal';
 import ModalTitle from 'react-bootstrap/ModalTitle';
 import ModalBody from 'react-bootstrap/ModalBody';
+import l from './locate';
 
 class ItemModalView extends Component {
     state = {
         hideOwnerInfo: true,
         contactOwnerBtnText: 'Contact Owner'
     }
+    componentDidUpdate(prevProps) {
+        if (prevProps.language != this.props.language) {
+            console.log(this.props.language)
+            this.setState({ contactOwnerBtnText: l(this.props.language, 'ItemContactOwner') })
+        }
+    }
+
 
     changeHideOwnerInfo = () => {
         this.setState({ hideOwnerInfo: !this.state.hideOwnerInfo });
     }
 
-    changeContactOwnerBtnText = () => {
+    changeContactOwnerBtnText = (language) => {
         if (this.state.hideOwnerInfo) {
             this.setState({
-                contactOwnerBtnText: 'Hide owner\'s information'
+                contactOwnerBtnText: l(language, 'ItemHideOwnerInfo')
             })
         }
         else {
             this.setState({
-                contactOwnerBtnText: 'Contact Owner'
+                contactOwnerBtnText: l(language, 'ItemContactOwner')
             })
         }
     }
 
-    btnOnClick = () => {
-        this.changeContactOwnerBtnText();
+    btnOnClick = (language) => {
+        this.changeContactOwnerBtnText(language);
         this.changeHideOwnerInfo();
     }
     render() {
-        const { item, modalSize, show, closeModal } = this.props;
+        const { item, modalSize, show, closeModal, language } = this.props;
 
         return (
             <Modal
@@ -56,39 +63,41 @@ class ItemModalView extends Component {
                                 <tbody>
                                     <tr>
                                         <th className="pr-4" scope="row">
-                                            Clothes type
-                                        <img src="./icons/typeClothes.png" alt="" className="img-fluid ml-2" style={{ width: '1.2rem' }} />
+                                            {l(language, 'ItemType')}
+                                            <img src="./icons/typeClothes.png" alt="" className="img-fluid " style={{ width: '1.2rem' }} />
                                         </th>
                                         <td>{item.type}</td>
                                     </tr>
                                     <tr>
                                         <th className="pr-4" scope="row">
-                                            Size
+                                            {l(language, 'ItemSize')}
                                             <img src="./icons/size.png" alt="" className="img-fluid ml-2" style={{ width: '1.2rem' }} />
                                         </th>
-                                        <td>{item.size}</td>
+                                        <td>{l(language, item.size)}</td>
                                     </tr>
                                     <tr>
                                         <th className="pr-4" scope="row">
-                                            Price
-                                        <img src="./icons/dollarIcon.png" alt="" className="img-fluid ml-2" style={{ width: '1rem' }} />
+                                            {l(language, 'ItemPrice')}
+                                            <img src="./icons/dollarIcon.png" alt="" className="img-fluid ml-1" style={{ width: '1rem' }} />
                                         </th>
                                         <td>{item.cost}$</td>
                                     </tr>
 
                                     <tr>
-                                        <th className="pr-4" scope="row">{item.secondaryColor ? 'Colors' : 'Color'}</th>
+                                        <th className="pr-4" scope="row">
+                                            {l(language, 'ItemColor')}
+                                        </th>
                                         <td>
                                             <ul>
-                                                <li>{item.mainColor}</li>
+                                                <li>{l(language, item.mainColor)}</li>
                                                 {item.secondaryColor ?
-                                                    <li>{item.secondaryColor}</li>
+                                                    <li>{l(language, item.secondaryColor)}</li>
                                                     : ''}
                                             </ul>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th className="pr-4" scope="row">Description</th>
+                                        <th className="pr-4" scope="row"> {l(language, 'ItemPrice')}</th>
                                         <td>{item.description}</td>
                                     </tr>
 
@@ -98,22 +107,22 @@ class ItemModalView extends Component {
                     </div>
 
                     <div className="text-center mt-2 mb-2">
-                        <button className="btn btn-primary" onClick={this.btnOnClick}>{this.state.contactOwnerBtnText}</button>
+                        <button className="btn btn-primary" onClick={() => this.btnOnClick(language)}>{this.state.contactOwnerBtnText}</button>
                     </div>
                     <div hidden={this.state.hideOwnerInfo}>
 
                         <table className="table text-center">
                             <tbody>
                                 <tr>
-                                    <th>Name</th>
+                                    <th>{l(language, 'Name')}</th>
                                     <td>{item.owner.name}</td>
                                 </tr>
                                 <tr>
-                                    <th>Email</th>
+                                    <th>{l(language, 'Email')}</th>
                                     <td>{item.owner.email}</td>
                                 </tr>
                                 <tr>
-                                    <th>Phone Number</th>
+                                    <th>{l(language, 'PhoneNumber')}</th>
                                     <td>{item.owner.phone}</td>
                                 </tr>
                             </tbody>

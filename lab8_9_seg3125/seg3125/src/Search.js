@@ -9,9 +9,9 @@ class Search extends Component {
     render() {
         return (
             <Form inline>
-                <FormControl type="text" placeholder="Search" className="mr-sm-2" style={{ width: '70%' }} />
+                <FormControl type="text" placeholder="Search" className="mr-sm-2" style={{ width: '60%' }} />
                 <Button variant="outline-success">Search</Button>
-                <p className="ml-5">Sort By (to be implemented...)</p>
+                <p className="ml-4">Sort By (to be implemented...)</p>
             </Form>
         )
 

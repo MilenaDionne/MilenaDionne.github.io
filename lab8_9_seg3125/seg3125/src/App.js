@@ -19,6 +19,7 @@ class App extends Component {
 
 
   state = {
+    language: 'en',
     idCount: 2,
 
     items: [{
@@ -37,11 +38,11 @@ class App extends Component {
         phone: '819-123-4568'
       }
     }, {
-      id: 1,
+      id: 2,
       name: 'Biking-Shirt',
       imgSrc: '../images/Biking-Shirt_T-Shirt_M_Blue_None_30_JL.jpg',
       cost: 30,
-      size: this.size.M,
+      size: this.size.S,
       type: 'T-Shirt',
       mainColor: 'Blue',
       secondaryColor: 'Red',
@@ -69,29 +70,33 @@ class App extends Component {
       }
     ]
   }
+
+  changeLanguage = (lang) => {
+    this.setState({ language: lang });
+  }
   render() {
     return (
       <div className="App">
         <Row>
-          <PageTitle></PageTitle>
+          <PageTitle changeLanguage={this.changeLanguage}></PageTitle>
         </Row>
         <Row>
-          <Col className="bg-white ml-1" sm={2}>
+          <Col className="bg-white ml-1" >
             <h3>Filters</h3>
             <FilterContainer filters={this.state.filters}></FilterContainer>
           </Col>
 
-          <Col sm={9}>
+          <Col xs={10}>
             <Row>
-              <Col sm={2}><NewPost /></Col>
-              <Col sm={10}>
+              <Col xs={2}><NewPost /></Col>
+              <Col xs={10}>
                 <Search />
               </Col>
             </Row>
-            {<ItemsContainer items={this.state.items} sizes={this.size}></ItemsContainer>}
+            {<ItemsContainer items={this.state.items} language={this.state.language} sizes={this.size}></ItemsContainer>}
           </Col>
         </Row>
-      </div>
+      </div >
     );
   }
 }

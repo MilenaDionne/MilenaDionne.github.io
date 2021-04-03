@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import Filter from './Filter'
-import ReactTooltip from "react-tooltip";
-import ItemModalView from './ItemModalView'
 
 class FilterContainer extends Component {
 

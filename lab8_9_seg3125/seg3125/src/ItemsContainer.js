@@ -2,12 +2,10 @@ import React, { Component, useState } from 'react'
 import Item from './Item';
 
 class ItemsContainer extends Component {
-    items = this.props.items;
-    sizes = this.props.sizes;
-
     render() {
-        const list = this.items.map(item => {
-            return (<Item item={item} key={item.id}></Item>)
+        const { items, language, sizes } = this.props
+        const list = items.map(item => {
+            return (<Item item={item} key={'Item' + item.id} language={language}></Item>)
         })
 
         return (
