@@ -10,8 +10,7 @@ class ItemModalView extends Component {
         contactOwnerBtnText: 'Contact Owner'
     }
     componentDidUpdate(prevProps) {
-        if (prevProps.language != this.props.language) {
-            console.log(this.props.language)
+        if (prevProps.language !== this.props.language) {
             this.setState({ contactOwnerBtnText: l(this.props.language, 'ItemContactOwner') })
         }
     }
