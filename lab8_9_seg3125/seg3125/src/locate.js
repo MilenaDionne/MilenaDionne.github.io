@@ -3,6 +3,22 @@ export default function l(language, word) {
 }
 
 let strings = {
+    SelectType: {
+        en: 'Choose type...',
+        fr: 'Choisir un type...'
+    },
+    Color1: {
+        en: 'Main color...', 
+        fr: 'Couleur principale...'
+    },
+    Color2: {
+        en: 'Second color...', 
+        fr: 'Deuxième couleur...'
+    },
+    NewPostTitle: {
+        en: 'New Post',
+        fr: 'Nouvelle publication'
+    },
     Name: {
         en: 'Name',
         fr: 'Nom'
@@ -10,6 +26,10 @@ let strings = {
     ItemSize: {
         en: 'Size',
         fr: 'Taille'
+    },
+    Picture: {
+        en: 'add image',
+        fr: 'ajouter image'
     },
     ItemPrice: {
         en: 'Price',
@@ -31,9 +51,29 @@ let strings = {
         en: 'Contact Owner',
         fr: 'Contacter le propriétaire'
     },
+    NewContactInfo: {
+        en: 'Enter contact info', 
+        fr: 'Entrer vos coordonnées'
+    },
+    NewContactName: {
+        en: 'Enter name', 
+        fr: 'Entrer votre nom'
+    }, 
+    NewContactEmail: {
+        en: 'Enter email', 
+        fr: 'Entrer votre courriel'
+    }, 
+    NewContactPhone: {
+        en: 'Enter phone number', 
+        fr: 'Entrer votre numéro de téléphone'
+    }, 
+    NewAgreementConditions: {
+        en: 'Do you agree to follow our terms and conditions?', 
+        fr: 'Acceptez-vous de suivre nos termes et conditions?'
+    }, 
     ItemType: {
-        en: 'Type of clothes',
-        fr: 'Type de linge'
+        en: 'Clothes type',
+        fr: 'Type de vêtements'
     },
     ItemHideOwnerInfo: {
         en: 'Hide information',
@@ -55,6 +95,14 @@ let strings = {
         'en': 'Small',
         'fr': 'Petit'
     },
+    Cancel: {
+        'en': 'Cancel', 
+        'fr': 'Annuler'
+    },
+    AddPost: {
+        'en': 'Post', 
+        'fr': 'Publier'
+    },
     Medium: {
         'en': 'Medium',
         'fr': 'Medium'
@@ -71,6 +119,30 @@ let strings = {
         'en': 'Extra extra large',
         'fr': 'Très très large'
     },
+    Tops: {
+        'en': 'Tops',
+        'fr': 'Hauts'
+    }, 
+    Dresses: {
+        'en': 'Dresses', 
+        'fr': 'Robes'
+    },
+    Pants: {
+        'en': 'Pants',
+        'fr': 'Bas'
+    }, 
+    Hats: {
+        'en': 'Hats',
+        'fr': 'Chapeaux'
+    }, 
+    Jewerly: {
+        'en': 'Jewerly', 
+        'fr': 'Bijoux'  
+    }, 
+    ChooseSize : {
+        'en': 'Choose size...', 
+        'fr': 'Choisir taille...'
+    }, 
     Red: {
         'en': 'Red',
         'fr': 'Rouge'
@@ -108,10 +180,24 @@ let strings = {
         'en': 'Pink',
         'fr': 'Rose'
     },
-
-
-
-
-
-
+    Grey: {
+        'en': 'Grey', 
+        'fr': 'Gris'
+    },
+    Brown: {
+        'en': 'Brown', 
+        'fr': 'Brun'
+    }, 
+    Gold: {
+        'en': 'Gold', 
+        'fr': 'Or'
+    }, 
+    Silver: {
+        'en': 'Silver', 
+        'fr': 'Argent'
+    }, 
+    Bronze: {
+        'en': 'Bronze', 
+        'fr': 'Bronze'
+    }
 }

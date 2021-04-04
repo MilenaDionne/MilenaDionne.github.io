@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import ItemsContainer from './ItemsContainer';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import NewPost from './components/NewPost'
 import FilterContainer from './FilterContainer'
 import PageTitle from './PageTitle'
 import Search from './Search'
+import NewPostContainer from './components/NewPostContainer';
 
 class App extends Component {
   size = {
@@ -16,6 +16,8 @@ class App extends Component {
     XL: 'Extra Large',
     XXL: 'Extra Extra Large'
   }
+
+  colors = ["Red", "Yellow", "Blue","Purple", "Grey", "Brown", "Black", "White", "Green", "Orange", "Pink", "Gold", "Silver", "Bronze"]
 
 
   state = {
@@ -58,15 +60,15 @@ class App extends Component {
     filters: [
       {
         name: 'Size',
-        values: ["", ...Object.values(this.size)]
+        values: [...Object.values(this.size)]
       },
       {
         name: 'Price',
-        values: ["", "0-9", "10-19", "20-29", "30-39", "40+"]
+        values: ["0-9", "10-19", "20-29", "30-39", "40+"]
       },
       {
         name: 'Type',
-        values: ["", "Dresses", "Hats", "Jewerly", "Pants", "Tops"]
+        values: ["Tops", "Pants", "Dresses", "Hats", "Jewerly"]
       }
     ]
   }
@@ -87,8 +89,11 @@ class App extends Component {
           </Col>
 
           <Col xs={10}>
+          <br></br>
             <Row>
-              <Col xs={2}><NewPost /></Col>
+              <Col xs={2}>
+              {<NewPostContainer language={this.state.language} filters={this.state.filters[2]} sizes={this.size} colors={this.colors}></NewPostContainer>}
+              </Col>
               <Col xs={10}>
                 <Search />
               </Col>

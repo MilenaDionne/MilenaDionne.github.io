@@ -14,6 +14,7 @@ class Filter extends Component {
          <form>
             <label htmlFor="filters">Filter by {name}&nbsp;</label>
             <select name="filters" id={name + 'Filter'}>
+               <option value="0"></option>
                {valueList}
             </select>
          </form>
