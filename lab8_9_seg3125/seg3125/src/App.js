@@ -63,10 +63,6 @@ class App extends Component {
         values: [...Object.values(this.size)]
       },
       {
-        name: 'Price',
-        values: ["0-9", "10-19", "20-29", "30-39", "40+"]
-      },
-      {
         name: 'Type',
         values: ["Tops", "Pants", "Dresses", "Hats", "Jewerly"]
       }
@@ -112,9 +108,16 @@ class App extends Component {
     var attr = criteria.split('_')[0];
     var order = criteria.split('_')[1];
     console.log(list.sort(this.compare(attr)))
-
-
   }
+
+    getFilters = (f, value) => {
+        this.setState(
+            {
+                resultList: this.state.resultList.filter(item=> {return item[f] == value})
+            })
+
+    }
+
   render() {
     return (
       <div className="App">
@@ -124,7 +127,7 @@ class App extends Component {
         <Row>
           <Col className="bg-white ml-1" >
             <h3>Filters</h3>
-            <FilterContainer filters={this.state.filters}></FilterContainer>
+                    <FilterContainer filters={this.state.filters} method={this.getFilters}></FilterContainer>
           </Col>
 
           <Col xs={10}>
