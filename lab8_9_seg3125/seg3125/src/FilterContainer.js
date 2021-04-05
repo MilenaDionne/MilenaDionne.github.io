@@ -7,7 +7,7 @@ class FilterContainer extends Component {
         const { filters, getFilter } = this.props;
         const filtersToRender = filters.map((filter, key) => {
             return (
-                <Filter name={filter.name} key={key} filters={filter.values} method={getFilter}/>
+                <Filter name={filter.name} key={key} filters={filter.values} getFilter={getFilter} />
             )
         })
         return (
