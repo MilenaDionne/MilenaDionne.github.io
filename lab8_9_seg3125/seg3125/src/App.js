@@ -44,7 +44,7 @@ class App extends Component {
         name: 'fake-Shirt',
         imgSrc: '../images/Biking-Shirt_T-Shirt_M_Blue_None_30_JL.jpg',
         cost: 40,
-        size: this.size.M,
+        size: this.size.XL,
         type: 'T-Shirt',
         mainColor: 'Blue',
         secondaryColor: 'Red',
@@ -56,6 +56,8 @@ class App extends Component {
 
       }],
     resultList: [],
+    appliedFilters: [],
+    searchQuery: '',
 
     filters: [
       {
@@ -110,13 +112,15 @@ class App extends Component {
     console.log(list.sort(this.compare(attr)))
   }
 
-    getFilters = (f, value) => {
-        this.setState(
-            {
-                resultList: this.state.resultList.filter(item=> {return item[f] == value})
-            })
+  getFilters = (f, value) => {
 
-    }
+    this.setState(
+      {
+        resultList: this.state.items.filter(item => { return item[f.toLowerCase()] == value })
+      });
+
+  }
+  buildResultList = () => { return null }
 
   render() {
     return (
@@ -127,14 +131,14 @@ class App extends Component {
         <Row>
           <Col className="bg-white ml-1" >
             <h3>Filters</h3>
-                    <FilterContainer filters={this.state.filters} method={this.getFilters}></FilterContainer>
+            <FilterContainer filters={this.state.filters} getFilter={this.getFilters}></FilterContainer>
           </Col>
 
           <Col xs={10}>
             <br></br>
             <Row>
               <Col xs={2}>
-                <NewPost addNewPost={this.addNewPost} language={this.state.language} filters={this.state.filters[2]} sizes={[...Object.values(this.size)]} colors={this.colors}></NewPost>
+                <NewPost addNewPost={this.addNewPost} language={this.state.language} filters={this.state.filters[1]} sizes={[...Object.values(this.size)]} colors={this.colors}></NewPost>
               </Col>
               <Col xs={10}>
                 <Search sortBy={this.sortBy} />
