@@ -21,7 +21,7 @@ class App extends Component {
 
   state = {
     language: 'en',
-    idCount: 2,
+    idCount: 3,
 
     items: [
       {
@@ -78,7 +78,8 @@ class App extends Component {
   }
 
   addNewPost = (item) => {
-    item.id = Math.random();
+    item.id = this.state.idCount;
+    this.setState({ idCount: this.stateidCount + 1 })
     let items = [...this.state.items, item]
     this.setState({
       items: items
@@ -90,6 +91,7 @@ class App extends Component {
     this.setState({ language: lang });
   }
 
+  //https://stackoverflow.com/questions/1129216/sort-array-of-objects-by-string-property-value
   compare(property, order) {
     var sortOrder = 1;
     if (order == 'Descending') {
@@ -111,10 +113,10 @@ class App extends Component {
     var list = this.state.resultList;
     var attr = criteria.split('_')[0];
     var order = criteria.split('_')[1];
-    console.log(list.sort(this.compare(attr)))
-
-
+    this.setState({ resultList: list.sort(this.compare(attr, order)) })
   }
+
+
   render() {
     return (
       <div className="App">
