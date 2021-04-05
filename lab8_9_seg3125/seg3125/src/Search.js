@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
+import SortBy from './SortBy'
 
 class Search extends Component {
 
@@ -11,7 +12,7 @@ class Search extends Component {
             <Form inline>
                 <FormControl type="text" placeholder="Search" className="mr-sm-2" style={{ width: '60%' }} />
                 <Button variant="outline-success">Search</Button>
-                <p className="ml-4">Sort By (to be implemented...)</p>
+                <SortBy sortBy={this.props.sortBy} />
             </Form>
         )
 

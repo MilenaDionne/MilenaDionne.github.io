@@ -16,7 +16,7 @@ class App extends Component {
     XL: 'Extra Large'
   }
 
-  colors = ["Red", "Yellow", "Blue","Purple", "Grey", "Brown", "Black", "White", "Green", "Orange", "Pink", "Gold", "Silver", "Bronze"]
+  colors = ["Red", "Yellow", "Blue", "Purple", "Grey", "Brown", "Black", "White", "Green", "Orange", "Pink", "Gold", "Silver", "Bronze"]
 
 
   state = {
@@ -25,22 +25,37 @@ class App extends Component {
 
     items: [
       {
-      id: 1,
-      name: 'Biking-Shirt',
-      imgSrc: '../images/Biking-Shirt_T-Shirt_M_Blue_None_30_JL.jpg',
-      cost: 30,
-      size: this.size.M,
-      type: 'T-Shirt',
-      mainColor: 'Blue',
-      secondaryColor: 'Red',
-      description: 'Perfect T-Shirt for biking',
-      
-      ownername: 'JL',
-      owneremail: 'fakeemail@gmail.com',
-      ownerphone: '819-123-4568'
-      
-    }],
+        id: 1,
+        name: 'Biking-Shirt',
+        imgSrc: '../images/Biking-Shirt_T-Shirt_M_Blue_None_30_JL.jpg',
+        cost: 50,
+        size: this.size.M,
+        type: 'T-Shirt',
+        mainColor: 'Blue',
+        secondaryColor: 'Red',
+        description: 'Perfect T-Shirt for biking',
 
+        ownername: 'JL',
+        owneremail: 'fakeemail@gmail.com',
+        ownerphone: '819-123-4568'
+
+      }, {
+        id: 2,
+        name: 'fake-Shirt',
+        imgSrc: '../images/Biking-Shirt_T-Shirt_M_Blue_None_30_JL.jpg',
+        cost: 40,
+        size: this.size.M,
+        type: 'T-Shirt',
+        mainColor: 'Blue',
+        secondaryColor: 'Red',
+        description: 'Perfect T-Shirt for biking',
+
+        ownername: 'JL',
+        owneremail: 'fakeemail@gmail.com',
+        ownerphone: '819-123-4568'
+
+      }],
+    resultList: [],
 
     filters: [
       {
@@ -58,6 +73,10 @@ class App extends Component {
     ]
   }
 
+  componentDidMount() {
+    this.setState({ resultList: this.state.items })
+  }
+
   addNewPost = (item) => {
     item.id = Math.random();
     let items = [...this.state.items, item]
@@ -69,6 +88,32 @@ class App extends Component {
 
   changeLanguage = (lang) => {
     this.setState({ language: lang });
+  }
+
+  compare(property, order) {
+    var sortOrder = 1;
+    if (order == 'Descending') {
+      sortOrder = -1;
+    }
+    return function (a, b) {
+      if (a[property] < b[property]) {
+        return -1 * sortOrder;
+      } else if (a[property] > b[property]) {
+        return 1 * sortOrder;
+      }
+      else {
+        return 0;
+      }
+    }
+  }
+
+  sortBy = (criteria) => {
+    var list = this.state.resultList;
+    var attr = criteria.split('_')[0];
+    var order = criteria.split('_')[1];
+    console.log(list.sort(this.compare(attr)))
+
+
   }
   render() {
     return (
@@ -83,16 +128,16 @@ class App extends Component {
           </Col>
 
           <Col xs={10}>
-          <br></br>
+            <br></br>
             <Row>
               <Col xs={2}>
-              <NewPost addNewPost={this.addNewPost} language={this.state.language} filters={this.state.filters[2]} sizes={[...Object.values(this.size)]} colors={this.colors}></NewPost>
+                <NewPost addNewPost={this.addNewPost} language={this.state.language} filters={this.state.filters[2]} sizes={[...Object.values(this.size)]} colors={this.colors}></NewPost>
               </Col>
               <Col xs={10}>
-                <Search />
+                <Search sortBy={this.sortBy} />
               </Col>
             </Row>
-            {<ItemsContainer items={this.state.items} language={this.state.language} sizes={this.size}></ItemsContainer>}
+            {<ItemsContainer items={this.state.resultList} language={this.state.language} sizes={this.size}></ItemsContainer>}
           </Col>
         </Row>
       </div >
