@@ -88,10 +88,18 @@ let strings = {
         'fr': 'Numéro de téléphone'
     },
     'Extra Small': {
-        'en': 'Extra small',
+        'en': 'Extra Small',
+        'fr': 'Très petit'
+    },
+    'Très petit': {
+        'en': 'Extra Small',
         'fr': 'Très petit'
     },
     Small: {
+        'en': 'Small',
+        'fr': 'Petit'
+    },
+    Petit: {
         'en': 'Small',
         'fr': 'Petit'
     },
@@ -111,8 +119,12 @@ let strings = {
         'en': 'Large',
         'fr': 'Large'
     },
+    'Très large': {
+        'en': 'Extra Large',
+        'fr': 'Très large'
+    },
     'Extra Large': {
-        'en': 'Extra large',
+        'en': 'Extra Large',
         'fr': 'Très large'
     },
     'Extra Extra Large': {

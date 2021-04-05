@@ -19,7 +19,7 @@ class Item extends Component {
                     {item.name}
                 </div >
                 <div >
-                    <img src={item.imgSrc} alt="" className="card-img" />
+                    <img src={item.imgSrc} alt="" className="card-img" style={{height: '300px'}} />
                 </div>
                 <div className="row text-center">
                     <span className="col">

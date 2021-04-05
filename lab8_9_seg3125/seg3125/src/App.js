@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col'
 import FilterContainer from './FilterContainer'
 import PageTitle from './PageTitle'
 import Search from './Search'
-import NewPostContainer from './components/NewPostContainer';
+import NewPost from './components/NewPost';
 
 class App extends Component {
   size = {
@@ -13,8 +13,7 @@ class App extends Component {
     S: 'Small',
     M: 'Medium',
     L: 'Large',
-    XL: 'Extra Large',
-    XXL: 'Extra Extra Large'
+    XL: 'Extra Large'
   }
 
   colors = ["Red", "Yellow", "Blue","Purple", "Grey", "Brown", "Black", "White", "Green", "Orange", "Pink", "Gold", "Silver", "Bronze"]
@@ -24,7 +23,8 @@ class App extends Component {
     language: 'en',
     idCount: 2,
 
-    items: [{
+    items: [
+      {
       id: 1,
       name: 'Biking-Shirt',
       imgSrc: '../images/Biking-Shirt_T-Shirt_M_Blue_None_30_JL.jpg',
@@ -34,27 +34,12 @@ class App extends Component {
       mainColor: 'Blue',
       secondaryColor: 'Red',
       description: 'Perfect T-Shirt for biking',
-      owner: {
-        name: 'JL',
-        email: 'fakeemail@gmail.com',
-        phone: '819-123-4568'
-      }
-    }, {
-      id: 2,
-      name: 'Biking-Shirt',
-      imgSrc: '../images/Biking-Shirt_T-Shirt_M_Blue_None_30_JL.jpg',
-      cost: 30,
-      size: this.size.S,
-      type: 'T-Shirt',
-      mainColor: 'Blue',
-      secondaryColor: 'Red',
-      description: 'Perfect T-Shirt for biking',
-      owner: {
-        name: 'JL',
-        email: 'fakeemail@gmail.com',
-        phone: '819-123-4568'
-      }
-    },],
+      
+      ownername: 'JL',
+      owneremail: 'fakeemail@gmail.com',
+      ownerphone: '819-123-4568'
+      
+    }],
 
 
     filters: [
@@ -71,6 +56,15 @@ class App extends Component {
         values: ["Tops", "Pants", "Dresses", "Hats", "Jewerly"]
       }
     ]
+  }
+
+  addNewPost = (item) => {
+    item.id = Math.random();
+    let items = [...this.state.items, item]
+    this.setState({
+      items: items
+    })
+    console.log('form submitted', item);
   }
 
   changeLanguage = (lang) => {
@@ -92,7 +86,7 @@ class App extends Component {
           <br></br>
             <Row>
               <Col xs={2}>
-              {<NewPostContainer language={this.state.language} filters={this.state.filters[2]} sizes={this.size} colors={this.colors}></NewPostContainer>}
+              <NewPost addNewPost={this.addNewPost} language={this.state.language} filters={this.state.filters[2]} sizes={[...Object.values(this.size)]} colors={this.colors}></NewPost>
               </Col>
               <Col xs={10}>
                 <Search />

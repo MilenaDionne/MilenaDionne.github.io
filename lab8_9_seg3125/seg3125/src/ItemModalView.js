@@ -114,15 +114,15 @@ class ItemModalView extends Component {
                             <tbody>
                                 <tr>
                                     <th>{l(language, 'Name')}</th>
-                                    <td>{item.owner.name}</td>
+                                    <td>{item.ownername}</td>
                                 </tr>
                                 <tr>
                                     <th>{l(language, 'Email')}</th>
-                                    <td>{item.owner.email}</td>
+                                    <td>{item.owneremail}</td>
                                 </tr>
                                 <tr>
                                     <th>{l(language, 'PhoneNumber')}</th>
-                                    <td>{item.owner.phone}</td>
+                                    <td>{item.ownerphone}</td>
                                 </tr>
                             </tbody>
                         </table>

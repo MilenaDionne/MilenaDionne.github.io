@@ -3,11 +3,55 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Form from 'react-bootstrap/Form'
 import l from '../locate';
-
+import Image from 'react-bootstrap/Image'
 
 class NewPost extends Component {
+
+    
+    state = {
+        imgSrc: '../../images/addImage.png'
+    }
+
+       
+    handleChange = (e) => {
+        console.log('target id: ', e.target.id)
+        if (e.target.id === 'imgSrc'){
+            this.setState({
+                [e.target.id]: URL.createObjectURL(e.target.files[0])
+            })
+
+        } else {
+            this.setState({
+                [e.target.id]: e.target.value
+            })
+        }
+        
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+        this.props.addNewPost(this.state);
+        
+        this.closeModal();
+
+    }
+
+   openModal() {
+        document.getElementById("backdrop").style.display = "block"
+        document.getElementById("newPostModal").style.display = "block"
+        document.getElementById("newPostModal").className += "show"
+    }
+
+    closeModal() {
+        document.getElementById("backdrop").style.display = "none"
+        document.getElementById("newPostModal").style.display = "none"
+        document.getElementById("newPostModal").className += document.getElementById("newPostModal").className.replace("show", "")
+    }
+
     render() {
-        const { language, filters, sizes, colors} = this.props;
+        const {language, filters, sizes, colors} = this.props;
+
+        
 
         const valueColors = colors.map((value, key) => {
             return (
@@ -21,33 +65,57 @@ class NewPost extends Component {
             )
          })
 
+         const clothsSize = sizes.map((value, key) => {
+             return (
+                <option key={key}>{l(language, value)}</option>
+             )
+         })
+
+         
+
         return (
             <Col className="bg-white" >
-                <button type="button" className="btn btn-primary w-100" data-toggle="modal" data-target="#exampleModal">
+                <button type="button" className="btn btn-primary w-100" onClick={this.openModal}>
                     {l(language, 'NewPostTitle')}
             </button>
-                <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal fade" id="newPostModal" tabIndex="-1" role="dialog" aria-labelledby="newPostModalLabel" aria-modal="true">
                     <div className="modal-dialog modal-xl" role="document">
                         <div className="modal-content">
                             <div className="modal-header">
-                                <h5 className="modal-title" id="exampleModalLabel">{l(language, 'NewPostTitle')}</h5>
+                                <h5 className="modal-title" id="newPostModalLabel">{l(language, 'NewPostTitle')}</h5>
                                 <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <div className="modal-body">
-                                <div className="row">
-                                    <div className="col-6">
-                                        <button type="button" className="btn bg-light w-100 h-100" title={l(language, 'Picture')}><h1>+</h1></button>
-                                    </div>
-                                    <div className="col-6">
-                                        <Form>
+                            <Form onSubmit={this.handleSubmit}>
+                                <div className="modal-body">
+                                    <Form.Row>
+                                        <div className="col-5">
+                                            <Row>
+                                                <label className="btn btn-default p-0">
+                                                    <input type="file" id="imgSrc" accept=".jpg, .jpeg, .png, .jfif" onChange={this.handleChange} />
+                                                </label>
+                                            </Row>
+                                            <div className="row-cols-2">
+                                                <Image src={this.state.imgSrc} className="img-fluid" alt="Responsive image"></Image>
+                                            </div>
+                                        </div>
+                                        <div className="col-1"></div>
+                                        <div className="col-6">
+                                            <Form.Group as={Row}>
+                                                <Form.Label column sm="2">
+                                                {l(language, 'Name')}
+                                                </Form.Label>
+                                                <Col sm="10">
+                                                    <Form.Control type="name" id="name" placeholder={l(language, 'Name')} onChange={this.handleChange}/>
+                                                </Col>
+                                            </Form.Group>
                                             <Form.Group as={Row}>
                                                 <Form.Label column sm="4">
                                                     {l(language, 'ItemType')}
-                                            </Form.Label>
+                                                </Form.Label>
                                                 <Col sm="8">
-                                                    <Form.Control as="select" className="my-1 mr-sm-2" custom>
+                                                    <Form.Control as="select" id="type" className="my-1 mr-sm-2" custom onChange={this.handleChange}>
                                                         <option value="0"> {l(language, 'SelectType')}</option>
                                                         {clothsType}
                                                     </Form.Control>
@@ -58,84 +126,75 @@ class NewPost extends Component {
                                                 {l(language, 'ItemPrice')}
                                                 </Form.Label>
                                                 <Col sm="10">
-                                                    <Form.Control type="price" placeholder={l(language, 'ItemPrice')} />
+                                                    <Form.Control type="price" id="cost" placeholder={l(language, 'ItemPrice')} onChange={this.handleChange}/>
                                                 </Col>
                                             </Form.Group>
                                             <Form.Group as={Row}>
                                                 <Form.Label column sm="2">
-                                                {l(language, "ItemSize")}
-                                            </Form.Label>
+                                                    {l(language, "ItemSize")}
+                                                </Form.Label>
                                                 <Col sm="10">
-                                                    <Form.Control as="select" className="my-1 mr-sm-2" custom>
+                                                    <Form.Control as="select" id="size" className="my-1 mr-sm-2" custom onChange={this.handleChange}>
                                                         <option value="0">{l(language, "ChooseSize")}</option>
-                                                        <option value="1">{l(language, sizes.XS)}</option>
-                                                        <option value="1">{l(language, sizes.S)}</option>
-                                                        <option value="1">{l(language, sizes.M)}</option>
-                                                        <option value="1">{l(language, sizes.L)}</option>
-                                                        <option value="1">{l(language, sizes.XL)}</option>
+                                                        {clothsSize}
                                                     </Form.Control>
                                                 </Col>
                                             </Form.Group>
                                             <Form.Group>
                                                 <Form.Label>Description</Form.Label>
-                                                <Form.Control as="textarea" rows={3} />
+                                                <Form.Control as="textarea" id="description" rows={3} onChange={this.handleChange}/>
                                             </Form.Group>
                                             <Form.Group>
                                                 <Row>
                                                     <Col>
-                                                        <Form.Control as="select" className="my-1 mr-sm-2" custom>
+                                                        <Form.Control as="select" id="mainColor" className="my-1 mr-sm-2" custom onChange={this.handleChange}>
                                                             <option value="0"> {l(language, "Color1")}</option>
                                                             {valueColors}
                                                         </Form.Control>
                                                     </Col>
                                                     <Col>
-                                                        <Form.Control as="select" className="my-1 mr-sm-2" custom>
+                                                        <Form.Control as="select" id="secondaryColor" className="my-1 mr-sm-2" custom onChange={this.handleChange}>
                                                             <option value="0">{l(language, "Color2")}</option>
                                                             {valueColors}
                                                         </Form.Control>
                                                     </Col>
                                                 </Row>
                                             </Form.Group>
-                                        </Form>
-                                    </div>
-                                </div>
-                                <br></br>
-                                <div>
+                                        </div>
+                                    </Form.Row> 
                                     <div>
                                         <h4>{l(language, 'NewContactInfo')}</h4>
                                     </div>
-                                    <Form>
-                                        <Form.Row>
-                                            <Col>
-                                                <Form.Control placeholder={l(language, 'NewContactName')} />
-                                                
-                                            </Col>
-                                            <Col>
-                                                <Form.Control placeholder={l(language, 'NewContactEmail')} />
-                                                
-                                            </Col>
-                                        </Form.Row>
-                                        <br></br>
-                                        <Form.Row>
-                                            <Col>
-                                                <Form.Control placeholder={l(language, 'NewContactPhone')} />
-                                            </Col>
-                                            <Col>
-                                                <Form.Group id="formGridCheckbox">
-                                                    <Form.Check type="checkbox" label={l(language, 'NewAgreementConditions')} />
-                                                </Form.Group>
-                                            </Col>
-                                        </Form.Row>
-                                    </Form>
+                                    <Row>
+                                        <Col>
+                                            <Form.Control placeholder={l(language, 'NewContactName')} id="ownername" onChange={this.handleChange}/>
+                                            
+                                        </Col>
+                                        <Col>
+                                            <Form.Control placeholder={l(language, 'NewContactEmail')} id="owneremail" onChange={this.handleChange}/>
+                                        </Col>
+                                    </Row>
+                                    <br></br>
+                                    <Form.Row>
+                                        <Col>
+                                            <Form.Control placeholder={l(language, 'NewContactPhone')} id="ownerphone" onChange={this.handleChange}/>
+                                        </Col>
+                                        <Col>
+                                            <Form.Group id="formGridCheckbox">
+                                                <Form.Check type="checkbox" label={l(language, 'NewAgreementConditions')}/>
+                                            </Form.Group>
+                                        </Col>
+                                    </Form.Row>
                                 </div>
-                            </div>
-                            <div className="modal-footer">
-                                <button type="button" className="btn btn-secondary" data-dismiss="modal">{l(language, 'Cancel')}</button>
-                                <button type="submit" className="btn btn-primary" data-dismiss="modal">{l(language, 'AddPost')}</button>
-                            </div>
+                                <div className="modal-footer">
+                                    <button type="button" className="btn btn-secondary" onClick={this.closeModal}>{l(language, 'Cancel')}</button>
+                                    <button type="submit" className="btn btn-primary">{l(language, 'AddPost')}</button>
+                                </div>
+                            </Form>
                         </div>
                     </div>
                 </div>
+                <div className="modal-backdrop fade show" id="backdrop" style={{display: 'none'}}></div>
             </Col>
 
         )

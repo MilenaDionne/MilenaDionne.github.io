@@ -9,13 +9,7 @@ class PageTitle extends Component {
         const { changeLanguage } = this.props
         return (
             <div className="bg-dark w-100">
-                <Row>
-                    <Col sm="11">
-                        <div >
-                            <h1 className="text-center text-white" style={{height: '100px', paddingTop: '20px'}}>Trendy Apparel Trade</h1>
-                        </div>
-                    </Col>
-                    
+                <Row className="justify-content-end">
                     <Col sm="1">
                         <div>
                             <select onChange={(e) => changeLanguage(e.target.value)}>
@@ -25,6 +19,14 @@ class PageTitle extends Component {
                         </div>
                     </Col>
                 </Row> 
+                <Row>
+                    <Col>
+                        <div >
+                            <h1 className="text-center text-white" style={{height: '80px'}}>Trendy Apparel Trade</h1>
+                        </div>
+                    </Col>
+                </Row> 
+            
             </div>
         )
     }
