@@ -79,7 +79,7 @@ class App extends Component {
     item.id = Math.random();
     let items = [...this.state.items, item]
     this.setState({
-      items: items
+      resultList: items
     })
     console.log('form submitted', item);
   }
