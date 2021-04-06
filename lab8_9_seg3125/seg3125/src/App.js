@@ -146,9 +146,14 @@ class App extends Component {
     filters[filter] = [];
     this.setState({ appliedFilters: filters }, this.buildResultList)
   }
+
+  updateSearchParam = (param) => {
+    this.setState({ searchQuery: param }, this.buildResultList);
+  }
+
+
   buildResultList = () => {
     var list = this.state.items;
-
     //applying filters
     Object.keys(this.state.appliedFilters).map((k) => {
       list = list.filter(item => {
@@ -158,6 +163,32 @@ class App extends Component {
         return true;
       })
     })
+
+    //applying query
+    var wordsArray = list;
+    if (this.state.searchQuery !== '') {
+      wordsArray = []
+      var query = this.state.searchQuery.split(' ');
+
+      var searchKeys = ['name', 'size', 'type', 'mainColor', 'secondaryColor', 'ownername']
+      query.forEach(word => {
+        list.forEach(item => {
+          var valid = false;
+          searchKeys.forEach(key => {
+
+            if (item[key].toLowerCase().split(' ').includes(word.toLowerCase())) {
+              valid = true;
+            }
+          })
+          if (valid) {
+            wordsArray.push(item)
+          }
+        })
+      })
+      //removing duplicates
+      list = Array.from(new Set(wordsArray));
+    }
+
 
     //Sorting
     //Default is cost ascending
@@ -177,7 +208,7 @@ class App extends Component {
               <NewPost addNewPost={this.addNewPost} language={this.state.language} filters={this.state.filters[1]} sizes={[...Object.values(this.size)]} colors={this.colors}></NewPost>
             </Col>
             <Col xs={9}>
-              <Search sortBy={this.sortBy} />
+              <Search sortBy={this.sortBy} updateSearchParam={this.updateSearchParam} />
             </Col>
             <Col className="col-auto">
               <select onChange={(e) => this.changeLanguage(e.target.value)}>
