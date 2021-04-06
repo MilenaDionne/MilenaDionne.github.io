@@ -30,7 +30,7 @@ class App extends Component {
         imgSrc: '../images/Biking-Shirt_T-Shirt_M_Blue_None_30_JL.jpg',
         cost: 50,
         size: this.size.M,
-        type: 'T-Shirt',
+        type: 'Tops',
         mainColor: 'Blue',
         secondaryColor: 'Red',
         description: 'Perfect T-Shirt for biking',
@@ -38,14 +38,13 @@ class App extends Component {
         ownername: 'JL',
         owneremail: 'fakeemail@gmail.com',
         ownerphone: '819-123-4568'
-
       }, {
         id: 2,
         name: 'fake-Shirt',
         imgSrc: '../images/Biking-Shirt_T-Shirt_M_Blue_None_30_JL.jpg',
         cost: 40,
         size: this.size.XL,
-        type: 'T-Shirt',
+        type: 'Tops',
         mainColor: 'Blue',
         secondaryColor: 'Red',
         description: 'Perfect T-Shirt for biking',
@@ -79,7 +78,8 @@ class App extends Component {
     item.id = Math.random();
     let items = [...this.state.items, item]
     this.setState({
-      resultList: items
+      resultList: items, 
+      items: items
     })
     console.log('form submitted', item);
   }
@@ -90,7 +90,7 @@ class App extends Component {
 
   compare(property, order) {
     var sortOrder = 1;
-    if (order == 'Descending') {
+    if (order === 'Descending') {
       sortOrder = -1;
     }
     return function (a, b) {
@@ -116,7 +116,7 @@ class App extends Component {
 
     this.setState(
       {
-        resultList: this.state.items.filter(item => { return item[f.toLowerCase()] == value })
+        resultList: this.state.items.filter(item => { return item[f.toLowerCase()] === value })
       });
 
   }
@@ -129,8 +129,10 @@ class App extends Component {
           <PageTitle changeLanguage={this.changeLanguage}></PageTitle>
         </Row>
         <Row>
-          <Col className="bg-white ml-1" >
-            <h3>Filters</h3>
+          <Col className="bg-white ml-1">
+            <h5 className="border-bottom border-dark p-1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-filter" viewBox="0 0 16 16">
+            <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
+            </svg> Filter By</h5>
             <FilterContainer filters={this.state.filters} getFilter={this.getFilters}></FilterContainer>
           </Col>
 
