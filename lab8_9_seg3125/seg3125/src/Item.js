@@ -41,7 +41,7 @@ class Item extends Component {
                     </span>
 
                 </div>
-                <button className="btn btn-primary " onClick={() => this.setState({ show: true })}>{l(language, 'MoreInformation')}</button>
+                <button className="btn btn-dark " onClick={() => this.setState({ show: true })}>{l(language, 'MoreInformation')}</button>
                 <ReactTooltip id={item.id + 'size'}>{l(language, 'ItemSize')}</ReactTooltip>
                 <ReactTooltip id={item.id + 'cost'}>{l(language, 'ItemPrice')}</ReactTooltip>
                 <ReactTooltip id={item.id + 'type'}>{l(language, 'ItemType')}</ReactTooltip>

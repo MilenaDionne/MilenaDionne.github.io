@@ -11,7 +11,7 @@ class Search extends Component {
         return (
             <Form inline>
                 <FormControl type="text" placeholder="Search" className="mr-sm-2" style={{ width: '60%' }} />
-                <Button variant="outline-success">Search</Button>
+                <Button variant="outline-light" className="mr-sm-2">Search</Button>
                 <SortBy sortBy={this.props.sortBy} />
             </Form>
         )
