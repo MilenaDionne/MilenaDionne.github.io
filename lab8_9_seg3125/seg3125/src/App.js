@@ -93,11 +93,11 @@ class App extends Component {
 
   addNewPost = (item) => {
     item.id = this.state.idCount;
-    this.setState({ idCount: this.stateidCount + 1 })
     let items = [...this.state.items, item]
     this.setState({
+      idCount: this.stateidCount + 1,
       items: items
-    })
+    }, this.buildResultList)
     console.log('form submitted', item);
   }
 
@@ -139,6 +139,13 @@ class App extends Component {
       }, this.buildResultList);
 
   }
+
+  removeFilters = (e, filter) => {
+    e.preventDefault();
+    var filters = { ...this.state.appliedFilters };
+    filters[filter] = [];
+    this.setState({ appliedFilters: filters }, this.buildResultList)
+  }
   buildResultList = () => {
     var list = this.state.items;
 
@@ -146,7 +153,6 @@ class App extends Component {
     Object.keys(this.state.appliedFilters).map((k) => {
       list = list.filter(item => {
         if (this.state.appliedFilters[k].length > 0) {
-          console.log(this.state.appliedFilters[k].length)
           return this.state.appliedFilters[k].includes(item[k.toLowerCase()]);
         }
         return true;
@@ -186,7 +192,7 @@ class App extends Component {
             <h5 className="border-bottom border-dark p-1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-filter" viewBox="0 0 16 16">
               <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />
             </svg> Filter By</h5>
-            <FilterContainer filters={this.state.filters} getFilter={this.getFilters}></FilterContainer>
+            <FilterContainer filters={this.state.filters} getFilter={this.getFilters} removeFilters={this.removeFilters}></FilterContainer>
           </Col>
           <Col xs={10}>
             <br></br>
