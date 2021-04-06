@@ -72,7 +72,7 @@ class App extends Component {
     sortBy: 'cost',
     ascendingOrder: true,
     resultList: [],
-    appliedFilters: [],
+    appliedFilters: { Size: null, Type: null },
     searchQuery: '',
 
     filters: [
@@ -127,19 +127,33 @@ class App extends Component {
   }
 
   getFilters = (f, value) => {
-
+    var attr = { ...this.state.appliedFilters };
+    attr[f] = value;
     this.setState(
       {
-        resultList: this.state.items.filter(item => { return item[f.toLowerCase()] === value })
-      });
+        appliedFilters: attr
+      }, this.buildResultList);
 
   }
   buildResultList = () => {
     var list = this.state.items;
-    // console.log(this.state.sortBy, this.state.ascendingOrder)
+
+    //applying filters
+    Object.keys(this.state.appliedFilters).map((k) => {
+      list = list.filter(item => {
+        if (this.state.appliedFilters[k]) {
+          return item[k.toLowerCase()] === this.state.appliedFilters[k];
+        }
+        return true;
+      })
+    })
+
+    //Sorting
+    //Default is cost ascending
     this.setState({
       resultList: list.sort(this.compare(this.state.sortBy, this.state.ascendingOrder))
     })
+    // resultList: this.state.items.filter(item => { return item[f.toLowerCase()] === value })
   }
 
   render() {

@@ -12,8 +12,8 @@ class SortBy extends Component {
                 <option value='cost_Descending'>Price descending</option>
                 <option value='name_Ascending'>Name ascending</option>
                 <option value='name_Descending'>Name descending</option>
-                <option value='name_Ascending'>Most recent</option>
-                <option value='name_Descending'>Least recent</option>
+                <option value='name_Descending'>Most recent</option>
+                <option value='name_Ascending'>Least recent</option>
             </select>
         )
 
