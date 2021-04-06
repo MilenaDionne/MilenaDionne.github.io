@@ -1,29 +1,27 @@
 // JavaScript source code
 import React, { Component } from 'react';
+import Checkbox from './Checkboxe';
 
 class Filter extends Component {
+
 
    render() {
       const { name, filters, getFilter } = this.props;
       const valueList = filters.map((value, key) => {
          return (
-            <div key={key}> 
-               <input className="form-check-input" type="radio" name="filters" id={value} value={value}></input> 
-               <label htmlFor={value} className="form-check-label">{value}</label> 
-            </div>
-            
+            <Checkbox value={value} key={key} getFilter={getFilter} filter={name} />
          )
       })
       return (
-         
-         
+
+
          <form>
             <label htmlFor="filters"><b>{name}&nbsp;</b></label>
-            <div className="form-check ml-2" id={name + 'Filter'} onChange={(e) => getFilter(name, e.target.value)}>
+            <div className="form-check ml-2" id={name + 'Filter'}>
                {valueList}
             </div>
             <br></br>
-         </form>
+         </form >
       );
 
    }

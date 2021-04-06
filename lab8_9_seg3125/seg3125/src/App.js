@@ -72,7 +72,7 @@ class App extends Component {
     sortBy: 'cost',
     ascendingOrder: true,
     resultList: [],
-    appliedFilters: { Size: null, Type: null },
+    appliedFilters: { Size: [], Type: [] },
     searchQuery: '',
 
     filters: [
@@ -88,7 +88,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.setState({ resultList: this.state.items }, this.buildResultList())
+    this.setState({ resultList: this.state.items }, this.buildResultList)
   }
 
   addNewPost = (item) => {
@@ -128,7 +128,11 @@ class App extends Component {
 
   getFilters = (f, value) => {
     var attr = { ...this.state.appliedFilters };
-    attr[f] = value;
+    if (attr[f].includes(value)) {
+      attr[f].splice(attr[f].indexOf(value), 1);
+    } else {
+      attr[f].push(value);
+    }
     this.setState(
       {
         appliedFilters: attr
@@ -141,8 +145,9 @@ class App extends Component {
     //applying filters
     Object.keys(this.state.appliedFilters).map((k) => {
       list = list.filter(item => {
-        if (this.state.appliedFilters[k]) {
-          return item[k.toLowerCase()] === this.state.appliedFilters[k];
+        if (this.state.appliedFilters[k].length > 0) {
+          console.log(this.state.appliedFilters[k].length)
+          return this.state.appliedFilters[k].includes(item[k.toLowerCase()]);
         }
         return true;
       })
@@ -152,8 +157,7 @@ class App extends Component {
     //Default is cost ascending
     this.setState({
       resultList: list.sort(this.compare(this.state.sortBy, this.state.ascendingOrder))
-    })
-    // resultList: this.state.items.filter(item => { return item[f.toLowerCase()] === value })
+    });
   }
 
   render() {
