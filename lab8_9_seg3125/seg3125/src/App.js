@@ -20,7 +20,7 @@ class App extends Component {
 
   state = {
     language: 'en',
-    idCount: 3,
+    idCount: 4,
 
     items: [
       {
@@ -69,6 +69,8 @@ class App extends Component {
         ownerphone: '819-123-4568'
 
       }],
+    sortBy: 'cost',
+    ascendingOrder: true,
     resultList: [],
     appliedFilters: [],
     searchQuery: '',
@@ -86,7 +88,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.setState({ resultList: this.state.items })
+    this.setState({ resultList: this.state.items }, this.buildResultList())
   }
 
   addNewPost = (item) => {
@@ -94,7 +96,6 @@ class App extends Component {
     this.setState({ idCount: this.stateidCount + 1 })
     let items = [...this.state.items, item]
     this.setState({
-      resultList: items,
       items: items
     })
     console.log('form submitted', item);
@@ -106,10 +107,7 @@ class App extends Component {
 
   //https://stackoverflow.com/questions/1129216/sort-array-of-objects-by-string-property-value
   compare(property, order) {
-    var sortOrder = 1;
-    if (order === 'Descending') {
-      sortOrder = -1;
-    }
+    var sortOrder = order ? 1 : -1;
     return function (a, b) {
       if (a[property] < b[property]) {
         return -1 * sortOrder;
@@ -123,10 +121,9 @@ class App extends Component {
   }
 
   sortBy = (criteria) => {
-    var list = this.state.resultList;
     var attr = criteria.split('_')[0];
     var order = criteria.split('_')[1];
-    this.setState({ resultList: list.sort(this.compare(attr, order)) })
+    this.setState({ sortBy: attr, ascendingOrder: order === 'Ascending' }, this.buildResultList);
   }
 
   getFilters = (f, value) => {
@@ -137,7 +134,13 @@ class App extends Component {
       });
 
   }
-  buildResultList = () => { return null }
+  buildResultList = () => {
+    var list = this.state.items;
+    // console.log(this.state.sortBy, this.state.ascendingOrder)
+    this.setState({
+      resultList: list.sort(this.compare(this.state.sortBy, this.state.ascendingOrder))
+    })
+  }
 
   render() {
     return (
