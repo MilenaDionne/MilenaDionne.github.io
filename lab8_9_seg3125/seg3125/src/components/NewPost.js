@@ -74,8 +74,8 @@ class NewPost extends Component {
          
 
         return (
-            <Col className="bg-white" >
-                <button type="button" className="btn btn-primary w-100" onClick={this.openModal}>
+            <Col >
+                <button type="button" className="btn btn-light w-100" onClick={this.openModal}>
                     {l(language, 'NewPostTitle')}
             </button>
                 <div className="modal fade" id="newPostModal" tabIndex="-1" role="dialog" aria-labelledby="newPostModalLabel" aria-modal="true">

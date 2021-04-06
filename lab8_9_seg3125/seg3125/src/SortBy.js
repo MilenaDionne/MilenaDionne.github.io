@@ -7,7 +7,7 @@ class SortBy extends Component {
     render() {
         const { sortBy } = this.props
         return (
-            <select onChange={(e) => sortBy(e.target.value)}>
+            <select className="form-control mr-sm-2" onChange={(e) => sortBy(e.target.value)}>
                 <option value='cost_Ascending'>Price ascending</option>
                 <option value='cost_Descending'>Price descending</option>
             </select>

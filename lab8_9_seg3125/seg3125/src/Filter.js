@@ -16,8 +16,9 @@ class Filter extends Component {
       })
       return (
          
+         
          <form>
-            <label htmlFor="filters">{name}&nbsp;</label>
+            <label htmlFor="filters"><b>{name}&nbsp;</b></label>
             <div className="form-check ml-2" id={name + 'Filter'} onChange={(e) => getFilter(name, e.target.value)}>
                {valueList}
             </div>
