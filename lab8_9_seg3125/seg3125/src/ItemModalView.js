@@ -96,7 +96,7 @@ class ItemModalView extends Component {
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th className="pr-4" scope="row"> {l(language, 'ItemPrice')}</th>
+                                        <th className="pr-4" scope="row"> {l(language, 'ItemDescription')}</th>
                                         <td>{item.description}</td>
                                     </tr>
 

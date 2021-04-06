@@ -7,7 +7,7 @@ import Image from 'react-bootstrap/Image'
 
 class NewPost extends Component {
 
-    
+    flag = false; 
     state = {
         imgSrc: '../../images/addImage.png'
     }
@@ -20,10 +20,29 @@ class NewPost extends Component {
                 [e.target.id]: URL.createObjectURL(e.target.files[0])
             })
 
-        } else {
+        } else if(e.target.id === 'agreement'){
+
+        }else {
             this.setState({
                 [e.target.id]: e.target.value
             })
+        }
+
+        var bt = document.getElementById('submit');
+        var type = document.getElementById('type'); 
+        var size = document.getElementById('size'); 
+        var name = document.getElementById('name'); 
+        var cost = document.getElementById('cost'); 
+        var owneremail = document.getElementById('owneremail'); 
+        var ownerphone = document.getElementById('ownerphone'); 
+        var mainColor = document.getElementById('mainColor'); 
+        var agreement = document.getElementById('agreement'); 
+        if (size.value !== '' && type.value !== '' && agreement.checked === true && name.value !== '' && mainColor.value !== '' && cost.value !== '' && (owneremail.value !== '' || ownerphone !== '')) {
+            bt.disabled = false;   // Enable the button.
+            
+        }
+        else {
+            bt.disabled = true;   // Disable the button.
         }
         
     }
@@ -48,6 +67,8 @@ class NewPost extends Component {
         document.getElementById("newPostModal").className += document.getElementById("newPostModal").className.replace("show", "")
     }
 
+
+
     render() {
         const {language, filters, sizes, colors} = this.props;
 
@@ -71,8 +92,6 @@ class NewPost extends Component {
              )
          })
 
-         
-
         return (
             <Col >
                 <button type="button" className="btn btn-light w-100" onClick={this.openModal}>
@@ -83,7 +102,7 @@ class NewPost extends Component {
                         <div className="modal-content">
                             <div className="modal-header">
                                 <h5 className="modal-title" id="newPostModalLabel">{l(language, 'NewPostTitle')}</h5>
-                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                <button type="button" className="close" data-dismiss="modal" aria-label="Close" onClick={this.closeModal}>
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
@@ -102,40 +121,40 @@ class NewPost extends Component {
                                         </div>
                                         <div className="col-1"></div>
                                         <div className="col-6">
-                                            <Form.Group as={Row}>
+                                            <Form.Group as={Row} className="was-validated">
                                                 <Form.Label column sm="2">
                                                 {l(language, 'Name')}
                                                 </Form.Label>
                                                 <Col sm="10">
-                                                    <Form.Control type="name" id="name" placeholder={l(language, 'Name')} onChange={this.handleChange}/>
+                                                    <Form.Control type="name" id="name" className ="is-invalid" placeholder={l(language, 'Name')} onChange={this.handleChange} aria-describedby="validationServerUsernameFeedback" required/>
                                                 </Col>
                                             </Form.Group>
-                                            <Form.Group as={Row}>
+                                            <Form.Group as={Row} className="was-validated">
                                                 <Form.Label column sm="4">
                                                     {l(language, 'ItemType')}
                                                 </Form.Label>
                                                 <Col sm="8">
-                                                    <Form.Control as="select" id="type" className="my-1 mr-sm-2" custom onChange={this.handleChange}>
-                                                        <option value="0"> {l(language, 'SelectType')}</option>
+                                                    <Form.Control as="select" id="type" className="my-1 mr-sm-2 is-invalid" custom onChange={this.handleChange} required>
+                                                        <option value=""> {l(language, 'SelectType')}</option>
                                                         {clothsType}
                                                     </Form.Control>
                                                 </Col>
                                             </Form.Group>
-                                            <Form.Group as={Row}>
+                                            <Form.Group as={Row} className="was-validated">
                                                 <Form.Label column sm="2">
                                                 {l(language, 'ItemPrice')}
                                                 </Form.Label>
                                                 <Col sm="10">
-                                                    <Form.Control type="price" id="cost" placeholder={l(language, 'ItemPrice')} onChange={this.handleChange}/>
+                                                    <Form.Control type="price" className ="is-invalid" id="cost" placeholder={l(language, 'ItemPrice')} onChange={this.handleChange} required/>
                                                 </Col>
                                             </Form.Group>
-                                            <Form.Group as={Row}>
+                                            <Form.Group as={Row} className="was-validated">
                                                 <Form.Label column sm="2">
                                                     {l(language, "ItemSize")}
                                                 </Form.Label>
                                                 <Col sm="10">
-                                                    <Form.Control as="select" id="size" className="my-1 mr-sm-2" custom onChange={this.handleChange}>
-                                                        <option value="0">{l(language, "ChooseSize")}</option>
+                                                    <Form.Control as="select" id="size" className="my-1 mr-sm-2 is-invalid" custom onChange={this.handleChange} required>
+                                                        <option value="">{l(language, "ChooseSize")}</option>
                                                         {clothsSize}
                                                     </Form.Control>
                                                 </Col>
@@ -146,15 +165,15 @@ class NewPost extends Component {
                                             </Form.Group>
                                             <Form.Group>
                                                 <Row>
-                                                    <Col>
-                                                        <Form.Control as="select" id="mainColor" className="my-1 mr-sm-2" custom onChange={this.handleChange}>
-                                                            <option value="0"> {l(language, "Color1")}</option>
+                                                    <Col className="was-validated">
+                                                        <Form.Control as="select" id="mainColor" className="my-1 mr-sm-2 is-invalid" custom onChange={this.handleChange} required>
+                                                            <option value=""> {l(language, "Color1")}</option>
                                                             {valueColors}
                                                         </Form.Control>
                                                     </Col>
                                                     <Col>
                                                         <Form.Control as="select" id="secondaryColor" className="my-1 mr-sm-2" custom onChange={this.handleChange}>
-                                                            <option value="0">{l(language, "Color2")}</option>
+                                                            <option value="">{l(language, "Color2")}</option>
                                                             {valueColors}
                                                         </Form.Control>
                                                     </Col>
@@ -170,8 +189,8 @@ class NewPost extends Component {
                                             <Form.Control placeholder={l(language, 'NewContactName')} id="ownername" onChange={this.handleChange}/>
                                             
                                         </Col>
-                                        <Col>
-                                            <Form.Control placeholder={l(language, 'NewContactEmail')} id="owneremail" onChange={this.handleChange}/>
+                                        <Col className="was-validated">
+                                            <Form.Control placeholder={l(language, 'NewContactEmail')} id="owneremail" className ="is-invalid" onChange={this.handleChange} required/>
                                         </Col>
                                     </Row>
                                     <br></br>
@@ -179,16 +198,16 @@ class NewPost extends Component {
                                         <Col>
                                             <Form.Control placeholder={l(language, 'NewContactPhone')} id="ownerphone" onChange={this.handleChange}/>
                                         </Col>
-                                        <Col>
-                                            <Form.Group id="formGridCheckbox">
-                                                <Form.Check type="checkbox" label={l(language, 'NewAgreementConditions')}/>
+                                        <Col className="was-validated">
+                                            <Form.Group>
+                                                <Form.Check type="checkbox" id="agreement" label={l(language, 'NewAgreementConditions')} onChange={this.handleChange} required/>
                                             </Form.Group>
                                         </Col>
                                     </Form.Row>
                                 </div>
                                 <div className="modal-footer">
                                     <button type="button" className="btn btn-secondary" onClick={this.closeModal}>{l(language, 'Cancel')}</button>
-                                    <button type="submit" className="btn btn-primary">{l(language, 'AddPost')}</button>
+                                    <button type="submit" id="submit" className="btn btn-primary" disabled>{l(language, 'AddPost')}</button>
                                 </div>
                             </Form>
                         </div>

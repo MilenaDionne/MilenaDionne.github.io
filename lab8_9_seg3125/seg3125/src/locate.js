@@ -159,8 +159,16 @@ let strings = {
         'en': 'Red',
         'fr': 'Rouge'
     },
+    Rouge: {
+        'en': 'Red',
+        'fr': 'Rouge'
+    },
 
     Blue: {
+        'en': 'Blue',
+        'fr': 'Bleu'
+    },
+    Bleu: {
         'en': 'Blue',
         'fr': 'Bleu'
     },
@@ -168,11 +176,23 @@ let strings = {
         'en': 'Yellow',
         'fr': 'Jaune'
     },
+    Jaune: {
+        'en': 'Yellow',
+        'fr': 'Jaune'
+    },
     Green: {
         'en': 'Green',
         'fr': 'Vert'
     },
+    Vert: {
+        'en': 'Green',
+        'fr': 'Vert'
+    },
     Purple: {
+        'en': 'Purple',
+        'fr': 'Mauve'
+    },
+    Mauve: {
         'en': 'Purple',
         'fr': 'Mauve'
     },
@@ -184,7 +204,15 @@ let strings = {
         'en': 'Black',
         'fr': 'Noir'
     },
+    Noir: {
+        'en': 'Black',
+        'fr': 'Noir'
+    },
     White: {
+        'en': 'White',
+        'fr': 'Blanc'
+    },
+    Blanc: {
         'en': 'White',
         'fr': 'Blanc'
     },
@@ -192,7 +220,15 @@ let strings = {
         'en': 'Pink',
         'fr': 'Rose'
     },
+    Rose: {
+        'en': 'Pink',
+        'fr': 'Rose'
+    },
     Grey: {
+        'en': 'Grey', 
+        'fr': 'Gris'
+    },
+    Gris: {
         'en': 'Grey', 
         'fr': 'Gris'
     },
@@ -200,11 +236,23 @@ let strings = {
         'en': 'Brown', 
         'fr': 'Brun'
     }, 
+    Brun: {
+        'en': 'Brown', 
+        'fr': 'Brun'
+    }, 
     Gold: {
         'en': 'Gold', 
         'fr': 'Or'
     }, 
+    Or: {
+        'en': 'Gold', 
+        'fr': 'Or'
+    }, 
     Silver: {
+        'en': 'Silver', 
+        'fr': 'Argent'
+    }, 
+    Argent: {
         'en': 'Silver', 
         'fr': 'Argent'
     }, 
