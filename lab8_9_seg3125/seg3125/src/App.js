@@ -6,7 +6,7 @@ import FilterContainer from './FilterContainer'
 import Search from './Search'
 import NewPost from './components/NewPost';
 import Navbar from 'react-bootstrap/esm/Navbar';
-
+import l from './locate'
 class App extends Component {
   size = {
     XS: 'Extra Small',
@@ -155,7 +155,7 @@ class App extends Component {
   buildResultList = () => {
     var list = this.state.items;
     //applying filters
-    Object.keys(this.state.appliedFilters).map((k) => {
+    Object.keys(this.state.appliedFilters).forEach((k) => {
       list = list.filter(item => {
         if (this.state.appliedFilters[k].length > 0) {
           return this.state.appliedFilters[k].includes(item[k.toLowerCase()]);
@@ -208,7 +208,7 @@ class App extends Component {
               <NewPost addNewPost={this.addNewPost} language={this.state.language} filters={this.state.filters[1]} sizes={[...Object.values(this.size)]} colors={this.colors}></NewPost>
             </Col>
             <Col xs={9}>
-              <Search sortBy={this.sortBy} updateSearchParam={this.updateSearchParam} language={this.state.language}/>
+              <Search sortBy={this.sortBy} updateSearchParam={this.updateSearchParam} language={this.state.language} />
             </Col>
             <Col className="col-auto">
               <select onChange={(e) => this.changeLanguage(e.target.value)}>
@@ -222,8 +222,8 @@ class App extends Component {
           <Col className="bg-white ml-1">
             <h5 className="border-bottom border-dark p-1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-filter" viewBox="0 0 16 16">
               <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />
-            </svg> Filter By</h5>
-            <FilterContainer filters={this.state.filters} getFilter={this.getFilters} removeFilters={this.removeFilters}></FilterContainer>
+            </svg> {l(this.state.language, 'FilterBy')}</h5>
+            <FilterContainer filters={this.state.filters} getFilter={this.getFilters} removeFilters={this.removeFilters} language={this.state.language}></FilterContainer>
           </Col>
           <Col xs={10}>
             <br></br>

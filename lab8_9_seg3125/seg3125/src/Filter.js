@@ -1,6 +1,7 @@
 // JavaScript source code
 import React, { Component } from 'react';
 import Checkbox from './Checkboxe';
+import l from './locate'
 
 
 class Filter extends Component {
@@ -33,20 +34,20 @@ class Filter extends Component {
    }
 
    render() {
-      const { name, filters, getFilter, removeFilters } = this.props;
+      const { name, filters, getFilter, removeFilters, language } = this.props;
       var active;
       if (Object.values(this.state.values).filter(value => { return value }).length > 0) {
          active = <button className="btn justify-content-end btn-sm p-0 pl-2 pb-1 align-items-end" onClick={(e) => this.deleteFilters(e, name, removeFilters)}><u>Clear filters</u> &nbsp;&times;</button>
       }
       const valueList = filters.map((value, key) => {
          return (
-            <Checkbox value={value} key={key} getFilter={getFilter} filter={name} checked={this.state.values[value]} selectFilter={this.selectFilter} />
+            <Checkbox language={language} value={value} key={key} getFilter={getFilter} filter={name} checked={this.state.values[value]} selectFilter={this.selectFilter} />
          )
       })
       return (
          <form>
             <label htmlFor="filters">
-               <b>{name}&nbsp;</b>
+               <b>{l(language, name)}&nbsp;</b>
             </label>
             {active}
             <div className="form-check ml-2" id={name + 'Filter'}>
