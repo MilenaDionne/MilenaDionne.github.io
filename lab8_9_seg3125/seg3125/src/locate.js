@@ -296,6 +296,11 @@ let strings = {
         en: "Type",
         fr: 'Vêtement'
     },
+    Search: {
+        en: "Search",
+        fr: 'Rechercher'
+    },
+
 
 
 
