@@ -303,6 +303,10 @@ let strings = {
     ClearFilters: {
         en: 'Clear filters',
         fr: "Retirer les filtres"
+    },
+    noResults: {
+        en: 'Oops! We do not have what you are looking for. Try clearing some filters or make your search more broad!',
+        fr: 'Oops! Nous n\'avons pas ce que vous recherchez. Essayez de retirer quelques filtres ou élargir votre recherche!'
     }
 
 

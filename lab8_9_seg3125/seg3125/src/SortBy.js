@@ -7,7 +7,6 @@ class SortBy extends Component {
 
     render() {
         const { sortBy, language } = this.props
-        console.log(language)
         return (
             <select className="form-control mr-sm-2" onChange={(e) => sortBy(e.target.value)}>
                 <option value='cost_Ascending'>{l(language, 'Price ascending')}</option>
