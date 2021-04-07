@@ -37,7 +37,7 @@ class Filter extends Component {
       const { name, filters, getFilter, removeFilters, language } = this.props;
       var active;
       if (Object.values(this.state.values).filter(value => { return value }).length > 0) {
-         active = <button className="btn justify-content-end btn-sm p-0 pl-2 pb-1 align-items-end" onClick={(e) => this.deleteFilters(e, name, removeFilters)}><u>Clear filters</u> &nbsp;&times;</button>
+         active = <button className="btn justify-content-end btn-sm p-0 pl-2 pb-1 align-items-end" onClick={(e) => this.deleteFilters(e, name, removeFilters)}><u>{l(language, 'ClearFilters')}</u> &nbsp;&times;</button>
       }
       const valueList = filters.map((value, key) => {
          return (
@@ -47,7 +47,8 @@ class Filter extends Component {
       return (
          <form>
             <label htmlFor="filters">
-               <b>{l(language, name)}&nbsp;</b>
+               <b>{l(language, name)}&nbsp;
+               <img src={"./icons/" + name + ".png"} alt="" className="img-fluid" style={{ width: '1rem' }} /></b>
             </label>
             {active}
             <div className="form-check ml-2" id={name + 'Filter'}>

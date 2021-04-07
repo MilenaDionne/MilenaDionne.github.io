@@ -63,14 +63,14 @@ class ItemModalView extends Component {
                                     <tr>
                                         <th className="pr-4" scope="row">
                                             {l(language, 'ItemType')}
-                                            <img src="./icons/typeClothes.png" alt="" className="img-fluid " style={{ width: '1.2rem' }} />
+                                            <img src="./icons/Type.png" alt="" className="img-fluid " style={{ width: '1.2rem' }} />
                                         </th>
                                         <td>{item.type}</td>
                                     </tr>
                                     <tr>
                                         <th className="pr-4" scope="row">
                                             {l(language, 'ItemSize')}
-                                            <img src="./icons/size.png" alt="" className="img-fluid ml-2" style={{ width: '1.2rem' }} />
+                                            <img src="./icons/Size.png" alt="" className="img-fluid ml-2" style={{ width: '1.2rem' }} />
                                         </th>
                                         <td>{l(language, item.size)}</td>
                                     </tr>

@@ -19,11 +19,11 @@ class Item extends Component {
                     {item.name}
                 </div >
                 <div >
-                    <img src={item.imgSrc} alt="" className="card-img" style={{height: '300px'}} />
+                    <img src={item.imgSrc} alt="" className="card-img" style={{ height: '300px' }} />
                 </div>
                 <div className="row text-center">
                     <span className="col">
-                        <img src="./icons/typeClothes.png" alt="" className="img-fluid" style={{ width: '1rem' }} />
+                        <img src="./icons/Type.png" alt="" className="img-fluid" style={{ width: '1rem' }} />
                         <span className="" data-tip data-for={item.id + 'type'}>
                             {item.type}
                         </span>
@@ -31,7 +31,7 @@ class Item extends Component {
 
 
                     <span className="col">
-                        <img src="./icons/size.png" alt="" className="img-fluid" style={{ width: '1rem' }} />
+                        <img src="./icons/Size.png" alt="" className="img-fluid" style={{ width: '1rem' }} />
                         <span className="" data-tip data-for={item.id + 'size'}>{l(language, item.size)}</span>
                     </span>
 

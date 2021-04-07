@@ -270,11 +270,11 @@ let strings = {
     },
     'Name ascending': {
         'en': 'Name ascending',
-        'fr': 'Alphabétique croissant'
+        'fr': 'Nom croissant'
     },
     'Name descending': {
         'en': 'Name descending',
-        'fr': 'Alphabétique décroissant'
+        'fr': 'Nom décroissant'
     },
     'Most recent': {
         'en': 'Most recent',
@@ -300,6 +300,10 @@ let strings = {
         en: "Search",
         fr: 'Rechercher'
     },
+    ClearFilters: {
+        en: 'Clear filters',
+        fr: "Retirer les filtres"
+    }
 
 
 
