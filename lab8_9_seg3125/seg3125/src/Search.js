@@ -20,12 +20,12 @@ class Search extends Component {
     }
 
     render() {
-        const { updateSearchParam } = this.props;
+        const { updateSearchParam, language } = this.props;
         return (
             <Form inline onSubmit={(e) => this.search(e, updateSearchParam)}>
                 <FormControl type="text" placeholder="Search" className="mr-sm-2" style={{ width: '60%' }} onChange={(e) => this.updatequery(e.target.value)} />
                 <Button variant="outline-light" className="mr-sm-2" onClick={(e) => this.search(e, updateSearchParam)}>Search</Button>
-                <SortBy sortBy={this.props.sortBy} />
+                <SortBy sortBy={this.props.sortBy} language={language} />
             </Form>
         )
 

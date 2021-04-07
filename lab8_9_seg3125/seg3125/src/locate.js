@@ -259,5 +259,32 @@ let strings = {
     Bronze: {
         'en': 'Bronze', 
         'fr': 'Bronze'
-    }
+    },
+    'Price ascending': {
+        'en': 'Price ascending', 
+        'fr': 'Prix croissant'
+    },
+    'Price descending': {
+        'en': 'Price descending', 
+        'fr': 'Prix décroissant'
+    },
+    'Name ascending': {
+        'en': 'Name ascending', 
+        'fr': 'Alphabétique croissant'
+    },
+    'Name descending': {
+        'en': 'Name descending', 
+        'fr': 'Alphabétique décroissant'
+    },
+    'Most recent': {
+        'en': 'Most recent', 
+        'fr': 'Plus récent'
+    },
+    'Least recent': {
+        'en': 'Least recent', 
+        'fr': 'Moins récent'
+    },
+    
+    
+
 }

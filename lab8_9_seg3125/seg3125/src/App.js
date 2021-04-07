@@ -208,7 +208,7 @@ class App extends Component {
               <NewPost addNewPost={this.addNewPost} language={this.state.language} filters={this.state.filters[1]} sizes={[...Object.values(this.size)]} colors={this.colors}></NewPost>
             </Col>
             <Col xs={9}>
-              <Search sortBy={this.sortBy} updateSearchParam={this.updateSearchParam} />
+              <Search sortBy={this.sortBy} updateSearchParam={this.updateSearchParam} language={this.state.language}/>
             </Col>
             <Col className="col-auto">
               <select onChange={(e) => this.changeLanguage(e.target.value)}>
