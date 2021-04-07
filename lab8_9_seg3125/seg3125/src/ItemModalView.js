@@ -106,7 +106,7 @@ class ItemModalView extends Component {
                     </div>
 
                     <div className="text-center mt-2 mb-2">
-                        <button className="btn btn-primary" onClick={() => this.btnOnClick(language)}>{this.state.contactOwnerBtnText}</button>
+                        <button className="btn  btn-dark" onClick={() => this.btnOnClick(language)}>{this.state.contactOwnerBtnText}</button>
                     </div>
                     <div hidden={this.state.hideOwnerInfo}>
 
