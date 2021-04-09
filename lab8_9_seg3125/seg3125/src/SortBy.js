@@ -13,8 +13,8 @@ class SortBy extends Component {
                 <option value='cost_Descending'>{l(language, 'Price descending')}</option>
                 <option value='name_Ascending'>{l(language, 'Name ascending')}</option>
                 <option value='name_Descending'>{l(language, 'Name descending')}</option>
-                <option value='name_Descending'>{l(language, 'Most recent')}</option>
-                <option value='name_Ascending'>{l(language, 'Least recent')}</option>
+                <option value='id_Descending'>{l(language, 'Most recent')}</option>
+                <option value='id_Ascending'>{l(language, 'Least recent')}</option>
             </select>
         )
 
