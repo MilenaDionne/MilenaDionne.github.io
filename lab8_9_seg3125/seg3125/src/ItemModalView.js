@@ -65,7 +65,7 @@ class ItemModalView extends Component {
                                             {l(language, 'ItemType')}
                                             <img src="./icons/Type.png" alt="" className="img-fluid " style={{ width: '1.2rem' }} />
                                         </th>
-                                        <td>{l(language, item.type)}</td>
+                                        <td>{item.type}</td>
                                     </tr>
                                     <tr>
                                         <th className="pr-4" scope="row">
